@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 const WAIT_TIME = 30000;
 

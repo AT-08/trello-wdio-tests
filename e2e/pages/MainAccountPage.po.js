@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 const CommonActions = require('../core/ui/CommonActions');
 
