@@ -20,6 +20,6 @@ Feature: Create Dashboard in Trello
 
     Examples:
         | NameBoard | Background |
-        | Dennis    |            |
+        | Dennis    |      green |
         | Roger     |       blue |
         | George    |        red |
