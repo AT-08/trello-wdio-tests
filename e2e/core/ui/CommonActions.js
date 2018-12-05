@@ -1,8 +1,11 @@
 'use strict';
-const TIME_TO_WAIT = 30000;
+
+const TIME_PAUSE = 2000;
+const WAIT_FOR_CLICK = 60000;
+const WAIT_FOR_SET = 30000;
 
 /**
- * CommonActions class with CommonActions Methods.
+ * CommonActionsRep class with CommonActionsRep Methods.
  */
 class CommonActions {
 
@@ -10,12 +13,23 @@ class CommonActions {
      * Method to click on element.
      *
      * @param element
+     */
+    static click(element) {
+        browser.pause(TIME_PAUSE);
+        browser.waitForExist(element, WAIT_FOR_CLICK);
+        browser.click(element);
+    }
+
+    /**
+     * Method to set a value on text element.
+     *
+     * @param element
      * @param value
      */
     static setValue(element, value) {
-        browser.waitForVisible(element, TIME_TO_WAIT);
-        browser.element(element).setValue(value);
+        browser.waitForExist(element, WAIT_FOR_SET);
+        browser.setValue(element, value);
     }
-}
 
+}
 module.exports = CommonActions;
