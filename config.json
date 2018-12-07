@@ -1,4 +1,16 @@
 {
-  "username": "dimmyeidan@gmail.com",
-  "password": "lamurgadesangarrote"
+  "credentials": {
+    "owner1": {
+      "username": "dimmyeidan@gmail.com",
+      "password": "lamurgadesangarrote"
+    },
+    "member1": {
+      "username": "dimmyeidan@gmail.com",
+      "password": "lamurgadesangarrote"
+    },
+    "member2": {
+      "username": "dimmyeidan@gmail.com",
+      "password": "lamurgadesangarrote"
+    }
+  }
 }
