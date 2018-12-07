@@ -10,22 +10,11 @@ const WAIT_FOR_SET = 30000;
 class CommonActions {
 
     /**
-     * Method to click on an element.
-     *
-     * @param element
-     */
-    static click(element) {
-        browser.pause(TIME_PAUSE);
-        browser.waitForExist(element, WAIT_FOR_CLICK);
-        browser.click(element);
-    }
-
-    /**
      * Method to set a value on text element.
      *
      * @param element
      */
-    static click(element) {
+    static operate(element) {
         browser.pause(TIME_PAUSE);
         browser.waitForExist(element, WAIT_FOR_CLICK);
         browser.click(element);

@@ -16,15 +16,15 @@ class account {
 
     clickCreateBoard() {
         browser.waitForExist('a[class="tab__tabLink__3C9rw tab__selected__1gsiC"]', WAIT_EXIST);
-        CommonActions.click(this.createBoard);
+        CommonActions.operate(this.createBoard);
     }
 
     createNewBoard(name, bg) {
         this.background = 'button[title='+bg+']';
         browser.waitForExist('div[class="board-tile create-board-tile has-photo-background"]', WAIT_EXIST);
         CommonActions.setValue(this.titleBoard, name);
-        CommonActions.click(this.background);
-        CommonActions.click(this.submit);
+        CommonActions.operate(this.background);
+        CommonActions.operate(this.submit);
     }
 }
 
