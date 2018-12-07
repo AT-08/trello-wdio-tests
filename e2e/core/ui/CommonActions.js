@@ -10,7 +10,7 @@ const WAIT_FOR_SET = 30000;
 class CommonActions {
 
     /**
-     * Method to click on element.
+     * Method to click on an element.
      *
      * @param element
      */
