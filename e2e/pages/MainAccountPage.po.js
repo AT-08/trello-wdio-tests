@@ -20,7 +20,7 @@ class account {
 
     createNewBoard() {
         browser.waitForExist('div[class="board-tile create-board-tile has-photo-background"]', WAIT_FOR_CREATE);
-        CommonActions.setValue(this.titleBoard, 'DanteBoard');
+        CommonActions.setValue(this.titleBoard, 'NewBoard');
         CommonActions.click(this.submit);
     }
 }
