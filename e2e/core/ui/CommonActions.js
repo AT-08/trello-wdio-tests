@@ -24,6 +24,17 @@ class CommonActions {
      * Method to set a value on text element.
      *
      * @param element
+     */
+    static click(element) {
+        browser.pause(TIME_PAUSE);
+        browser.waitForExist(element, WAIT_FOR_CLICK);
+        browser.click(element);
+    }
+
+    /**
+     * Method to set a value on text element.
+     *
+     * @param element
      * @param value
      */
     static setValue(element, value) {
