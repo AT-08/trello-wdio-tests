@@ -26,7 +26,7 @@ When(/^I create a new Board/, () => {
     accountpage.createNewBoard();
 });
 
-Then(/^I expect my board created/, () => {
+Then(/^I expect the board created/, () => {
     board.isDashboardCreated();
-    expect(board.pageTitle()).to.be.eql('DanteBoard | Trello');
+    expect(board.pageTitle()).to.be.eql('NewBoard | Trello');
 });

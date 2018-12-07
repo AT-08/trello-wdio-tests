@@ -19,7 +19,7 @@ class LoginPage {
     }
 
     clickLoginAccount() {
-        CommonActions.click(this.loginButton);
+        CommonActions.operate(this.loginButton);
     }
 }
 

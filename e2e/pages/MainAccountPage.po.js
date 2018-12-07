@@ -15,13 +15,13 @@ class account {
 
     clickCreateBoard() {
         browser.waitForExist('a[class="tab__tabLink__3C9rw tab__selected__1gsiC"]', WAIT_FOR_CLICK);
-        CommonActions.click(this.createBoard);
+        CommonActions.operate(this.createBoard);
     }
 
     createNewBoard() {
         browser.waitForExist('div[class="board-tile create-board-tile has-photo-background"]', WAIT_FOR_CREATE);
-        CommonActions.setValue(this.titleBoard, 'DanteBoard');
-        CommonActions.click(this.submit);
+        CommonActions.setValue(this.titleBoard, 'NewBoard');
+        CommonActions.operate(this.submit);
     }
 }
 
