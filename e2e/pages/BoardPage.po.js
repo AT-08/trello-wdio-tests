@@ -9,7 +9,7 @@ class Board {
     }
 
     isDashboardCreated() {
-        browser.waitForExist(this.board, WAIT_TIME);
+        browser.waitForVisible(this.board, WAIT_TIME);
     }
 
     pageTitle() {

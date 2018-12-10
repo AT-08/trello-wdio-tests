@@ -16,7 +16,7 @@ class CommonActions {
      */
     static operate(element) {
         browser.pause(TIME_PAUSE);
-        browser.waitForExist(element, WAIT_FOR_CLICK);
+        browser.waitForVisible(element, WAIT_FOR_CLICK);
         browser.click(element);
     }
 
@@ -27,9 +27,8 @@ class CommonActions {
      * @param value
      */
     static setValue(element, value) {
-        browser.waitForExist(element, WAIT_FOR_SET);
+        browser.waitForVisible(element, WAIT_FOR_SET);
         browser.setValue(element, value);
     }
-
 }
 module.exports = CommonActions;
