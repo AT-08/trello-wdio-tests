@@ -30,5 +30,24 @@ class CommonActions {
         browser.waitForVisible(element, WAIT_FOR_SET);
         browser.setValue(element, value);
     }
+
+    /**
+     * Method to open the browser with a URL.
+     *
+     * @param site is the URL.
+     */
+    static openUrl(site) {
+        browser.url(site);
+    }
+
+    /**
+     * Method that returns the title of the current web page.
+     *
+     * @returns {*} title of the current web page.
+     */
+    static getTitleOfPage() {
+        browser.pause(TIME_PAUSE);
+        return browser.getTitle();
+    }
 }
 module.exports = CommonActions;

@@ -4,11 +4,11 @@ const expect = require('chai').expect;
 
 const config = require('../../../config.json');
 
-const MainPage = require('../../pages/LoadPage.po.js');
-const AccountPage = require('../../pages/MainAccountPage.po.js');
-const BoardPage = require('../../pages/BoardPage.po.js');
-const CreationBoard = require('../../pages/CreationOfABoard.js');
-const LoginPage = require('../../pages/LoginPage.po.js');
+const MainPage = require('../../pages/loadPage.po.js');
+const AccountPage = require('../../pages/mainAccountPage.po.js');
+const BoardPage = require('../../pages/boardPage.po.js');
+const CreationBoard = require('../../pages/creationOfABoard.js');
+const LoginPage = require('../../pages/loginPage.po.js');
 
 let mpageP = new MainPage();
 let accountpageP = new AccountPage();
@@ -25,7 +25,7 @@ Given(/^I login "([^"]*)"$/, (url) => {
     }
 });
 
-When(/^I create a new Dashboard with:$/, (dataTable) => {
+When(/^I create a new Board with:$/, (dataTable) => {
     accountpageP.clickCreateBoard();
     let rHash = dataTable.rowsHash();
     boardCreation.createBoard(rHash);
