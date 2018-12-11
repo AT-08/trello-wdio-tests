@@ -1,7 +1,7 @@
 #trello.feature
-Feature: Create Dashboard in Trello
+Feature: Create board in Trello
   As a User
-  I want to create dashboards in Trello
+  I want to create boards in Trello
 
   Scenario: Create a board in Trello
     Given I login "https://trello.com/login?returnUrl=%2F"
