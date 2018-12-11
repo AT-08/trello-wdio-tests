@@ -8,7 +8,7 @@ class Board {
         this.board = '#board';
     }
 
-    isDashboardCreated() {
+    isBoardCreated() {
         browser.waitForVisible(this.board, WAIT_TIME);
     }
 

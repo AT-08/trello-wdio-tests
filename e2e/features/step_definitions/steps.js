@@ -31,6 +31,6 @@ When(/^I create a new Board with:$/, (dataTable) => {
 });
 
 Then(/^I expect my board created$/, () => {
-    board.isDashboardCreated();
+    board.isBoardCreated();
     expect(board.pageTitle()).to.contains('| Trello');
 });
