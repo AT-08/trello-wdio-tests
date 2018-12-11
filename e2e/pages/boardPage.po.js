@@ -8,8 +8,8 @@ class Board {
         this.board = '#board';
     }
 
-    isDashboardCreated() {
-        browser.waitForExist(this.board, WAIT_TIME);
+    isBoardCreated() {
+        browser.waitForVisible(this.board, WAIT_TIME);
     }
 
     pageTitle() {
