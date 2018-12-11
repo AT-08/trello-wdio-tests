@@ -1,16 +1,16 @@
 {
   "credentials": {
-    "owner1": {
+    "owner": {
       "username": "dimmyeidan@gmail.com",
       "password": "lamurgadesangarrote"
     },
     "member1": {
-      "username": "dimmyeidan@gmail.com",
-      "password": "lamurgadesangarrote"
+      "username": "nestor.otondo@fundacion-jala.org",
+      "password": "Zeus2Deus"
     },
     "member2": {
-      "username": "dimmyeidan@gmail.com",
-      "password": "lamurgadesangarrote"
+      "username": "fake.sandbox@gmail.com",
+      "password": "MasterKey123"
     }
   }
 }

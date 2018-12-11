@@ -16,7 +16,7 @@ class CommonActions {
      */
     static operate(element) {
         browser.pause(TIME_PAUSE);
-        browser.waitForExist(element, WAIT_FOR_CLICK);
+        browser.waitForVisible(element, WAIT_FOR_CLICK);
         browser.click(element);
     }
 
@@ -27,9 +27,27 @@ class CommonActions {
      * @param value
      */
     static setValue(element, value) {
-        browser.waitForExist(element, WAIT_FOR_SET);
+        browser.waitForVisible(element, WAIT_FOR_SET);
         browser.setValue(element, value);
     }
 
+    /**
+     * Method to open the browser with a URL.
+     *
+     * @param site is the URL.
+     */
+    static loadPage(site) {
+        browser.url(site);
+    }
+
+    /**
+     * Method that returns the title of the current web page.
+     *
+     * @returns {*} title of the current web page.
+     */
+    static getTitleOfPage() {
+        browser.pause(TIME_PAUSE);
+        return browser.getTitle();
+    }
 }
 module.exports = CommonActions;

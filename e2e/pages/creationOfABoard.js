@@ -1,6 +1,6 @@
 'use strict';
 
-const CommonActions = require('../core/ui/CommonActions');
+const CommonActions = require('../core/ui/commonActions');
 
 class CreationPage {
     
