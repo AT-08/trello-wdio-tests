@@ -14,12 +14,13 @@ let accountpageP = new AccountPage();
 let board = new BoardPage();
 let boardCreation = new CreationBoard();
 let loginpage = new LoginPage();
+const credentials = config.credentials;
 
 Given(/^I login "([^"]*)"$/, (url) => {
     CommonActions.loadPage(url);
     if (CommonActions.getTitleOfPage() === 'Log in to Trello') {
-        loginpage.setEmailTextField(config.username);
-        loginpage.writePassword(config.password);
+        loginpage.setEmailTextField(credentials.owner.username);
+        loginpage.writePassword(credentials.owner.password);
         loginpage.clickLoginAccount();
     }
 });
