@@ -36,7 +36,7 @@ class CommonActions {
      *
      * @param site is the URL.
      */
-    static openUrl(site) {
+    static loadPage(site) {
         browser.url(site);
     }
 
