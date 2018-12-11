@@ -7,12 +7,12 @@ const CommonActions = require('../../core/ui/commonActions');
 
 const AccountPage = require('../../pages/mainAccountPage.po.js');
 const BoardPage = require('../../pages/boardPage.po.js');
-const CreationBoard = require('../../pages/creationOfABoard.js');
+const BoardActions = require('../../pages/actionsOfABoard.js');
 const LoginPage = require('../../pages/loginPage.po.js');
 
 let accountpageP = new AccountPage();
 let board = new BoardPage();
-let boardCreation = new CreationBoard();
+let boardActions = new BoardActions();
 let loginpage = new LoginPage();
 
 Given(/^I login "([^"]*)"$/, (url) => {
@@ -27,7 +27,7 @@ Given(/^I login "([^"]*)"$/, (url) => {
 When(/^I create a new Board with:$/, (dataTable) => {
     accountpageP.clickCreateBoard();
     let rHash = dataTable.rowsHash();
-    boardCreation.createBoard(rHash);
+    boardActions.createBoard(rHash);
 });
 
 Then(/^I expect my board created$/, () => {

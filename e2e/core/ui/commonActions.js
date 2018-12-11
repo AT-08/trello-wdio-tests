@@ -15,7 +15,7 @@ class CommonActions {
      * @param element
      */
     static operate(element) {
-        browser.pause(TIME_PAUSE);
+        //browser.pause(TIME_PAUSE);
         browser.waitForVisible(element, WAIT_FOR_CLICK);
         browser.click(element);
     }
@@ -46,7 +46,7 @@ class CommonActions {
      * @returns {*} title of the current web page.
      */
     static getTitleOfPage() {
-        browser.pause(TIME_PAUSE);
+        //browser.pause(TIME_PAUSE);
         return browser.getTitle();
     }
 }

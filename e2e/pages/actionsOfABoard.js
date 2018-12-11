@@ -44,6 +44,11 @@ class CreationPage {
             CommonActions.operate(this.confirmPublicButton);
         }
     }
+
+    searchBoard(title) {
+        browser.waitForVisible(`div[title="${title}"]`);
+        browser.element(`div[title="${title}"]`).click();
+    }
 }
 
 module.exports = CreationPage;
