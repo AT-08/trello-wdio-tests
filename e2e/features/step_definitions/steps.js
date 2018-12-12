@@ -6,18 +6,20 @@ const CommonActions = require('../../core/ui/commonActions');
 
 const AccountPage = require('../../pages/mainAccountPage.po.js');
 const BoardPage = require('../../pages/boardPage.po.js');
-const CreationBoard = require('../../pages/creationOfABoard.js');
+const BoardActions = require('../../pages/actionsOfABoard.js');
 const LoginPage = require('../../pages/loginPage.po.js');
 
 let accountpageP = new AccountPage();
 let board = new BoardPage();
-let boardCreation = new CreationBoard();
+let boardActions = new BoardActions();
 let loginpage = new LoginPage();
+let titleString;
+let accessibilityString;
 const credentials = config.credentials;
 
 Given(/^I login "([^"]*)"$/, (url) => {
   CommonActions.loadPage(url);
-  if (CommonActions.getTitleOfPage() === 'Log in to Trello') {
+  if (CommonActions.getTitlePage() === 'Log in to Trello') {
     loginpage.setEmailTextField(credentials.owner.username);
     loginpage.writePassword(credentials.owner.password);
     loginpage.clickLoginAccount();
@@ -27,10 +29,13 @@ Given(/^I login "([^"]*)"$/, (url) => {
 When(/^I create a new Board with:$/, (dataTable) => {
   accountpageP.clickCreateBoard();
   let rHash = dataTable.rowsHash();
-  boardCreation.createBoard(rHash);
+  titleString = rHash.Title;
+  accessibilityString = rHash.Privacy;
+  boardActions.createBoard(rHash);
 });
 
 Then(/^I expect my board created$/, () => {
   board.isBoardCreated();
-  expect(board.pageTitle()).to.contains('| Trello');
+  expect(board.pageTitle()).to.equal(titleString+' | Trello');
+  expect(board.accessibilityBoard().toString()).to.equal(titleString+','+accessibilityString);
 });

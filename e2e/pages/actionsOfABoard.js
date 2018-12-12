@@ -38,11 +38,16 @@ class CreationPage {
   }
 
   setAccessBoard(accessAttribute) {
-    if(accessAttribute === 'Public') {
+    if (accessAttribute === 'Public') {
       CommonActions.operate(this.visibilityButton);
       CommonActions.operate(this.publicButton);
       CommonActions.operate(this.confirmPublicButton);
     }
+  }
+
+  searchBoard(title) {
+    browser.waitForVisible(`div[title="${title}"]`);
+    return browser.element(`div[title="${title}"]`);
   }
 }
 

@@ -1,67 +1,67 @@
 {
-    "plugins": [
-        "webdriverio"
+  "plugins": [
+    "webdriverio"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "webdriverio/wdio": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "rules": {
+    "eol-last": [
+      "error",
+      "always"
     ],
-    "env": {
-        "es6": true,
-        "node": true,
-        "mocha": true,
-        "webdriverio/wdio": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 8,
-        "sourceType": "module"
-    },
-    "rules": {
-        "eol-last": [
-            "error",
-            "always"
+    "default-case": "error",
+    "no-eq-null": "error",
+    "no-empty-function": "error",
+    "no-lone-blocks": "error",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [
+          0,
+          1
         ],
-        "default-case": "error",
-        "no-eq-null": "error",
-        "no-empty-function": "error",
-        "no-lone-blocks": "error",
-        "no-magic-numbers": [
-            "error",
-            {
-                "ignore": [
-                    0,
-                    1
-                ],
-                "ignoreArrayIndexes": true
-            }
-        ],
-        "no-multi-spaces": "error",
-        "no-new": "error",
-        "no-new-func": "error",
-        "no-new-wrappers": "error",
-        "no-param-reassign": "error",
-        "no-proto": "error",
-        "no-redeclare": "error",
-        "no-self-assign": "error",
-        "no-self-compare": "error",
-        "space-before-blocks": "error",
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "curly": "error",
-        "eqeqeq": "error"
-    },
-    "globals": {
-        "expect": true
-    }
+        "ignoreArrayIndexes": true
+      }
+    ],
+    "no-multi-spaces": "error",
+    "no-new": "error",
+    "no-new-func": "error",
+    "no-new-wrappers": "error",
+    "no-param-reassign": "error",
+    "no-proto": "error",
+    "no-redeclare": "error",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "space-before-blocks": "error",
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "curly": "error",
+    "eqeqeq": "error"
+  },
+  "globals": {
+    "expect": true
+  }
 }

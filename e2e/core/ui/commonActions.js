@@ -3,11 +3,10 @@
 const TIME_PAUSE = 2000;
 const WAIT_FOR_CLICK = 60000;
 const WAIT_FOR_SET = 30000;
-// const WAIT_VISIBILITY = 10000;
 
 /**
-* CommonActionsRep class with CommonActionsRep Methods.
-*/
+ * CommonActionsRep class with CommonActionsRep Methods.
+ */
 class CommonActions {
 
   /**
@@ -16,7 +15,6 @@ class CommonActions {
   * @param element
   */
   static operate(element) {
-    browser.pause(TIME_PAUSE);
     browser.waitForVisible(element, WAIT_FOR_CLICK);
     browser.click(element);
   }
@@ -42,7 +40,6 @@ class CommonActions {
   }
 
   static getTitlePage() {
-    browser.pause(TIME_PAUSE);
     return browser.getTitle();
   }
 
@@ -58,16 +55,6 @@ class CommonActions {
   static getElementValue(element) {
     this.isElementVisible(element);
     return browser.getValue(element);
-  }
-
-  /**
-  * Method that returns the title of the current web page.
-  *
-  * @returns {*} title of the current web page.
-  */
-  static getTitleOfPage() {
-    browser.pause(TIME_PAUSE);
-    return browser.getTitle();
   }
 }
 module.exports = CommonActions;
