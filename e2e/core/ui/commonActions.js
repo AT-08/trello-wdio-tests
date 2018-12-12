@@ -40,7 +40,6 @@ class CommonActions {
   }
 
   static getTitlePage() {
-    //browser.pause(TIME_PAUSE);
     return browser.getTitle();
   }
 
