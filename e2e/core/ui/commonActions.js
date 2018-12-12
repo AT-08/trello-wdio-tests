@@ -3,6 +3,7 @@
 const TIME_PAUSE = 2000;
 const WAIT_FOR_CLICK = 60000;
 const WAIT_FOR_SET = 30000;
+// const WAIT_VISIBILITY = 10000;
 
 /**
 * CommonActionsRep class with CommonActionsRep Methods.
@@ -38,6 +39,25 @@ class CommonActions {
   */
   static loadPage(site) {
     browser.url(site);
+  }
+
+  static getTitlePage() {
+    browser.pause(TIME_PAUSE);
+    return browser.getTitle();
+  }
+
+  static isElementCreated(element) {
+    return browser.waitForExist(element, WAIT_FOR_SET);
+  }
+
+  static isElementVisible(element) {
+    browser.pause(TIME_PAUSE);
+    return browser.waitForVisible(element, WAIT_FOR_SET);
+  }
+
+  static getElementValue(element) {
+    this.isElementVisible(element);
+    return browser.getValue(element);
   }
 
   /**

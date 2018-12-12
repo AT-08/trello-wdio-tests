@@ -22,6 +22,10 @@ class Login {
   submit() {
     commonActions.operate(this.selectors.loginButton);
   }
+
+  getTitlePage() {
+    commonActions.getTitlePage();
+  }
 }
 
 module.exports = Login;
