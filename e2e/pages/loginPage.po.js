@@ -4,23 +4,23 @@ const CommonActions = require('../core/ui/commonActions');
 
 class LoginPage {
 
-    constructor() {
-        this.userNameTextfield = '#user';
-        this.passwordTextField = '#password';
-        this.loginButton = '#login';
-    }
+  constructor() {
+    this.userNameTextfield = '#user';
+    this.passwordTextField = '#password';
+    this.loginButton = '#login';
+  }
 
-    setEmailTextField(usrname) {
-        CommonActions.setValue(this.userNameTextfield, usrname);
-    }
+  setEmailTextField(usrname) {
+    CommonActions.setValue(this.userNameTextfield, usrname);
+  }
 
-    writePassword(pass) {
-        CommonActions.setValue(this.passwordTextField, pass);
-    }
+  writePassword(pass) {
+    CommonActions.setValue(this.passwordTextField, pass);
+  }
 
-    clickLoginAccount() {
-        CommonActions.operate(this.loginButton);
-    }
+  clickLoginAccount() {
+    CommonActions.operate(this.loginButton);
+  }
 }
 
 module.exports = LoginPage;
