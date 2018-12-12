@@ -18,6 +18,6 @@ $ npm i
 ```
 and
 ```javascript
-$ npm run test
+$ wdio wdio.conf.js
 ```
 Get more information click here
