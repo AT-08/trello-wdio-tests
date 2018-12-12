@@ -62,5 +62,4 @@ typings/
 
 # custom
 package-lock.json
-errorShots/
-config.json
+my.config.json
