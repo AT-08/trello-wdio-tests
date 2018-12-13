@@ -4,7 +4,7 @@ const CommonActions = require('../core/ui/commonActions');
 
 const WAIT_VISIBILITY = 10000;
 
-class account {
+class MainPage {
 
   constructor() {
     this.createBoard = 'a[class="board-tile mod-add"]';
@@ -17,4 +17,4 @@ class account {
   }
 }
 
-module.exports = account;
+module.exports = MainPage;
