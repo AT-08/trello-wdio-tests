@@ -12,15 +12,11 @@ let boardForm;
 let loginpage;
 let titleString;
 let accessibilityString;
-const credentials = config.credentials;
 const url = config.url;
 
-Given(/^I login with user$/, () => {
-  CommonActions.loadPage(url.trello);
-  if (CommonActions.getTitlePage() === 'Log in to Trello') {
-    loginpage = new LoginPage();
-    mainPage = loginpage.loginToTrello(credentials.member1);
-  }
+Given(/^I login with "([^"]*)"$/, (userKeys) => {
+  loginpage = new LoginPage(url.trello);
+  mainPage = loginpage.loginToTrello(userKeys);
 });
 When(/^I create a new Board with:$/, (dataTable) => {
   boardForm = mainPage.clickCreateBoard();
@@ -35,3 +31,4 @@ Then(/^I expect my board created$/, () => {
   expect(dashboard.pageTitle()).to.equal(titleString + ' | Trello');
   expect(dashboard.accessibilityBoard().toString()).to.equal(titleString + ',' + accessibilityString);
 });
+
