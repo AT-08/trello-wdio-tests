@@ -1,9 +1,10 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
+
 const WAIT_TIME = 30000;
 
-class Board {
+class Dashboard {
 
   constructor() {
     this.board = '#board';
@@ -37,4 +38,4 @@ class Board {
   }
 }
 
-module.exports = Board;
+module.exports = Dashboard;

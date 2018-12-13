@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('cucumber');
 const expect = require('chai').expect;
 
-const config = require('../../../my.config.json');
+const config = require('../../core/ui/environment.config.json');
 const credentials = config.credentials;
 const CommonActions = require('../../core/ui/commonActions');
 
