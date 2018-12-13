@@ -2,7 +2,6 @@ const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
 const config = require('../../core/ui/environment.config.json');
-const CommonActions = require('../../core/ui/commonActions');
 
 const LoginPage = require('../../pages/loginPage.po.js');
 
