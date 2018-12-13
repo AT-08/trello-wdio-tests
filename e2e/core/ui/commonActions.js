@@ -10,31 +10,31 @@ const WAIT_FOR_SET = 30000;
 class CommonActions {
 
   /**
-  * Method to set a value on text element.
-  *
-  * @param element
-  */
+   * Method to set a value on text element.
+   *
+   * @param element
+   */
   static operate(element) {
     browser.waitForVisible(element, WAIT_FOR_CLICK);
     browser.click(element);
   }
 
   /**
-  * Method to set a value on text element.
-  *
-  * @param element
-  * @param value
-  */
+   * Method to set a value on text element.
+   *
+   * @param element
+   * @param value
+   */
   static setValue(element, value) {
     browser.waitForVisible(element, WAIT_FOR_SET);
     browser.setValue(element, value);
   }
 
   /**
-  * Method to open the browser with a URL.
-  *
-  * @param site is the URL.
-  */
+   * Method to open the browser with a URL.
+   *
+   * @param site is the URL.
+   */
   static loadPage(site) {
     browser.url(site);
   }
@@ -57,4 +57,5 @@ class CommonActions {
     return browser.getValue(element);
   }
 }
+
 module.exports = CommonActions;

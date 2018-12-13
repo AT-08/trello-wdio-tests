@@ -1,8 +1,9 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
+const Dashboard = require('../pages/dashboard.po.js');
 
-class CreationPage {
+class BoardForm {
 
   constructor() {
     this.titleBoard = 'input[class="subtle-input"]';
@@ -10,7 +11,7 @@ class CreationPage {
     this.publicButton = 'span[class="icon-sm icon-public"]';
     this.confirmPublicButton = 'input[class="js-confirm full primary"]';
     this.color = '';
-    this.background = 'button[title='+this.color+']';
+    this.background = 'button[title=' + this.color + ']';
     this.submit = 'button[type="submit"]';
   }
 
@@ -26,6 +27,7 @@ class CreationPage {
     });
 
     CommonActions.operate(this.submit);
+    return new Dashboard();
   }
 
   setTitleBoard(name) {
@@ -33,7 +35,7 @@ class CreationPage {
   }
 
   setBackgroundBoard(background) {
-    this.background = 'button[title='+background+']';
+    this.background = 'button[title=' + background + ']';
     CommonActions.operate(this.background);
   }
 
@@ -51,4 +53,4 @@ class CreationPage {
   }
 }
 
-module.exports = CreationPage;
+module.exports = BoardForm;

@@ -1,7 +1,11 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
+const MainPage = require('../pages/mainPage.js');
 
+/**
+ * This is the page for login to trello.
+ */
 class LoginPage {
 
   constructor() {
@@ -10,16 +14,16 @@ class LoginPage {
     this.loginButton = '#login';
   }
 
-  setEmailTextField(usrname) {
-    CommonActions.setValue(this.userNameTextfield, usrname);
-  }
-
-  writePassword(pass) {
-    CommonActions.setValue(this.passwordTextField, pass);
-  }
-
-  clickLoginAccount() {
+  /**
+   * This method log-in to trello with a specified user.
+   * @param user Input name.
+   * @returns {MainPage} The PO of MainPage.
+   */
+  loginToTrello(user) {
+    CommonActions.setValue(this.userNameTextfield, user.username);
+    CommonActions.setValue(this.passwordTextField, user.password);
     CommonActions.operate(this.loginButton);
+    return new MainPage();
   }
 }
 

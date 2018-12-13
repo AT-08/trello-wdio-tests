@@ -2,8 +2,8 @@
 const {When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
-const BoardActions = require('../../pages/actionsOfABoard.js');
-const BoardPage = require('../../pages/boardPage.po.js');
+const BoardActions = require('../../pages/boardForm.po.js');
+const BoardPage = require('../../pages/dashboard.po.js');
 const ClosedBoardPage = require('../../pages/closedBoardPage.po.js');
 
 const CommonActions = require('../../core/ui/commonActions');
