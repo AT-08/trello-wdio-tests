@@ -8,9 +8,11 @@ const MainPage = require('../pages/mainPage.js');
  */
 class LoginPage {
 
-  userNameTextfield = '#user';
-  passwordTextField = '#password';
-  loginButton = '#login';
+  constructor() {
+    this.userNameTextfield = '#user';
+    this.passwordTextField = '#password';
+    this.loginButton = '#login';
+  }
 
   /**
    * This method log-in to trello with a specified user.
