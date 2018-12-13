@@ -65,3 +65,4 @@ package-lock.json
 my.config.json
 errorShots/
 .idea/
+e2e/core/ui/environment.config.json
