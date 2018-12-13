@@ -8,21 +8,21 @@ const MainPage = require('../pages/mainPage.js');
  */
 class LoginPage {
 
-    userNameTextfield = '#user';
-    passwordTextField = '#password';
-    loginButton = '#login';
+  userNameTextfield = '#user';
+  passwordTextField = '#password';
+  loginButton = '#login';
 
-    /**
-     * This method log-in to trello with a specified user.
-     * @param user Input name.
-     * @returns {MainPage} The PO of MainPage.
-     */
-    loginToTrello(user) {
-        CommonActions.setValue(this.userNameTextfield, user.username);
-        CommonActions.setValue(this.passwordTextField, user.password);
-        CommonActions.operate(this.loginButton);
-        return new MainPage();
-    }
+  /**
+   * This method log-in to trello with a specified user.
+   * @param user Input name.
+   * @returns {MainPage} The PO of MainPage.
+   */
+  loginToTrello(user) {
+    CommonActions.setValue(this.userNameTextfield, user.username);
+    CommonActions.setValue(this.passwordTextField, user.password);
+    CommonActions.operate(this.loginButton);
+    return new MainPage();
+  }
 }
 
 module.exports = LoginPage;
