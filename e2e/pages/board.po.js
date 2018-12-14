@@ -15,9 +15,9 @@ class Board {
   }
 
   onClickAddIcon() {
-    commonActions.operate(this.selectors.addIcon);
+    commonActions.click(this.selectors.addIcon);
     commonActions.isElementVisible(this.selectors.addContainer);
-    commonActions.operate(this.selectors.createTeam);
+    commonActions.click(this.selectors.createTeam);
   }
 
   setNewTeamName(name) {
@@ -25,7 +25,7 @@ class Board {
   }
 
   onClickCreate() {
-    commonActions.operate(this.selectors.createButton);
+    commonActions.click(this.selectors.createButton);
   }
 
   isNewTeamCreated() {
