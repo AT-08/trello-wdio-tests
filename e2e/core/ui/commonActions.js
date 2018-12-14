@@ -1,8 +1,6 @@
 'use strict';
 
-const TIME_PAUSE = 2000;
-const WAIT_FOR_CLICK = 60000;
-const WAIT_FOR_SET = 30000;
+const EXPLICIT_TIMEOUT = 30000;
 const config = require('../../core/ui/environment.config.json');
 
 /**
@@ -10,52 +8,64 @@ const config = require('../../core/ui/environment.config.json');
  */
 class CommonActions {
 
+
   /**
-   * Method to set a value on text element.
+   * Method to click a element.
    *
-   * @param element
+   * @param element Input object
    */
-  static operate(element) {
-    browser.waitForVisible(element, WAIT_FOR_CLICK);
+  static click(element) {
+    browser.waitForVisible(element, EXPLICIT_TIMEOUT);
     browser.click(element);
   }
 
   /**
    * Method to set a value on text element.
    *
-   * @param element
-   * @param value
+   * @param element Input object.
+   * @param value Input value to set.
    */
   static setValue(element, value) {
-    browser.waitForVisible(element, WAIT_FOR_SET);
+    browser.waitForVisible(element, EXPLICIT_TIMEOUT);
     browser.setValue(element, value);
   }
 
   /**
-   * Method to open the browser with a URL.
+   * Method for wait visibility of an object.
    *
-   * @param site is the URL.
+   * @param element Input object.
    */
-  static loadPage(site) {
-    browser.url(site);
+  static waitVisibility(element) {
+    browser.waitForVisible(element, EXPLICIT_TIMEOUT);
   }
 
-  static getTitlePage() {
-    return browser.getTitle();
+  /**
+   * Method for submit a form.
+   *
+   * @param element Input object
+   */
+  static submitForm(element) {
+    browser.waitForVisible(element);
+    browser.submit(element);
   }
 
-  static isElementCreated(element) {
-    return browser.waitForExist(element, WAIT_FOR_SET);
+  /**
+   * Method for get the text of an element.
+   *
+   * @param element Input object.
+   * @returns {String|String[]} The text of the element.
+   */
+  static getText(element) {
+    browser.waitForVisible(element, EXPLICIT_TIMEOUT);
+    return browser.getText(element);
   }
 
-  static isElementVisible(element) {
-    browser.pause(TIME_PAUSE);
-    return browser.waitForVisible(element, WAIT_FOR_SET);
-  }
-
-  static getElementValue(element) {
-    this.isElementVisible(element);
-    return browser.getValue(element);
+  /**
+   * Method of a tiny sleep.
+   */
+  static sleep() {
+    const tinySleep = 500;
+    browser.driver.sleep(tinySleep);
   }
 
   /**

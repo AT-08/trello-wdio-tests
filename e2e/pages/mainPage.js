@@ -13,7 +13,7 @@ class MainPage {
 
   clickCreateBoard() {
     browser.waitForVisible(this.something, WAIT_VISIBILITY);
-    CommonActions.operate(this.createBoardButton);
+    CommonActions.click(this.createBoardButton);
     return new BoardForm();
   }
 }
