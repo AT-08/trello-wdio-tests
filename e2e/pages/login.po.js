@@ -20,7 +20,7 @@ class Login {
   }
 
   submit() {
-    commonActions.operate(this.selectors.loginButton);
+    commonActions.click(this.selectors.loginButton);
   }
 
   getTitlePage() {

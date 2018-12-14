@@ -10,8 +10,8 @@ class ClosedBoardPage {
   }
 
   deletePermanently() {
-    CommonActions.operate(this.deleteBoardPermanentlyLink);
-    CommonActions.operate(this.confirmDeleteButton);
+    CommonActions.click(this.deleteBoardPermanentlyLink);
+    CommonActions.click(this.confirmDeleteButton);
   }
 }
 
