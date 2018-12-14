@@ -19,7 +19,7 @@ class card {
     }
 
     /**
-     *
+     * This method create the new card.
      */
     addCard() {
         commonActions.click(this.addCardOption);
