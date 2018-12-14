@@ -7,7 +7,7 @@ const commonActions = require('../core/ui/commonActions');
  */
 class card {
     constructor() {
-        this.addCardButton = 'js-add-another-card';
+        this.addCardOption = 'js-add-another-card';
 
         this.txtCardTitle = 'js-card-title';
 
@@ -16,6 +16,16 @@ class card {
         this.optionsCard = 'active-card';
 
         this.btnDeleteCard = 'js-archive';
+    }
+
+    /**
+     *
+     */
+    addCard() {
+        commonActions.click(this.addCardOption);
+        commonActions.setValue(this.txtCardTitle, 'nameCard');
+        commonActions.click(this.btnAddCard);
+
     }
 
     /**
