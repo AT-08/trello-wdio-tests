@@ -14,8 +14,6 @@ class list {
   constructor() {
     this.cardTitleTextAreaInput = '.list-card-composer-textarea.js-card-title';
     this.addCardButton = '.js-add-card';
-
-
   }
 
   /**
