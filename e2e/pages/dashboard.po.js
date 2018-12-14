@@ -7,7 +7,7 @@ const dashboardMenu = require('../pages/boardForm.po.js');
 /**
  * This is the PO of a selected dashboard.
  */
-class Dashboard {
+class dashboard {
   /**
    * This method create a list in the current board.
    * @returns {BoardForm} Class boardForm.
@@ -33,4 +33,4 @@ class Dashboard {
   }
 }
 
-module.exports = Dashboard;
+module.exports = dashboard;
