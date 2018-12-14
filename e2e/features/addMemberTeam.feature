@@ -1,7 +1,7 @@
 #trello.feature
-Feature: Create board in Trello
+Feature: Create team in Trello
   As a User
-  I want to create boards in Trello
+  I want to create team in Trello
 
   Background: Create a team in Trello
     Given I login "{credentials.owmer1}"
