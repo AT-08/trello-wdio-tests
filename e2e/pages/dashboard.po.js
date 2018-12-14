@@ -24,9 +24,9 @@ class Dashboard {
 
   closeBoard() {
     this.isBoardCreated();
-    CommonActions.operate(this.moreOptions);
-    CommonActions.operate(this.closeBoardLink);
-    CommonActions.operate(this.confirmCLoseBoard);
+    CommonActions.click(this.moreOptions);
+    CommonActions.click(this.closeBoardLink);
+    CommonActions.click(this.confirmCLoseBoard);
   }
 
   isBoardExisting(title) {
