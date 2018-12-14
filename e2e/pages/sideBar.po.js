@@ -10,11 +10,10 @@ class sideBar {
    * Constructor of set the elements to be used.
    */
   constructor() {
-    this.selectors = {
-      'createTeamButton': 'button[class="tab__tabButton__37WIj.tab__quiet__ed4jD"]',
-      'selectedBoardButton': 'a[class="tab__tab__15G2j"]',
-      'selectedHomeButton': 'a[class="tab__tabLink__3C9rw"]',
-    };
+    this.createTeamButton = 'button[class="tab__tabButton__37WIj.tab__quiet__ed4jD"]';
+    this.selectedBoardButton = 'a[class="tab__tab__15G2j"]';
+    this.selectedHomeButton = 'a[class="tab__tabLink__3C9rw"]';
+
   }
 
   /**
@@ -23,7 +22,7 @@ class sideBar {
    * @returns {teamForm} .
    */
   createTeam(data) {
-    CommonActions.click(this.selectors.createTeamButton);
+    CommonActions.click(this.createTeamButton);
     return new teamForm();
   }
 
@@ -32,7 +31,7 @@ class sideBar {
    * @returns {boardContainer} .
    */
   selectBoardsContainer() {
-    CommonActions.click(this.selectors.selectedBoardButton);
+    CommonActions.click(this.selectedBoardButton);
     return new boardContainer();
   }
 
@@ -41,7 +40,7 @@ class sideBar {
    * @returns {homeContainer}
    */
   selectHomeContainer() {
-    CommonActions.click(this.selectors.selectedHomeButton);
+    CommonActions.click(this.selectedHomeButton);
     return new homeContainer();
   }
 
