@@ -6,9 +6,11 @@ class members {
 
 
   constructor() {
-    this.findMemberInputText = by.css('.autocomplete-input');
-    this.invitationMessageInput = by.css('.js-invitation-message');
-    this.sendInvitationButton = by.css('.autocomplete-btn.primary');
+
+
+    this.findMemberInputText = 'input[class="autocomplete-input"]';
+    this.invitationMessageInput = 'textarea[class="js-invitation-message]';
+    this.sendInvitationButton = 'button[class="autocomplete-btn.primary"]';
   }
 
   /**
@@ -16,8 +18,8 @@ class members {
    * @param data .
    */
   addMember(any) {
-    this.fillDataMember(data);
-    CommonActions.click(this.sendInvitationButton);
+    this.fillDataMember(any);
+    commonActions.click(this.sendInvitationButton);
   }
 
   /**
@@ -38,11 +40,11 @@ class members {
    * This method selects a user from the search list.
    * @param user Specific user.
    */
-  selectUser(string) {
-    CommonActions.setValue(this.findMemberInputText, user);
-    var memberContainer = by.cssContainingText('.full-name', user);
-    CommonActions.waitVisibility(memberContainer);
-    CommonActions.click(memberContainer);
+  selectUser(user) {
+    commonActions.setValue(this.findMemberInputText, user);
+    var memberContainer = `//*[contains(text(),"${user}")]/ancestor::a[contains(@class,'.full-name')]`;
+    commonActions.waitVisibility(memberContainer);
+    commonActions.click(memberContainer);
   }
 
   /**
@@ -50,7 +52,7 @@ class members {
    * @param description Input description.
    */
   setDescription(description) {
-    CommonActions.setValue(this.invitationMessageInput, description);
+    commonActions.setValue(this.invitationMessageInput, description);
   }
 
 
