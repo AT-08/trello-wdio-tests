@@ -55,7 +55,7 @@ class sideBar {
    * @returns {teamContainer} .
    */
   selectTeam(title) {
-    var teamNameTab = `//*[contains(text()," ${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
+    var teamNameTab = `//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
     commonActions.click(teamNameTab);
     return new teamContainer();
   }
