@@ -6,6 +6,7 @@ const commonActions = require('../core/ui/commonActions');
  * This is the PO of the card page
  */
 class card {
+
     constructor() {
 
         this.cardName = 'js-card-name';
@@ -24,9 +25,9 @@ class card {
 
     }
 
-    /**
-     * This method create a new list.
-     */
+  /**
+   * This method create a new list.
+   */
     addCheckList() {
         commonActions.click(this.cardName);
         commonActions.click(this.addChecklist);
@@ -35,18 +36,18 @@ class card {
 
     }
 
-    /**
-     * This method add item to checklist
-     */
+  /**
+   * This method add item to checklist
+   */
     addItemCheckList() {
         commonActions.click(this.newChecklistItem);
         commonActions.setValue(this.checklistNewItemText, 'description');
         commonActions.click(this.checklistNewItemText);
     }
 
-    /**
-     * This method delete check list
-     */
+  /**
+   * This method delete check list
+   */
     deleteCheckList() {
         commonActions.click(this.confirmDelete);
         commonActions.click(this.btnConfirmDeleteChecklist);
