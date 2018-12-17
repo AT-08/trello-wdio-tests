@@ -1,6 +1,11 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
+const teamForm = require('../core/ui/commonActions');
+const boardContainer = require('../');
+const homeContainer = require('../');
+const teamContainer = require('../');
+
 
 /**
  * PageObject of the sideBar.
@@ -21,8 +26,8 @@ class sideBar {
    * @param data data table input.
    * @returns {teamForm} .
    */
-  createTeam(data) {
-    CommonActions.click(this.createTeamButton);
+  createTeam() {
+    commonActions.click(this.createTeamButton);
     return new teamForm();
   }
 
@@ -31,7 +36,7 @@ class sideBar {
    * @returns {boardContainer} .
    */
   selectBoardsContainer() {
-    CommonActions.click(this.selectedBoardButton);
+    commonActions.click(this.selectedBoardButton);
     return new boardContainer();
   }
 
@@ -40,7 +45,7 @@ class sideBar {
    * @returns {homeContainer}
    */
   selectHomeContainer() {
-    CommonActions.click(this.selectedHomeButton);
+    commonActions.click(this.selectedHomeButton);
     return new homeContainer();
   }
 
@@ -50,8 +55,8 @@ class sideBar {
    * @returns {teamContainer} .
    */
   selectTeam(title) {
-    var teamNameTab = by.cssContainingText('.tab__tabText__212hs', title);
-    CommonActions.click(teamNameTab);
+    var teamNameTab = `//*[contains(text()," ${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
+    commonActions.click(teamNameTab);
     return new teamContainer();
   }
 }
