@@ -50,7 +50,6 @@ class card {
     deleteCheckList() {
         commonActions.click(this.confirmDelete);
         commonActions.click(this.btnConfirmDeleteChecklist);
-
     }
 }
 
