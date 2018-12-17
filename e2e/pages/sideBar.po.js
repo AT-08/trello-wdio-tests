@@ -16,8 +16,8 @@ class sideBar {
    */
   constructor() {
     this.createTeamButton = 'button[class="tab__tabButton__37WIj.tab__quiet__ed4jD"]';
-    this.selectedBoardButton = 'a[class="tab__tab__15G2j"]';
-    this.selectedHomeButton = 'a[class="tab__tabLink__3C9rw"]';
+    this.selectedBoardButton = '[href*="/boards"]';
+    this.selectedHomeButton = '.tab__tabLink__3C9rw.tab__selected__1gsiC"]';
 
   }
 
