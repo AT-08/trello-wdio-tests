@@ -22,7 +22,6 @@ class card {
     this.checklistNewItemText = 'checklist-new-item-text';
 
     this.btnConfirmDeleteChecklist = 'js-confirm';
-
   }
 
   /**
@@ -33,7 +32,6 @@ class card {
     commonActions.click(this.addChecklist);
     commonActions.setValue(this.checklistTitle, 'nameChecklist');
     commonActions.click(this.btnAddChecklist);
-
   }
 
   /**
