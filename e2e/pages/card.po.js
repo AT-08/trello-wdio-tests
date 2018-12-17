@@ -7,33 +7,50 @@ const commonActions = require('../core/ui/commonActions');
  */
 class card {
     constructor() {
-        this.addCardOption = 'js-add-another-card';
 
-        this.txtCardTitle = 'js-card-title';
+        this.cardName = 'js-card-name';
 
-        this.btnAddCard = 'js-add-card';
+        this.addChecklist = 'js-add-checklist-menu';
 
-        this.optionsCard = 'active-card';
+        this.checklistTitle = 'js-checklist-title';
 
-        this.btnDeleteCard = 'js-archive';
-    }
+        this.btnAddChecklist = 'js-add-checklist';
 
-    /**
-     * This method create the new card.
-     */
-    addCard() {
-        commonActions.click(this.addCardOption);
-        commonActions.setValue(this.txtCardTitle, 'nameCard');
-        commonActions.click(this.btnAddCard);
+        this.newChecklistItem = 'js-new-checklist-item-input';
+
+        this.checklistNewItemText = 'checklist-new-item-text';
+
+        this.btnConfirmDeleteChecklist = 'js-confirm';
 
     }
 
     /**
-     * This method delete the current card.
+     * This method create a new list.
      */
-    deleteCard() {
-        commonActions.click(this.optionsCard);
-        return commonActions.click(this.btnDeleteCard);
+    addCheckList() {
+        commonActions.click(this.cardName);
+        commonActions.click(this.addChecklist);
+        commonActions.setValue(this.checklistTitle, 'nameChecklist');
+        commonActions.click(this.btnAddChecklist);
+
+    }
+
+    /**
+     * This method add item to checklist
+     */
+    addItemCheckList() {
+        commonActions.click(this.newChecklistItem);
+        commonActions.setValue(this.checklistNewItemText, 'description');
+        commonActions.click(this.checklistNewItemText);
+    }
+
+    /**
+     * This method delete check list
+     */
+    deleteCheckList() {
+        commonActions.click(this.confirmDelete);
+        commonActions.click(this.btnConfirmDeleteChecklist);
+
     }
 }
 
