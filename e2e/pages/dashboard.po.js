@@ -1,41 +1,36 @@
 'use strict';
 
-const CommonActions = require('../core/ui/commonActions');
+const list = require('../pages/boardForm.po.js');
+const member = require('../pages/boardForm.po.js');
+const dashboardMenu = require('../pages/boardForm.po.js');
 
-const WAIT_TIME = 30000;
-
-class Dashboard {
-
-  constructor() {
-    this.board = '#board';
-    this.moreOptions = 'a[class="board-menu-navigation-item-link js-open-more"]';
-    this.closeBoardLink = 'a[class="board-menu-navigation-item-link js-close-board"]';
-    this.confirmCLoseBoard = 'input[class="js-confirm full negate"]';
-    this.accessibilityButton = 'span[class="board-header-btn-text"]';
+/**
+ * This is the PO of a selected dashboard.
+ */
+class dashboard {
+  /**
+   * This method create a list in the current board.
+   * @returns {BoardForm} Class boardForm.
+   */
+  createList() {
+    return new list();
   }
 
-  isBoardCreated() {
-    browser.waitForVisible(this.board, WAIT_TIME);
+  /**
+   * This method invite a member to the current dashboard.
+   * @returns {BoardForm} Class member.
+   */
+  inviteMember() {
+    return new member();
   }
 
-  pageTitle() {
-    return browser.getTitle();
-  }
-
-  closeBoard() {
-    this.isBoardCreated();
-    CommonActions.click(this.moreOptions);
-    CommonActions.click(this.closeBoardLink);
-    CommonActions.click(this.confirmCLoseBoard);
-  }
-
-  isBoardExisting(title) {
-    return browser.isExisting(`div[title="${title}"]`);
-  }
-
-  accessibilityBoard() {
-    return browser.getText(this.accessibilityButton);
+  /**
+   * This method shows the menu option.
+   * @returns {BoardForm} Class dashboardMenu.
+   */
+  showMenu() {
+    return new dashboardMenu();
   }
 }
 
-module.exports = Dashboard;
+module.exports = dashboard;
