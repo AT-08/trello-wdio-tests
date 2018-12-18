@@ -1,4 +1,5 @@
 'use strict';
+const commonActions = require('../core/ui/commonActions');
 
 /**
  * This is the PO of a create a team setting.
@@ -19,7 +20,7 @@ class teamSettings {
   /**
    * This method change the visibility of team.
    */
-  changeVisibility() {
+  changeVisibility(privacy) {
     commonActions.click(this.settingTabPane);
     commonActions.click(this.changeVisibilityButton);
     const privacyLocator = `//span[@class="icon-sm icon-${privacy}"]/parent::a`;
