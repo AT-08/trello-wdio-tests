@@ -2,7 +2,7 @@
 
 const commonActions = require('../core/ui/commonActions');
 
-const card = require('../card');
+const card = require('../pages/card.po');
 
 /**
  * PageObject for a list in the dashboard.

@@ -1,8 +1,8 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
-const member = require('../pages/member.po.js');
-const teamSetting = require('../pages/teamSetting.po.js');
+const member = require('../pages/members.po');
+const teamSetting = require('../pages/teamSettings.po');
 
 /**
  * This is the PO of the team page.
@@ -10,11 +10,8 @@ const teamSetting = require('../pages/teamSetting.po.js');
 class team {
   constructor() {
     this.boardsTabPane = '[data-tab="boards"]';
-
     this.membersTabPane = '[data-tab="members"]';
-
     this.settingTabPane = '[data-tab="settings"]';
-
     this.sendInvitationButton = '.autocomplete-btn.primary';
   }
 

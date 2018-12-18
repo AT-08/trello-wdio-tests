@@ -1,7 +1,7 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
-const boardContainer = require('../pages/mainPage.js');
+const boardContainer = require('../pages/boardContainer.po');
 
 /**
  * This is the page for login to trello.

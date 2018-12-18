@@ -17,8 +17,8 @@ class members {
    * This method add/invite a member.
    * @param data .
    */
-  addMember(any) {
-    this.fillDataMember(any);
+  addMember(data) {
+    this.fillDataMember(data);
     commonActions.click(this.sendInvitationButton);
   }
 
