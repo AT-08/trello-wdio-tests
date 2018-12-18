@@ -1,7 +1,7 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
-const dashboard = require('../pages/dashboard.po.js');
+const commonActions = require('../../core/ui/commonActions');
+const dashboard = require('./dashboard.po.js');
 
 /**
  * Page Object of the form for create a dashboard.

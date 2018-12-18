@@ -1,8 +1,8 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
+const commonActions = require('../../core/ui/commonActions');
 
-const card = require('../pages/card.po');
+const card = require('../card/card.po');
 
 /**
  * PageObject for a list in the dashboard.

@@ -1,10 +1,10 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
-const teamForm = require('../pages/teamForm.po');
-const boardContainer = require('../pages/boardContainer.po');
-const homeContainer = require('../pages/homeContainer.po');
-const teamContainer = require('../pages/teamContainer.po');
+const commonActions = require('../../core/ui/commonActions');
+const teamForm = require('../team/teamForm.po');
+const boardContainer = require('../container/boardContainer.po');
+const homeContainer = require('../container/homeContainer.po');
+const teamContainer = require('../container/teamContainer.po');
 
 /**
  * PageObject of the sideBar.

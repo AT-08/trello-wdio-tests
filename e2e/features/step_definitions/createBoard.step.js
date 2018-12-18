@@ -1,7 +1,7 @@
 const {Given, When, Then} = require('cucumber');
 
 const config = require('../../core/ui/environment.config.json');
-const login = require('../../pages/login.po.js');
+const login = require('../../pages/common/login.po.js');
 
 let boardContainer;
 let dashboard;

@@ -1,13 +1,10 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
+const commonActions = require('../../core/ui/commonActions');
 
 class members {
 
-
   constructor() {
-
-
     this.findMemberInputText = 'input[class="autocomplete-input"]';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn.primary"]';

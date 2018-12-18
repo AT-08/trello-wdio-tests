@@ -1,6 +1,6 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
+const commonActions = require('../../core/ui/commonActions');
 
 /**
  * PageObject of the Menu of the dashboard.
