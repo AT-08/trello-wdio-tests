@@ -1,31 +1,32 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
+const boardContainer = require('../pages/mainPage.js');
 
-class Login {
-  constructor() {
-    this.selectors = {
-      'username': '#user',
-      'password': '#password',
-      'loginButton': '#login'
-    };
+/**
+ * This is the page for login to trello.
+ */
+class login {
+
+  constructor(site) {
+    browser.url(site);
+    this.userNameTextfield = '#user';
+    this.passwordTextField = '#password';
+    this.loginButton = '#login';
   }
 
-  setUsername(username) {
-    commonActions.setValue(this.selectors.username, username);
-  }
-
-  setPassword(password) {
-    commonActions.setValue(this.selectors.password, password);
-  }
-
-  submit() {
-    commonActions.click(this.selectors.loginButton);
-  }
-
-  getTitlePage() {
-    commonActions.getTitlePage();
+  /**
+   * This method log-in to trello with a specified user.
+   * @param userKeys Input name.
+   * @returns {boardContainer} The PO of boardContainer.
+   */
+  loginToTrello(userKeys) {
+    let user = commonActions.getUserFromKey(userKeys);
+    commonActions.setValue(this.userNameTextfield, user.username);
+    commonActions.setValue(this.passwordTextField, user.password);
+    commonActions.operate(this.loginButton);
+    return new boardContainer();
   }
 }
 
-module.exports = Login;
+module.exports = login;
