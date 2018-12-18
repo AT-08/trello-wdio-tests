@@ -1,6 +1,7 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
+const checklist = require('../checklist');
 
 /**
  * This is the PO of the card page
@@ -20,19 +21,19 @@ class card {
   /**
    * This method create a new list.
    */
-  addCheckList() {
+  addCheckList(nameChecklist) {
     commonActions.click(this.cardName);
     commonActions.click(this.addChecklist);
-    commonActions.setValue(this.checklistTitle, 'nameChecklist');
+    commonActions.setValue(this.checklistTitle, nameChecklist);
     commonActions.click(this.btnAddChecklist);
   }
 
   /**
    * This method add item to checklist
    */
-  addItemCheckList() {
+  addItemCheckList(description) {
     commonActions.click(this.newChecklistItem);
-    commonActions.setValue(this.checklistNewItemText, 'description');
+    commonActions.setValue(this.checklistNewItemText, description);
     commonActions.click(this.checklistNewItemText);
   }
 
