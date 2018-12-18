@@ -1,7 +1,7 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
-const BoardForm = require('../pages/boardForm.po.js');
+const BoardForm = require('./dashboardForm.js');
 const WAIT_VISIBILITY = 10000;
 
 class MainPage {

@@ -1,9 +1,9 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
-const Dashboard = require('../pages/dashboard.po.js');
+const dashboard = require('../pages/dashboard.po.js');
 
-class BoardForm {
+class dashboardForm {
 
   constructor() {
     this.titleBoard = 'input[class="subtle-input"]';
@@ -27,7 +27,7 @@ class BoardForm {
     });
 
     CommonActions.click(this.submit);
-    return new Dashboard();
+    return new dashboard();
   }
 
   setTitleBoard(name) {
@@ -53,4 +53,4 @@ class BoardForm {
   }
 }
 
-module.exports = BoardForm;
+module.exports = dashboardForm;
