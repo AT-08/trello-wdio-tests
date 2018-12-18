@@ -9,13 +9,13 @@ const checklist = require('../checklist');
 class card {
 
   constructor() {
-    this.cardName = 'js-card-name';
-    this.addChecklist = 'js-add-checklist-menu';
-    this.checklistTitle = 'js-checklist-title';
-    this.btnAddChecklist = 'js-add-checklist';
-    this.newChecklistItem = 'js-new-checklist-item-input';
-    this.checklistNewItemText = 'checklist-new-item-text';
-    this.btnConfirmDeleteChecklist = 'js-confirm';
+    this.cardName = '.js-card-name';
+    this.addChecklist = '.js-add-checklist-menu';
+    this.checklistTitle = '.js-checklist-title';
+    this.btnAddChecklist = '.js-add-checklist';
+    this.newChecklistItem = '.js-new-checklist-item-input';
+    this.checklistNewItemText = '.checklist-new-item-text';
+    this.btnConfirmDeleteChecklist = '.js-confirm';
   }
 
   /**
