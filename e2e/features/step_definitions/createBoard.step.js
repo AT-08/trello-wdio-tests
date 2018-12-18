@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 
 const config = require('../../core/ui/environment.config.json');
 
-const LoginPage = require('../../pages/loginPage.po.js');
+const LoginPage = require('../../pages/login.po.js');
 
 let mainPage;
 let dashboard;
