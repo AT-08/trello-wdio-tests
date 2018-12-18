@@ -1,8 +1,8 @@
 'use strict';
 
-const list = require('../pages/list.po');
-const member = require('../pages/members.po');
-const dashboardMenu = require('../pages/dashboardMenu.po');
+const list = require('./list.po');
+const member = require('../common/members.po');
+const dashboardMenu = require('./dashboardMenu.po');
 
 /**
  * This is the PO of a selected dashboard.

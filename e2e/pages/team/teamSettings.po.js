@@ -1,6 +1,6 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
+const commonActions = require('../../core/ui/commonActions');
 
 /**
  * This is the PO of a create a team setting.

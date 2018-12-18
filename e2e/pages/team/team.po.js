@@ -1,8 +1,8 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
-const member = require('../pages/members.po');
-const teamSetting = require('../pages/teamSettings.po');
+const commonActions = require('../../core/ui/commonActions');
+const member = require('../common/members.po');
+const teamSetting = require('./teamSettings.po');
 
 /**
  * This is the PO of the team page.
