@@ -1,4 +1,5 @@
 'use strict';
+
 const commonActions = require('../core/ui/commonActions');
 
 /**
@@ -8,13 +9,10 @@ class teamSettings {
 
 
   constructor() {
-
     this.settingTabPane = '[href*="/teamtestcreation/account"]';
     this.changeVisibilityButton = 'a[class="button-link u-text-align-center"]';
     this.confirmDeleteTeamButton = 'input[class=.js-confirm';
     this.deleteButton = 'a[class="quiet-button"]';
-
-
   }
 
   /**

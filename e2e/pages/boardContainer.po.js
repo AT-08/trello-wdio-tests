@@ -1,7 +1,7 @@
 'use strict';
 
 const commonActions = require('../core/ui/commonActions');
-const dashboardForm = require('../');
+const dashboardForm = require('../pages/dashboardForm.po');
 const dashboard = require('../pages/dashboard.po');
 
 class boardContainer {

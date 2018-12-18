@@ -1,6 +1,6 @@
 'use strict';
 const commonActions = require('../core/ui/commonActions');
-const dashboardForm = require('../');
+const dashboardForm = require('../pages/dashboardForm.po');
 const dashboard = require('../pages/dashboard.po');
 
 /**
@@ -28,7 +28,7 @@ class teamContainer {
    * Method for select a board in the team container PO.
    *
    * @param boardName Name of the board.
-   * @returns {Dashboard} The PO of the dashboard.
+   * @returns {dashboard} The PO of the dashboard.
    */
   selectBoard(boardName) {
     let board = `[class="board-tile-details-name"][title="${boardName}"]`;

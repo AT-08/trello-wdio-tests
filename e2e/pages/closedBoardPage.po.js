@@ -1,8 +1,8 @@
 'use strict';
 
-const CommonActions = require('../core/ui/commonActions');
+const commonActions = require('../core/ui/commonActions');
 
-class ClosedBoardPage {
+class closedBoardPage {
 
   constructor() {
     this.deleteBoardPermanentlyLink = 'a[class="quiet js-delete"]';
@@ -10,9 +10,9 @@ class ClosedBoardPage {
   }
 
   deletePermanently() {
-    CommonActions.click(this.deleteBoardPermanentlyLink);
-    CommonActions.click(this.confirmDeleteButton);
+    commonActions.click(this.deleteBoardPermanentlyLink);
+    commonActions.click(this.confirmDeleteButton);
   }
 }
 
-module.exports = ClosedBoardPage;
+module.exports = closedBoardPage;
