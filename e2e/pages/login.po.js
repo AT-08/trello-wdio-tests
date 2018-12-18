@@ -1,12 +1,12 @@
 'use strict';
 
-const CommonActions = require('../core/ui/commonActions');
+const commonActions = require('../core/ui/commonActions');
 const boardContainer = require('../pages/mainPage.js');
 
 /**
  * This is the page for login to trello.
  */
-class LoginPage {
+class login {
 
   constructor(site) {
     browser.url(site);
@@ -21,12 +21,12 @@ class LoginPage {
    * @returns {boardContainer} The PO of boardContainer.
    */
   loginToTrello(userKeys) {
-    let user = CommonActions.getUserFromKey(userKeys);
-    CommonActions.setValue(this.userNameTextfield, user.username);
-    CommonActions.setValue(this.passwordTextField, user.password);
-    CommonActions.operate(this.loginButton);
+    let user = commonActions.getUserFromKey(userKeys);
+    commonActions.setValue(this.userNameTextfield, user.username);
+    commonActions.setValue(this.passwordTextField, user.password);
+    commonActions.operate(this.loginButton);
     return new boardContainer();
   }
 }
 
-module.exports = LoginPage;
+module.exports = login;
