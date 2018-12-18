@@ -1,9 +1,9 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
-const Dashboard = require('../pages/dashboard.po.js');
+const dashboard = require('../pages/dashboard.po.js');
 
-class BoardForm {
+class dashboardForm {
 
   constructor() {
     this.titleBoard = 'input[class="subtle-input"]';
@@ -26,8 +26,8 @@ class BoardForm {
       fillValues[key].call();
     });
 
-    CommonActions.operate(this.submit);
-    return new Dashboard();
+    CommonActions.click(this.submit);
+    return new dashboard();
   }
 
   setTitleBoard(name) {
@@ -36,14 +36,14 @@ class BoardForm {
 
   setBackgroundBoard(background) {
     this.background = 'button[title=' + background + ']';
-    CommonActions.operate(this.background);
+    CommonActions.click(this.background);
   }
 
   setAccessBoard(accessAttribute) {
     if (accessAttribute === 'Public') {
-      CommonActions.operate(this.visibilityButton);
-      CommonActions.operate(this.publicButton);
-      CommonActions.operate(this.confirmPublicButton);
+      CommonActions.click(this.visibilityButton);
+      CommonActions.click(this.publicButton);
+      CommonActions.click(this.confirmPublicButton);
     }
   }
 
@@ -53,4 +53,4 @@ class BoardForm {
   }
 }
 
-module.exports = BoardForm;
+module.exports = dashboardForm;

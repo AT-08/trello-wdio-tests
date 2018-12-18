@@ -1,7 +1,7 @@
 'use strict';
 
 const CommonActions = require('../core/ui/commonActions');
-const BoardForm = require('../pages/boardForm.po.js');
+const BoardForm = require('./dashboardForm.js');
 const WAIT_VISIBILITY = 10000;
 
 class MainPage {
@@ -13,7 +13,7 @@ class MainPage {
 
   clickCreateBoard() {
     browser.waitForVisible(this.something, WAIT_VISIBILITY);
-    CommonActions.operate(this.createBoardButton);
+    CommonActions.click(this.createBoardButton);
     return new BoardForm();
   }
 }
