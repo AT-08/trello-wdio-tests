@@ -1,7 +1,5 @@
 #trello.feature
 Feature: Create list in Trello
-  As a User
-  I want to create list in Trello
 
   Background: Create a board in Trello
     Given I login "{credentials.owmer1}"
