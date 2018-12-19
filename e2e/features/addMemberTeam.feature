@@ -1,7 +1,4 @@
-#trello.feature
-Feature: Create team in Trello
-  As a User
-  I want to create team in Trello
+Feature: Team
 
   Background: Create a team in Trello
     Given I login with "{credentials.owner1}"
@@ -10,10 +7,11 @@ Feature: Create team in Trello
       | description | Hi all |
     And I click Trello icon
 
-  Scenario: Add member to existing team
+  Scenario: Add member to the team
     Given I select a team with:
       | teamName | AT-08 |
     When I select Members item list
     And I add member in the team:
       | user | {credentials.member1} |
-    Then I expect member add in team
+    Then I see the member in Team Members
+      | user | {credentials.member1} |

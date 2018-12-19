@@ -7,7 +7,7 @@ class members {
   constructor() {
     this.findMemberInputText = 'input[class="autocomplete-input"]';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
-    this.sendInvitationButton = 'button[class="autocomplete-btn.primary"]';
+    this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
   }
 
   /**
@@ -17,6 +17,7 @@ class members {
   addMember(data) {
     this.fillDataMember(data);
     commonActions.click(this.sendInvitationButton);
+    commonActions.waitInvisibility(this.sendInvitationButton);
   }
 
   /**
@@ -38,9 +39,9 @@ class members {
    * @param data Specific data.
    */
   selectUser(data) {
-    let user = commonActions.getUserFromKey(data);
+    let user = commonActions.getUserFromKey(data.user);
     commonActions.setValue(this.findMemberInputText, user.username);
-    var memberContainer = `//*[contains(text(),"${user.username}")]/ancestor::a[contains(@class,'.full-name')]`;
+    var memberContainer = `[title*="${user.username}"]`;
     commonActions.waitVisibility(memberContainer);
     commonActions.click(memberContainer);
   }
@@ -52,8 +53,6 @@ class members {
   setDescription(description) {
     commonActions.setValue(this.invitationMessageInput, description);
   }
-
-
 }
 
 module.exports = members;

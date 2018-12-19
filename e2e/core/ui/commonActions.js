@@ -40,6 +40,15 @@ class CommonActions {
   }
 
   /**
+   * Method for wait invisibility of an object.
+   *
+   * @param element Input object.
+   */
+  static waitInvisibility(element) {
+    browser.waitForVisible(element, EXPLICIT_TIMEOUT, true);
+  }
+
+  /**
    * Method for submit a form.
    *
    * @param element Input object
@@ -64,8 +73,8 @@ class CommonActions {
    * Method of a tiny sleep.
    */
   static sleep() {
-    const tinySleep = 500;
-    browser.driver.sleep(tinySleep);
+    const tinySleep = 1000;
+    browser.pause(tinySleep);
   }
 
   /**
@@ -74,9 +83,13 @@ class CommonActions {
    * @returns {*} A user with their username and password.
    */
   static getUserFromKey(textInBrackets) {
-    var keys = textInBrackets.match(/{([^)]+)}/)[1].split('.');
-    let credentials = config[keys[0]];
-    return credentials[keys[1]];
+    try {
+      var keys = textInBrackets.match(/{([^)]+)}/)[1].split('.');
+      let credentials = config[keys[0]];
+      return credentials[keys[1]];
+    } catch (e) {
+      throw `Isnt a key="${textInBrackets}"`;
+    }
   }
 }
 

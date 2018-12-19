@@ -30,6 +30,18 @@ class team {
     commonActions.click(this.settingTabPane);
     return new teamSetting();
   }
+
+  /**
+   * This method verifies if exists a member in the team.
+   *
+   * @param member To verify.
+   */
+  isMember(member) {
+    commonActions.click(this.membersTabPane);
+    let memberName = commonActions.getUserFromKey(member);
+    commonActions.sleep();
+    return browser.isExisting(`//div[@class="member-list-item-detail"]/descendant::span[contains(@title,"${memberName.username}")]`);
+  }
 }
 
 module.exports = team;

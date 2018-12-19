@@ -1,4 +1,5 @@
 const {Given, When, Then} = require('cucumber');
+const expect = require('chai').expect;
 
 const header = require('../../pages/common/header.po');
 const sideBar = require('../../pages/common/sideBar.po');
@@ -21,7 +22,7 @@ When(/^I click Trello icon$/, () => {
 
 Given(/^I select a team with:$/, (data) => {
   let rHash = data.rowsHash();
-  teamContainer = leftBar.selectTeam(rHash.TeamName);
+  teamContainer = leftBar.selectTeam(rHash.teamName);
 });
 
 When(/^I select Members item list$/, () => {
@@ -34,6 +35,7 @@ When(/^I add member in the team:$/, (data) => {
   members.addMember(memberData);
 });
 
-Then(/^I expect member add in team$/, () => {
-  console.log('POSI');
+Then(/^I see the member in Team Members$/, (data) => {
+  let memberData = data.rowsHash();
+  expect(team.isMember(memberData.user)).to.be.true;
 });
