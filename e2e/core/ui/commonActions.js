@@ -72,8 +72,7 @@ class CommonActions {
   /**
    * Method of a tiny sleep.
    */
-  static sleep() {
-    const tinySleep = 1000;
+  static sleep(tinySleep = 1000) {
     browser.pause(tinySleep);
   }
 
