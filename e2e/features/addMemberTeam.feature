@@ -4,14 +4,16 @@ Feature: Create team in Trello
   I want to create team in Trello
 
   Background: Create a team in Trello
-    Given I login "{credentials.owmer1}"
-    When I  created new Team
-      | TeamTitle |
-      | GUI-ATeam |
+    Given I login with "{credentials.owner1}"
+    When I create a new Team with:
+      | teamName    | AT-08  |
+      | description | Hi all |
+    And I click Trello icon
 
-  Scenario: add member to existing team
-    Given I selected a team with:
-      | TeamTitle | GUI-ATeam |
-    When I selected member option
-    And I add member in team
+  Scenario: Add member to existing team
+    Given I select a team with:
+      | teamName | AT-08 |
+    When I select Members item list
+    And I add member in the team:
+      | user | {credentials.member1} |
     Then I expect member add in team

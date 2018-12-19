@@ -7,7 +7,7 @@ const CommonActions = require('../../core/ui/commonActions');
 
 const Page = require('../../pages/common/login.po');
 const page = new Page();
-const Board = require('../../pages/board.po');
+const Board = require('../../pages/dashboard/dashboard.po');
 const boards = new Board();
 
 Given(/^I logged into Trello website$/, (data) => {

@@ -24,7 +24,7 @@ class login {
     let user = commonActions.getUserFromKey(userKeys);
     commonActions.setValue(this.userNameTextfield, user.username);
     commonActions.setValue(this.passwordTextField, user.password);
-    commonActions.operate(this.loginButton);
+    commonActions.click(this.loginButton);
     return new boardContainer();
   }
 }

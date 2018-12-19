@@ -14,7 +14,7 @@ class teamForm {
   constructor() {
     this.createTeamTab = '.tab__quiet__ed4jD';
     this.teamNameInputText = '.js-autofocus.js-display-name';
-    this.descriptionOfTeamTextArea = 'org-desc';
+    this.descriptionOfTeamTextArea = '[id="org-desc"]';
     this.createTeamButton = '.js-save';
   }
 
@@ -23,8 +23,8 @@ class teamForm {
    * @param data Input info.
    */
   createTeam(data) {
-    commonActions.click(this.createTeamTab);
-    commonActions.setValue(this.teamNameInputText, data.title);
+    // commonActions.click(this.createTeamTab);
+    commonActions.setValue(this.teamNameInputText, data.teamName);
     commonActions.setValue(this.descriptionOfTeamTextArea, data.description);
     commonActions.click(this.createTeamButton);
     return new team();

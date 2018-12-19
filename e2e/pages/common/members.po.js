@@ -25,7 +25,7 @@ class members {
    */
   fillDataMember(data) {
     const fillProjectInformation = {
-      user: () => this.selectUser(data.user),
+      user: () => this.selectUser(data),
       description: () => this.setDescription(data.description),
     };
     Object.keys(data).forEach(key => {
@@ -34,12 +34,13 @@ class members {
   }
 
   /**
-   * This method selects a user from the search list.
-   * @param user Specific user.
+   * This method selects a data from the search list.
+   * @param data Specific data.
    */
-  selectUser(user) {
-    commonActions.setValue(this.findMemberInputText, user);
-    var memberContainer = `//*[contains(text(),"${user}")]/ancestor::a[contains(@class,'.full-name')]`;
+  selectUser(data) {
+    let user = commonActions.getUserFromKey(data);
+    commonActions.setValue(this.findMemberInputText, user.username);
+    var memberContainer = `//*[contains(text(),"${user.username}")]/ancestor::a[contains(@class,'.full-name')]`;
     commonActions.waitVisibility(memberContainer);
     commonActions.click(memberContainer);
   }

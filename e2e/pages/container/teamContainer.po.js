@@ -2,6 +2,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
+const members = require('../common/members.po');
 
 /**
  * Page Object of the Team Container.
@@ -13,7 +14,7 @@ class teamContainer {
    */
   constructor() {
     this.createNewBoardButton = '[class*="mod-add"][href="#"]';
-
+    this.membersItemList = '[href*=members]';
   }
 
   /**
@@ -34,6 +35,15 @@ class teamContainer {
     let board = `[class="board-tile-details-name"][title="${boardName}"]`;
     commonActions.click(board);
     return new dashboard();
+  }
+
+  /**
+   * Method for click to Members item list.
+   *
+   * @returns {members} Page Object.
+   */
+  goToMembers() {
+    commonActions.click(this.membersItemList);
   }
 }
 

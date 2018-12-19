@@ -17,13 +17,10 @@ class team {
 
   /**
    * This method invite a member to the team.
-   * @param infoMember Input member name.
    */
-  inviteMember(infoMember) {
+  inviteMember() {
     commonActions.click(this.membersTabPane);
-    this.memberTeam = new member();
-    this.memberTeam.addMember(infoMember);
-    commonActions.waitVisibility(this.sendInvitationButton);
+    return new member();
   }
 
   /**
