@@ -5,7 +5,7 @@ const config = require('../../core/ui/environment.config.json');
 const credentials = config.credentials;
 const CommonActions = require('../../core/ui/commonActions');
 
-const Page = require('../../pages/login.po');
+const Page = require('../../pages/common/login.po');
 const page = new Page();
 const Board = require('../../pages/board.po');
 const boards = new Board();

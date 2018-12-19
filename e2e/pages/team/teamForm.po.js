@@ -1,7 +1,7 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
-const team = require('../');
+const commonActions = require('../../core/ui/commonActions');
+const team = require('./team.po');
 
 /**
  * PageObject of the Form to create a team.

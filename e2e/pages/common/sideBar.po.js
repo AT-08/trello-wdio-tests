@@ -1,11 +1,10 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
-const teamForm = require('../core/ui/commonActions');
-const boardContainer = require('../');
-const homeContainer = require('../');
-const teamContainer = require('../');
-
+const commonActions = require('../../core/ui/commonActions');
+const teamForm = require('../team/teamForm.po');
+const boardContainer = require('../container/boardContainer.po');
+const homeContainer = require('../container/homeContainer.po');
+const teamContainer = require('../container/teamContainer.po');
 
 /**
  * PageObject of the sideBar.
@@ -23,7 +22,6 @@ class sideBar {
 
   /**
    * This method as create team.
-   * @param data data table input.
    * @returns {teamForm} .
    */
   createTeam() {

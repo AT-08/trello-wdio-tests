@@ -1,8 +1,8 @@
 'use strict';
 
-const list = require('../pages/boardForm.po.js');
-const member = require('../pages/boardForm.po.js');
-const dashboardMenu = require('../pages/boardForm.po.js');
+const list = require('./list.po');
+const member = require('../common/members.po');
+const dashboardMenu = require('./dashboardMenu.po');
 
 /**
  * This is the PO of a selected dashboard.
@@ -10,7 +10,7 @@ const dashboardMenu = require('../pages/boardForm.po.js');
 class dashboard {
   /**
    * This method create a list in the current board.
-   * @returns {BoardForm} Class boardForm.
+   * @returns {list} Class boardForm.
    */
   createList() {
     return new list();
@@ -18,7 +18,7 @@ class dashboard {
 
   /**
    * This method invite a member to the current dashboard.
-   * @returns {BoardForm} Class member.
+   * @returns {member} Class member.
    */
   inviteMember() {
     return new member();
@@ -26,7 +26,7 @@ class dashboard {
 
   /**
    * This method shows the menu option.
-   * @returns {BoardForm} Class dashboardMenu.
+   * @returns {dashboardMenu} Class dashboardMenu.
    */
   showMenu() {
     return new dashboardMenu();

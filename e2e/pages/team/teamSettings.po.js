@@ -1,20 +1,17 @@
 'use strict';
-const commonActions = require('../core/ui/commonActions');
+
+const commonActions = require('../../core/ui/commonActions');
 
 /**
  * This is the PO of a create a team setting.
  */
 class teamSettings {
 
-
   constructor() {
-
     this.settingTabPane = '[href*="/teamtestcreation/account"]';
     this.changeVisibilityButton = 'a[class="button-link u-text-align-center"]';
     this.confirmDeleteTeamButton = 'input[class=.js-confirm';
     this.deleteButton = 'a[class="quiet-button"]';
-
-
   }
 
   /**

@@ -1,6 +1,6 @@
 'use strict';
 
-const commonActions = require('../core/ui/commonActions');
+const commonActions = require('../../core/ui/commonActions');
 
 /**
  * This is the PO of the card page
@@ -9,17 +9,11 @@ class card {
 
   constructor() {
     this.cardName = '.js-card-name';
-
     this.addChecklist = '.js-add-checklist-menu';
-
     this.checklistTitle = '.js-checklist-title';
-
     this.btnAddChecklist = '.js-add-checklist';
-
     this.newChecklistItem = '.js-new-checklist-item-input';
-
     this.checklistNewItemText = '.checklist-new-item-text';
-
     this.btnConfirmDeleteChecklist = '.js-confirm';
   }
 
