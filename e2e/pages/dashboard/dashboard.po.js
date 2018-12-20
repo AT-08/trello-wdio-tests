@@ -47,8 +47,6 @@ class dashboard {
     commonActions.pause();
     return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
   }
-
-
 }
 
 module.exports = dashboard;

@@ -2,6 +2,8 @@
 
 const commonActions = require('../../core/ui/commonActions');
 
+const memberCard = require('../../pages/common/memberCard.po');
+
 class members {
 
   constructor() {
@@ -25,6 +27,13 @@ class members {
    */
   addMemberBoard(data) {
     this.fillDataMember(data);
+  }
+
+  /**
+   * This method add/invite a member to a card.
+   */
+  addMemberToCardButton() {
+    return new memberCard();
   }
 
   /**

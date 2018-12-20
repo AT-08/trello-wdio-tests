@@ -2,6 +2,8 @@
 
 const commonActions = require('../../core/ui/commonActions');
 
+const members = require('../../pages/common/members.po');
+
 /**
  * This is the PO of the card page
  */
@@ -42,6 +44,12 @@ class card {
   deleteCheckList() {
     commonActions.click(this.confirmDelete);
     commonActions.click(this.btnConfirmDeleteChecklist);
+  }
+
+  clickAddMember() {
+    this.addMemberButton = '.button-link.js-change-card-members';
+    commonActions.click(this.addMemberButton);
+    return new members();
   }
 }
 
