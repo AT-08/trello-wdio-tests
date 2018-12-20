@@ -1,6 +1,8 @@
 const {Given, When, Then} = require('cucumber');
 const Boardcontainer = require('../../pages/container/boardContainer.po.js');
 const expect = require('chai').expect;
+const dashboardClass = require('../../pages/dashboard/dashboard.po');
+
 let dashboard;
 let boardcontainer;
 
@@ -13,7 +15,7 @@ Given(/^I select a board with:$/, (dataTable) => {
 });
 
 When(/^I create new list with:$/, (dataTable) => {
-  dashboard = new dashboard();
+  dashboard = new dashboardClass();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   dashboard.createList(titleString);
