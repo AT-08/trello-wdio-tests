@@ -39,6 +39,11 @@ class dashboard {
   showMenu() {
     return new dashboardMenu();
   }
+
+  isCreatedList(title) {
+    commonActions.pause();
+    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
+  }
 }
 
 module.exports = dashboard;
