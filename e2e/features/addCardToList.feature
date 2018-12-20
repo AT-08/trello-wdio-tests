@@ -14,10 +14,6 @@ Feature: Create card in Trello
     And I create new list with:
       | Title | test list |
 
-  Scenario: add card to existing list
-    Given I select
-
-
   Scenario: add list to existing board
     Given I select a list with:
       | Title | test list |
