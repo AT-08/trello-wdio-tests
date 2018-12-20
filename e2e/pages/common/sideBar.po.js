@@ -14,7 +14,7 @@ class sideBar {
    * Constructor of set the elements to be used.
    */
   constructor() {
-    this.createTeamButton = 'button[class="tab__tabButton__37WIj.tab__quiet__ed4jD"]';
+    this.createTeamButton = 'button[class="tab__tabButton__37WIj tab__quiet__ed4jD"]';
     this.selectedBoardButton = '[href*="/boards"]';
     this.selectedHomeButton = '.tab__tabLink__3C9rw.tab__selected__1gsiC"]';
 
@@ -25,6 +25,7 @@ class sideBar {
    * @returns {teamForm} .
    */
   createTeam() {
+    commonActions.waitVisibility(this.createTeamButton);
     commonActions.click(this.createTeamButton);
     return new teamForm();
   }

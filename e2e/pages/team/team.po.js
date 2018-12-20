@@ -17,13 +17,10 @@ class team {
 
   /**
    * This method invite a member to the team.
-   * @param infoMember Input member name.
    */
-  inviteMember(infoMember) {
+  inviteMember() {
     commonActions.click(this.membersTabPane);
-    this.memberTeam = new member();
-    this.memberTeam.addMember(infoMember);
-    commonActions.waitVisibility(this.sendInvitationButton);
+    return new member();
   }
 
   /**
@@ -32,6 +29,18 @@ class team {
   editTeam() {
     commonActions.click(this.settingTabPane);
     return new teamSetting();
+  }
+
+  /**
+   * This method verifies if exists a member in the team.
+   *
+   * @param member To verify.
+   */
+  isMember(member) {
+    commonActions.click(this.membersTabPane);
+    let memberName = commonActions.getUserFromKey(member);
+    commonActions.pause();
+    return browser.isExisting(`//div[@class="member-list-item-detail"]/descendant::span[contains(@title,"${memberName.username}")]`);
   }
 }
 

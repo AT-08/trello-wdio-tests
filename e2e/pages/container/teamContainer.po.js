@@ -13,7 +13,7 @@ class teamContainer {
    */
   constructor() {
     this.createNewBoardButton = '[class*="mod-add"][href="#"]';
-
+    this.membersItemList = '[href*=members]';
   }
 
   /**
@@ -34,6 +34,13 @@ class teamContainer {
     let board = `[class="board-tile-details-name"][title="${boardName}"]`;
     commonActions.click(board);
     return new dashboard();
+  }
+
+  /**
+   * Method for click to Members item list.
+   */
+  goToMembers() {
+    commonActions.click(this.membersItemList);
   }
 }
 

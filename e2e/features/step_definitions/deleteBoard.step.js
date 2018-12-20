@@ -3,13 +3,12 @@ const expect = require('chai').expect;
 
 const BoardActions = require('../../pages/dashboard/dashboardForm.po.js');
 const BoardPage = require('../../pages/dashboard/dashboard.po.js');
-const ClosedBoardPage = require('../../pages/closedBoardPage.po.js');
 
 const CommonActions = require('../../core/ui/commonActions');
 
 let boardActions = new BoardActions();
 let board = new BoardPage();
-let closedBoardPage = new ClosedBoardPage();
+let closedBoardPage;
 let boardElement;
 let titleString;
 
