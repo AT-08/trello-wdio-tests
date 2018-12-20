@@ -14,7 +14,7 @@ Feature: Create Board in Trello
   Scenario: invite member to the board
     Given I select a board with:
       | Title | test Board |
-    When I select Members item list
+    When I select Members button
     And I add member in the board:
       | user | {credentials.member1} |
     Then I see the member in board Members
