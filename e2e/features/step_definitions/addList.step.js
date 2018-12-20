@@ -1,13 +1,9 @@
 const {Given, When, Then} = require('cucumber');
-const header = require('../../pages/common/header.po.js');
+const dashboard = require('../../pages/dashboard/dashboard.po');
 const boardcontainer = require('../../pages/container/boardContainer.po.js');
 
 let dashboardTest;
 let boardcontainer1;
-
-When(/^I go to Trello main page$/, () => {
-  header.clickTrelloIcon();
-});
 
 Given(/^I select a board with:$/, (dataTable) => {
   boardcontainer1 = new boardcontainer();
@@ -17,6 +13,7 @@ Given(/^I select a board with:$/, (dataTable) => {
 });
 
 When(/^I create new list with:$/, (dataTable) => {
+  dashboardTest = new dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   dashboardTest.createList(titleString);

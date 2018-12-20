@@ -47,7 +47,7 @@ class card {
   }
 
   clickAddMember() {
-    this.addMemberButton = 'button-link js-change-card-members';
+    this.addMemberButton = '.button-link.js-change-card-members';
     commonActions.click(this.addMemberButton);
     return new members();
   }

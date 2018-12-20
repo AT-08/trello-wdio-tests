@@ -2,14 +2,17 @@
 
 const commonActions = require('../../core/ui/commonActions');
 
-const memberCard = require('../../pages/common/memberCard.po');
-
-class members {
+class memberCard {
 
   constructor() {
-    this.findMemberInputText = 'input[class="autocomplete-input"]';
-    this.invitationMessageInput = 'textarea[class="js-invitation-message]';
-    this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
+    this.findMemberInputText = '.js-search-mem';
+  }
+
+  isMember(data) {
+    let member = commonActions.getUserFromKey(data);
+    this.userMemberIcon = `.card-detail-data.u-gutter [title*="${member.username}"]`;
+    commonActions.pause();
+    return browser.isExisting(this.userMemberIcon);
   }
 
   /**
@@ -18,15 +21,6 @@ class members {
    */
   addMember(data) {
     this.fillDataMember(data);
-    commonActions.click(this.sendInvitationButton);
-    commonActions.waitInvisibility(this.sendInvitationButton);
-  }
-
-  /**
-   * This method add/invite a member to a card.
-   */
-  addMemberToCardButton() {
-    return new memberCard();
   }
 
   /**
@@ -50,18 +44,10 @@ class members {
   selectUser(data) {
     let user = commonActions.getUserFromKey(data.user);
     commonActions.setValue(this.findMemberInputText, user.username);
-    var memberContainer = `[title*="${user.username}"]`;
+    var memberContainer = `[class*="js-select-member"][title*="${user.username}"]`;
     commonActions.waitVisibility(memberContainer);
     commonActions.click(memberContainer);
   }
-
-  /**
-   * This method set a optional description when a owner tries to invite a member to a team.
-   * @param description Input description.
-   */
-  setDescription(description) {
-    commonActions.setValue(this.invitationMessageInput, description);
-  }
 }
 
-module.exports = members;
+module.exports = memberCard;

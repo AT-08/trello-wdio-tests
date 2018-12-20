@@ -12,6 +12,7 @@ class list {
    * Constructor to set the locators.
    */
   constructor() {
+    this.addAnotherCardButton = '.js-open-card-composer';
     this.cardTitleTextAreaInput = '.list-card-composer-textarea.js-card-title';
     this.addCardButton = '.js-add-card';
   }
@@ -20,18 +21,23 @@ class list {
    * This method create a card in a list.
    */
   createCard(cardName) {
+    commonActions.click(this.addAnotherCardButton);
     commonActions.setValue(this.cardTitleTextAreaInput, cardName);
     commonActions.click(this.addCardButton);
   }
 
   /**
-   * This method select a specific card.
+   * Method for select a card of a specified List.
    *
-   * @param title
+   * @param cardName Name of the card.
+   * @param listTitle Title of the list.
+   * @returns {card} Page Object.
    */
-  selectCard(title) {
-    this.cardBox = `.list-card-details.js-card-details ${title}`;
-    commonActions.click(this.cardBox);
+  selectCard(cardName, listTitle) {
+    let cardOfList = `//textarea[@aria-label="${listTitle}"]
+                      /ancestor::div[contains(@class, 'js-list-content')]
+                      /descendant::span[contains(text(), "${cardName}")]`;
+    commonActions.click(cardOfList);
     return new card();
   }
 }

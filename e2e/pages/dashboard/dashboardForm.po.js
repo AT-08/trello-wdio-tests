@@ -28,6 +28,7 @@ class dashboardForm {
     });
 
     commonActions.click(this.submit);
+    commonActions.waitInvisibility(this.submit);
     return new dashboard();
   }
 
