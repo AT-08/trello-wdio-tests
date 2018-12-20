@@ -65,7 +65,7 @@ class CommonActions {
    */
   static sleep() {
     const tinySleep = 500;
-    browser.driver.sleep(tinySleep);
+    browser.pause(tinySleep);
   }
 
   /**
