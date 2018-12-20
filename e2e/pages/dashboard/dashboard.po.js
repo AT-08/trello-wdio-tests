@@ -1,6 +1,4 @@
 'use strict';
-
-const list = require('./list.po');
 const member = require('../common/members.po');
 const dashboardMenu = require('./dashboardMenu.po');
 const commonActions = require('../../core/ui/commonActions');
@@ -11,16 +9,14 @@ const commonActions = require('../../core/ui/commonActions');
 class dashboard {
 
   constructor() {
-    //this.addListBoton = '//a[@class="open-add-list js-open-add-list"]';
-    //this.listNameInput = '//input[@class="list-name-input"]';
     this.addListBoton = '.placeholder';
     this.listNameInput = '.list-name-input';
-    this.saveListNameButton = `//input[@class='primary mod-list-add-button js-save-edit']`;
+    this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
   }
 
   /**
-   * This method create a list in the current board.
-   * @returns {list} Class boardForm.
+   *  this method create list
+   * @param title parameter of input.
    */
   createList(title) {
     commonActions.click(this.addListBoton);

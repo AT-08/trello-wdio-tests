@@ -7,7 +7,7 @@ Feature: Create list in Trello
       | Title      | test Board 24 |
       | Privacy    | Public        |
       | Background | orange        |
-    And I click Trello icon
+    And  I go to Trello main page
 
   Scenario: add list to existing board
     Given I select a board with:
@@ -15,3 +15,4 @@ Feature: Create list in Trello
     When I create new list with:
       | Title | test list |
     Then I expect list created in board
+      | Title | test list |
