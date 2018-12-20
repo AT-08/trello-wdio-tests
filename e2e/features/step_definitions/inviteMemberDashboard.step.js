@@ -1,11 +1,6 @@
-const {Given, When, Then} = require('cucumber');
+const {When, Then} = require('cucumber');
 const expect = require('chai').expect;
-
-const header = require('../../pages/common/header.po');
-const sideBar = require('../../pages/common/sideBar.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
-
-let dashboard;
 let members;
 
 When(/^I select Members button$/, () => {
