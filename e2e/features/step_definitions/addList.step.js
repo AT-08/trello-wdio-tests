@@ -5,9 +5,6 @@ const boardcontainer = require('../../pages/container/boardContainer.po.js');
 let dashboardTest;
 let boardcontainer1;
 
-When(/^I go to Trello main page$/, () => {
-  header.clickTrelloIcon();
-});
 
 Given(/^I select a board with:$/, (dataTable) => {
   boardcontainer1 = new boardcontainer();
