@@ -8,7 +8,7 @@ const boardcontainer = require('../../pages/container/boardContainer.po.js');
 const dashboard = require('../../pages/dashboard/dashboard.po.js');
 
 let dashboardTest;
-let boardConatiner1;
+let boardcontainer1;
 let list;
 const url = config.url;
 
@@ -19,7 +19,7 @@ When(/^I click Trello icon$/, () => {
 
 Given(/^I select a board with:$/, (dataTable) => {
   let rHashBoard = dataTable.rowsHash();
-  titleString = rHashBoard.Title;
+  let titleString = rHashBoard.Title;
   dashboardTest = boardcontainer1.selectBoard(titleString);
 });
 
