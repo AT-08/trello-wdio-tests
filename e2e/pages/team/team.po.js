@@ -39,7 +39,7 @@ class team {
   isMember(member) {
     commonActions.click(this.membersTabPane);
     let memberName = commonActions.getUserFromKey(member);
-    commonActions.sleep();
+    commonActions.pause();
     return browser.isExisting(`//div[@class="member-list-item-detail"]/descendant::span[contains(@title,"${memberName.username}")]`);
   }
 }

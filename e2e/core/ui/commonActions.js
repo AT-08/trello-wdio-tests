@@ -1,6 +1,7 @@
 'use strict';
 
 const EXPLICIT_TIMEOUT = 30000;
+const DEFAULT_PAUSE = 1000;
 const config = require('../../core/ui/environment.config.json');
 
 /**
@@ -70,10 +71,9 @@ class CommonActions {
   }
 
   /**
-   * Method of a tiny sleep.
+   * Method of a tiny pause.
    */
-  static sleep() {
-    const tinySleep = 1000;
+  static pause(tinySleep = DEFAULT_PAUSE) {
     browser.pause(tinySleep);
   }
 
