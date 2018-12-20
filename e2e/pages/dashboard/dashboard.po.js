@@ -12,7 +12,7 @@ class dashboard {
     this.addListBoton = '.placeholder';
     this.listNameInput = '.list-name-input';
     this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
-    this.inviteMemberButton='.js-open-manage-board-members';
+    this.inviteMemberButton = '.js-open-manage-board-members';
 
   }
 
@@ -41,6 +41,11 @@ class dashboard {
    */
   showMenu() {
     return new dashboardMenu();
+  }
+
+  isCreatedList(title) {
+    commonActions.pause();
+    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
   }
 
 
