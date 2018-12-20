@@ -1,22 +1,27 @@
 'use strict';
-
+const member = require('../common/members.po');
+const dashboardMenu = require('./dashboardMenu.po');
 const commonActions = require('../../core/ui/commonActions');
-
-const list = require('../../pages/dashboard/list.po');
-const member = require('../../pages/common/members.po');
-const dashboardMenu = require('../../pages/dashboard/dashboardMenu.po');
-const card = require('../../pages/card/card.po');
 
 /**
  * This is the PO of a selected dashboard.
  */
 class dashboard {
+
+  constructor() {
+    this.addListBoton = '.placeholder';
+    this.listNameInput = '.list-name-input';
+    this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
+  }
+
   /**
-   * This method create a list in the current board.
-   * @returns {list} Class boardForm.
+   *  this method create list
+   * @param title parameter of input.
    */
-  createList() {
-    return new list();
+  createList(title) {
+    commonActions.click(this.addListBoton);
+    commonActions.setValue(this.listNameInput, title);
+    commonActions.click(this.saveListNameButton);
   }
 
   /**
@@ -34,7 +39,6 @@ class dashboard {
   showMenu() {
     return new dashboardMenu();
   }
-
   /**
    * Method for select a card of a specified List.
    *
