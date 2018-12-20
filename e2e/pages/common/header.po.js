@@ -11,6 +11,7 @@ class header {
    */
   static clickTrelloIcon() {
     this.trelloIcon = '.header-logo-default';
+    commonActions.pause();
     commonActions.click(this.trelloIcon);
   }
 }

@@ -16,7 +16,7 @@ When(/^I create a new Team with:$/, (data) => {
   team = teamForm.createTeam(teamData);
 });
 
-When(/^I click Trello icon$/, () => {
+When(/^I go to Trello main page$/, () => {
   header.clickTrelloIcon();
 });
 

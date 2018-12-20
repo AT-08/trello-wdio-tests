@@ -37,10 +37,10 @@ class teamForm {
 
   /**
    * Method for set the team name.
-   * @param name Input.
+   * @param teamName Input.
    */
-  setTeamName(name) {
-    commonActions.setValue(this.teamNameInputText, data.teamName);
+  setTeamName(teamName) {
+    commonActions.setValue(this.teamNameInputText, teamName);
   }
 
   /**
@@ -48,7 +48,7 @@ class teamForm {
    * @param background Input.
    */
   setDescriptionTeam(background) {
-    commonActions.setValue(this.descriptionOfTeamTextArea, data.description);
+    commonActions.setValue(this.descriptionOfTeamTextArea, background);
   }
 }
 

@@ -4,7 +4,7 @@ Feature: Team
     Given I login with "{credentials.owner1}"
     When I create a new Team with:
       | teamName    | AT-08  |
-    And I click Trello icon
+    And I go to Trello main page
 
   Scenario: Add member to the team
     Given I select a team with:
