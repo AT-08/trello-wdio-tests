@@ -1,26 +1,26 @@
 const {Given, When, Then} = require('cucumber');
-const dashboard = require('../../pages/dashboard/dashboard.po');
-const boardcontainer = require('../../pages/container/boardContainer.po.js');
+const Boardcontainer = require('../../pages/container/boardContainer.po.js');
+const expect = require('chai').expect;
+let dashboard;
+let boardcontainer;
 
-let dashboardTest;
-let boardcontainer1;
 
 Given(/^I select a board with:$/, (dataTable) => {
-  boardcontainer1 = new boardcontainer();
+  boardcontainer = new Boardcontainer();
   let rHashBoard = dataTable.rowsHash();
   let titleString = rHashBoard.Title;
-  dashboardTest = boardcontainer1.selectBoard(titleString);
+  dashboard = boardcontainer.selectBoard(titleString);
 });
 
 When(/^I create new list with:$/, (dataTable) => {
-  dashboardTest = new dashboard();
+  dashboard = new dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
-  dashboardTest.createList(titleString);
+  dashboard.createList(titleString);
 });
 
 Then(/^I expect list created in board$/, (dataTable) => {
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
-  browser.console(titleString);
+  expect(dashboard.isCreatedList(titleString)).to.be.true;
 });

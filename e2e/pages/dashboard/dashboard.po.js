@@ -1,9 +1,7 @@
 'use strict';
-
-const commonActions = require('../../core/ui/commonActions');
-
 const member = require('../common/members.po');
 const dashboardMenu = require('./dashboardMenu.po');
+const commonActions = require('../../core/ui/commonActions');
 
 /**
  * This is the PO of a selected dashboard.
@@ -14,6 +12,8 @@ class dashboard {
     this.addListBoton = '.placeholder';
     this.listNameInput = '.list-name-input';
     this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
+    this.inviteMemberButton = '.js-open-manage-board-members';
+
   }
 
   /**
@@ -31,8 +31,7 @@ class dashboard {
    * @returns {member} Class member.
    */
   inviteMember() {
-    let memberButtonIcon = '.js-open-manage-board-members';
-    commonActions.click(memberButtonIcon);
+    commonActions.click(this.inviteMemberButton);
     return new member();
   }
 
@@ -42,6 +41,11 @@ class dashboard {
    */
   showMenu() {
     return new dashboardMenu();
+  }
+
+  isCreatedList(title) {
+    commonActions.pause();
+    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
   }
 }
 

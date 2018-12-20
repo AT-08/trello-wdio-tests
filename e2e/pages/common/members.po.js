@@ -19,7 +19,14 @@ class members {
   addMember(data) {
     this.fillDataMember(data);
     commonActions.click(this.sendInvitationButton);
-    commonActions.waitInvisibility(this.sendInvitationButton);
+  }
+
+  /**
+   * This method add/invite a member.
+   * @param data .
+   */
+  addMemberBoard(data) {
+    this.fillDataMember(data);
   }
 
   /**
@@ -61,6 +68,13 @@ class members {
    */
   setDescription(description) {
     commonActions.setValue(this.invitationMessageInput, description);
+  }
+
+
+  isMemberDashboard(member) {
+    let memberName = commonActions.getUserFromKey(member);
+    commonActions.pause();
+    return browser.isExisting(`//div[@class="mini-profile-info"]/descendant::a[@href="/${memberName.username}"]`);
   }
 }
 
