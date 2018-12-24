@@ -1,8 +1,7 @@
 const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
-const header = require('../../pages/common/header.po');
-const sideBar = require('../../pages/common/sideBar.po');
+const SideBar = require('../../pages/common/sideBar.po');
 
 let leftBar;
 let teamForm;
@@ -10,14 +9,10 @@ let team;
 let teamContainer;
 let members;
 When(/^I create a new Team with:$/, (data) => {
-  leftBar = new sideBar();
+  leftBar = new SideBar();
   teamForm = leftBar.createTeam();
   let teamData = data.rowsHash();
   team = teamForm.createTeam(teamData);
-});
-
-When(/^I go to Trello main page$/, () => {
-  header.clickTrelloIcon();
 });
 
 Given(/^I select a team with:$/, (data) => {

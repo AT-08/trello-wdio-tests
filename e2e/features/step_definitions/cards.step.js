@@ -1,22 +1,22 @@
 const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
-const list = require('../../pages/dashboard/list.po');
-const dashboard = require('../../pages/dashboard/dashboard.po');
+const List = require('../../pages/dashboard/list.po');
+const Dashboard = require('../../pages/dashboard/dashboard.po');
 
 let newCard;
 let member;
 let newList;
-let cardmember;
+let cardMember;
 
 When(/^I create a card with:$/, (cardData => {
   let cardName = cardData.rowsHash();
-  newList = new list();
+  newList = new List();
   newCard = newList.createCard(cardName.CardTitle);
 }));
 
 Given(/^I invite a member to the board:$/, (dataMember) => {
-  member = new dashboard().inviteMember();
+  member = new Dashboard().inviteMember();
   let data = dataMember.rowsHash();
   member.addMember(data);
 });
@@ -29,11 +29,11 @@ Given(/^I select the card:$/, (member) => {
 When(/^I assign a member to the card:$/, (data) => {
   member = newCard.clickAddMember();
   let memberData = data.rowsHash();
-  cardmember = member.addMemberToCardButton();
-  cardmember.addMember(memberData);
+  cardMember = member.addMemberToCardButton();
+  cardMember.addMember(memberData);
 });
 
 Then(/^I see the assigned member on the form$/, (data) => {
   let memberData = data.rowsHash();
-  expect(cardmember.isMember(memberData.user)).to.be.true;
+  expect(cardMember.isMember(memberData.user)).to.be.true;
 });

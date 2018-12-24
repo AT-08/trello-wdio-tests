@@ -9,7 +9,6 @@ const config = require('../../core/ui/environment.config.json');
  */
 class CommonActions {
 
-
   /**
    * Method to click a element.
    *
