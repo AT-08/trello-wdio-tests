@@ -20,7 +20,7 @@ class login {
    * @param userKeys Input name.
    * @returns {boardContainer} The PO of boardContainer.
    */
-  loginToTrello(userKeys) {
+  loginAs(userKeys) {
     let user = commonActions.getUserFromKey(userKeys);
     commonActions.setValue(this.userNameTextfield, user.username);
     commonActions.setValue(this.passwordTextField, user.password);
