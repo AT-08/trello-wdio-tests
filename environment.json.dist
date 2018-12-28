@@ -1,0 +1,15 @@
+{
+  "credentials": {
+    "owner1": {
+      "username": "",
+      "password": ""
+    },
+    "member1": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "url": {
+    "trello": "https://trello.com/login?returnUrl=%2F"
+  }
+}

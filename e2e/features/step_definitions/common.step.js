@@ -1,6 +1,6 @@
 const {Given, When} = require('cucumber');
 
-const config = require('../../core/ui/environment.config.json');
+const config = require('../../../environment.json');
 
 const Login = require('../../pages/common/login.po.js');
 const Header = require('../../pages/common/header.po');

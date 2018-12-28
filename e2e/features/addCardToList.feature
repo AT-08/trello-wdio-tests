@@ -1,6 +1,7 @@
 #trello.feature
 Feature: Create card in Trello
 
+  @wip
   Background: Create a board in Trello
     Given I login with "{credentials.owner1}"
     When I create a new Board with:
@@ -14,6 +15,7 @@ Feature: Create card in Trello
     And I create new list with:
       | Title | test list |
 
+  @wip
   Scenario: add list to existing board
     Given I select a list with:
       | Title | test list |

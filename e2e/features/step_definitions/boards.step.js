@@ -1,7 +1,7 @@
 const {When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
-const BoardContainer = require('../container/boardContainer.po');
+const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 
