@@ -1,11 +1,12 @@
 'use strict';
 
+const config = require('../../../environment.json');
+
 const EXPLICIT_TIMEOUT = 30000;
 const DEFAULT_PAUSE = 1000;
-const config = require('../../core/ui/environment.config.json');
 
 /**
- * CommonActionsRep class with CommonActionsRep Methods.
+ * CommonActions class with common actions methods.
  */
 class CommonActions {
 
