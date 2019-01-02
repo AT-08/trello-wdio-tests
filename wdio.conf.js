@@ -41,11 +41,11 @@ exports.config = {
   //
   capabilities: [{
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-    // grid with only 5 chrome instances available you can make sure that not more than
+    // grid with only 5 chrome/firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 5,
     //
-    browserName: 'chrome'
+    browserName: environment.local.browser
   }],
   //
   // ===================
@@ -78,7 +78,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://localhost',
+  baseUrl: environment.url,
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 15000,
@@ -181,7 +181,9 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
   // before: function (capabilities, specs) {
-  // },
+  before: function () {
+    browser.windowHandleMaximize();
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name

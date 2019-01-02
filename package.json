@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio",
-    "firefox": "wdio wdio.firefox.conf.js",
     "saucelabs": "wdio wdio.saucelabs.conf.js",
     "browserstack": "wdio wdio.browserstack.conf.js",
     "testingbot": "wdio wdio.testingbot.conf.js",
     "travis": "wdio wdio.travis.conf.js",
+    "docker": "wdio wdio.docker.conf.js",
     "lint": "eslint . --cache -- fix --format node_modules/eslint-friendly-formatter --ext .js"
   },
   "keywords": [],
