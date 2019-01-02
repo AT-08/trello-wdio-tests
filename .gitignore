@@ -63,5 +63,6 @@ typings/
 # custom
 package-lock.json
 errorShots/
+allure-results/
 .idea/
 environment.json
