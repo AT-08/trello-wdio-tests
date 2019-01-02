@@ -11,5 +11,28 @@
   },
   "url": {
     "trello": "https://trello.com/login?returnUrl=%2F"
+  },
+  "tags": "(not @wip) and @bvt",
+  "saucelabs": {
+    "user": "",
+    "key": "",
+    "browserName": "chrome",
+    "platform": "macOS 10.14",
+    "version": "71.0"
+  },
+  "browserstack": {
+    "user": "",
+    "key": "",
+    "os": "OS X",
+    "os_version": "Mojave",
+    "browser": "Chrome",
+    "browser_version": "71.0"
+  },
+  "testingbot": {
+    "user": "",
+    "key": "",
+    "browserName": "chrome",
+    "platform": "WIN10",
+    "version": "70"
   }
 }

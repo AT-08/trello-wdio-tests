@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio",
+    "firefox": "wdio wdio.firefox.conf.js",
+    "saucelabs": "wdio wdio.saucelabs.conf.js",
+    "browserstack": "wdio wdio.browserstack.conf.js",
+    "testingbot": "wdio wdio.testingbot.conf.js",
+    "travis": "wdio wdio.travis.conf.js",
     "lint": "eslint . --cache -- fix --format node_modules/eslint-friendly-formatter --ext .js"
   },
   "keywords": [],
@@ -14,10 +19,15 @@
     "axios": "^0.18.0",
     "chai": "^4.2.0",
     "eslint-plugin-webdriverio": "^1.0.1",
+    "wdio-allure-reporter": "^0.8.3",
+    "wdio-browserstack-service": "^0.1.18",
     "wdio-cucumber-framework": "^2.2.8",
     "wdio-eslint-service": "0.0.3",
+    "wdio-sauce-service": "^0.4.14",
+    "wdio-screenshots-cleanup-service": "0.0.7",
     "wdio-selenium-standalone-service": "0.0.11",
     "wdio-spec-reporter": "^0.1.5",
+    "wdio-testingbot-service": "^0.2.1",
     "webdriverio": "^4.14.1"
   }
 }
