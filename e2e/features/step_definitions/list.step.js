@@ -26,3 +26,10 @@ Then(/^I expect list created in board$/, (dataTable) => {
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.true;
 });
+
+Given(/^I select a list with:$/, (data) => {
+  dashboard = new Dashboard();
+  let listToSelect = data.rowsHash();
+  let nameList = listToSelect.Title;
+  dashboard.selectList(nameList);
+});
