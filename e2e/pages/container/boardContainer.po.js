@@ -32,6 +32,11 @@ class boardContainer {
     commonActions.click(board);
     return new dashboard();
   }
+
+  isBoardExisting(title) {
+    commonActions.waitVisibility(this.createNewBoardButton);
+    return browser.isVisible(`div[title="${title}"]`);
+  }
 }
 
 module.exports = boardContainer;
