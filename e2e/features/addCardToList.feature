@@ -1,5 +1,4 @@
 #trello.feature
-@wip
 Feature: Create card in Trello
 
   Background: Create a board in Trello
@@ -9,7 +8,6 @@ Feature: Create card in Trello
       | Privacy    | Public        |
       | Background | orange        |
     And I go to Trello main page
-    Then add list to existing board
     And I select a board with:
       | Title | test Board 24 |
     And I create new list with:
@@ -18,7 +16,7 @@ Feature: Create card in Trello
   Scenario: add list to existing board
     Given I select a list with:
       | Title | test list |
-    And I create new card with:
-      | Title | test card |
+    And I create a card with:
+      | CardTitle | test card |
     Then I expect card created in list
       | Title | test card |

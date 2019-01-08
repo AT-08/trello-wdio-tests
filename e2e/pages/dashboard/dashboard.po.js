@@ -13,7 +13,6 @@ class dashboard {
     this.listNameInput = '.list-name-input';
     this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
     this.inviteMemberButton = '.js-open-manage-board-members';
-
   }
 
   /**
@@ -47,6 +46,17 @@ class dashboard {
     commonActions.pause();
     return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
   }
+
+  /**
+   * Method to select a list
+   * @param list name of the list to select.
+   */
+  selectList(list) {
+    commonActions.click(`//textarea[@aria-label="${list}"]
+                      /ancestor::div[contains(@class, 'js-list-content')]`);
+  }
+
+
 }
 
 module.exports = dashboard;

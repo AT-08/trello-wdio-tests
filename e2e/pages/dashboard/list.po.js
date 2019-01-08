@@ -40,6 +40,16 @@ class list {
     commonActions.click(cardOfList);
     return new card();
   }
+
+  /**
+   *
+   * @param nameCard to search.
+   * @returns {boolean} does exist the card?
+   */
+  isThereCard(nameCard) {
+    let text = browser.getText(`=${nameCard}`);
+    return text === nameCard;
+  }
 }
 
 module.exports = list;

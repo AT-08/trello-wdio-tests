@@ -37,3 +37,10 @@ Then(/^I see the assigned member on the form$/, (data) => {
   let memberData = data.rowsHash();
   expect(cardMember.isMember(memberData.user)).to.be.true;
 });
+
+Then(/^I expect card created in list$/, (cardName) => {
+  let card = cardName.rowsHash();
+  let nameCard = card.Title;
+  newList = new List();
+  expect(newList.isThereCard(nameCard)).to.be.true;
+});

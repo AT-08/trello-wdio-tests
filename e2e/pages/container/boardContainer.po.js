@@ -10,7 +10,7 @@ class boardContainer {
    * Constructor for set the elements.
    */
   constructor() {
-    this.createNewBoardButton = '[class*="mod-add"][href="#"]';
+    this.createNewBoardButton = 'div[class="board-tile mod-add"]';
   }
 
   /**
