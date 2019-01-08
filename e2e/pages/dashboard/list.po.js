@@ -48,12 +48,7 @@ class list {
    */
   isThereCard(nameCard) {
     let text = browser.getText(`=${nameCard}`);
-    if (text === nameCard) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return text === nameCard;
   }
 }
 
