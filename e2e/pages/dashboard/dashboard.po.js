@@ -10,6 +10,7 @@ class dashboard {
 
   constructor() {
     this.addListBoton = '.placeholder';
+    this.addLitButtomGreen ='.primary.mod-list-add-button.js-save-edit';
     this.listNameInput = '.list-name-input';
     this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
     this.inviteMemberButton = '.js-open-manage-board-members';
@@ -20,9 +21,14 @@ class dashboard {
    * @param title parameter of input.
    */
   createList(title) {
-    commonActions.click(this.addListBoton);
+    if(browser.isVisible(this.addListBoton)) {
+      commonActions.click(this.addListBoton);
+    } else {
+      commonActions.click(this.addLitButtomGreen);
+    }
     commonActions.setValue(this.listNameInput, title);
     commonActions.click(this.saveListNameButton);
+    return new dashboard();
   }
 
   /**
