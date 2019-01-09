@@ -1,17 +1,30 @@
 const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
+const Header = require('../../pages/common/header.po');
 const BoardContainer = require('../../pages/container/boardContainer.po');
+const BoardsDrawerContainer = require('../../pages/container/boardsDrawerContainer.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 
+let header;
 let dashboard;
 let boardContainer;
+let boardsDrawerContainer;
 
 Given(/^I select a board with:$/, (dataTable) => {
   boardContainer = new BoardContainer();
   let rHashBoard = dataTable.rowsHash();
   let titleString = rHashBoard.Title;
   dashboard = boardContainer.selectBoard(titleString);
+});
+
+Given(/^I select a board in Boards Drawer with:$/, (dataTable) => {
+  header = new Header();
+  header.clickBoardsDrawerButtom();
+  boardsDrawerContainer = new BoardsDrawerContainer();
+  let rHashBoard = dataTable.rowsHash();
+  let titleString = rHashBoard.Title;
+  dashboard = boardsDrawerContainer.selectBoard(titleString);
 });
 
 When(/^I create new list with:$/, (dataTable) => {
