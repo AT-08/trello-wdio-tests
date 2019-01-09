@@ -1,6 +1,7 @@
 'use strict';
 
 const commonActions = require('../../core/ui/commonActions');
+const BoardsDrawerContainer = require('../../pages/container/boardsDrawerContainer.po');
 
 /**
  * PageObject of the header of Trello.
@@ -24,11 +25,12 @@ class header {
   }
 
   /**
-   *
+   * Method for open PO Boards Drawer container.
    */
   clickBoardsDrawerButtom() {
     commonActions.pause();
     commonActions.click(this.boardsDrawerButton);
+    return new BoardsDrawerContainer();
   }
 }
 

@@ -3,7 +3,6 @@ const expect = require('chai').expect;
 
 const Header = require('../../pages/common/header.po');
 const BoardContainer = require('../../pages/container/boardContainer.po');
-const BoardsDrawerContainer = require('../../pages/container/boardsDrawerContainer.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 
 let header;
@@ -20,8 +19,7 @@ Given(/^I select a board with:$/, (dataTable) => {
 
 Given(/^I select a board in Boards Drawer with:$/, (dataTable) => {
   header = new Header();
-  header.clickBoardsDrawerButtom();
-  boardsDrawerContainer = new BoardsDrawerContainer();
+  boardsDrawerContainer = header.clickBoardsDrawerButtom();
   let rHashBoard = dataTable.rowsHash();
   let titleString = rHashBoard.Title;
   dashboard = boardsDrawerContainer.selectBoard(titleString);
