@@ -3,11 +3,14 @@ const expect = require('chai').expect;
 
 const List = require('../../pages/dashboard/list.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
+const Card = require('../../pages/card/card.po');
 
 let newCard;
 let member;
 let newList;
 let cardMember;
+
+let card;
 
 When(/^I create a card with:$/, (cardData => {
   let cardName = cardData.rowsHash();
@@ -23,6 +26,7 @@ Given(/^I invite a member to the board:$/, (dataMember) => {
 
 Given(/^I select the card:$/, (member) => {
   let memberData = member.rowsHash();
+  card = memberData.CardTitle;
   newCard = newList.selectCard(memberData.CardTitle, memberData.ListTitle);
 });
 
@@ -43,4 +47,28 @@ Then(/^I expect card created in list$/, (cardName) => {
   let nameCard = card.Title;
   newList = new List();
   expect(newList.isThereCard(nameCard)).to.be.true;
+});
+
+When(/^I move the card to the my list:$/, (data) => {
+  newCard = new Card();
+  let CardSet = data.rowsHash();
+  newCard.moveCard(CardSet.ListTitle);
+});
+
+When(/^I move the card to:$/, (data) => {
+  newCard = new Card();
+  let CardSet = data.rowsHash();
+  newCard.moveCard(CardSet);
+});
+
+Then(/^I see the card in:$/, (data) => {
+  newList = new List();
+  let destin = data.rowsHash();
+  expect(newList.verifyMoveCard(destin, card)).to.be.true;
+});
+
+Then(/^I don't see the card in:$/, (data) => {
+  newList = new List();
+  let origin = data.rowsHash();
+  expect(newList.verifyMoveCard(origin, card)).to.be.false;
 });

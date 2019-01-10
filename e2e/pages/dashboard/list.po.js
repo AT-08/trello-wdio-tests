@@ -4,6 +4,7 @@ const commonActions = require('../../core/ui/commonActions');
 
 const card = require('../card/card.po');
 const listActions = require('../dashboard/listActions.po');
+const Header = require('../common/header.po');
 
 /**
  * PageObject for a list in the dashboard.
@@ -59,6 +60,39 @@ class list {
   clickListAction() {
     commonActions.click(this.listActionButton);
     return new listActions();
+  }
+
+  verifyMoveCard(moveSet, card) {
+    let rightBoard = true;
+    let rightList = true;
+    let rightPosition = true;
+    const move = {
+      'BoardTitle': () => rightBoard = this.verifyBoard(card, moveSet.BoardTitle),
+      'ListTitle': () => rightList = this.verifyList(card, moveSet.ListTitle),
+      'Position': () => rightPosition = this.verifyPosition(moveSet.Position)
+    };
+    Object.keys(moveSet).forEach(key => {
+      move[key].call();
+    });
+    return rightList && rightBoard && rightPosition;
+  }
+
+  verifyBoard(nameCard, BoardTitle) {
+    Header.clickTrelloIcon();
+    let board = `[class="board-tile-details-name"][title="${BoardTitle}"]`;
+    commonActions.click(board);
+    return browser.isExisting(`=${nameCard}`);
+  }
+
+  verifyList(nameCard, nameList) {
+    let cardOfList = `//textarea[@aria-label="${nameList}"]
+                      /ancestor::div[contains(@class, 'js-list-content')]
+                      /descendant::span[contains(text(), "${nameCard}")]`;
+    return browser.isExisting(cardOfList);
+  }
+
+  verifyPosition(position) {
+    return position;
   }
 }
 
