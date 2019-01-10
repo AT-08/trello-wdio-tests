@@ -13,6 +13,7 @@ class login {
     this.userNameTextfield = '#user';
     this.passwordTextField = '#password';
     this.loginButton = '#login';
+    this.mainHeaderButton = 'span[class="header-logo-default"]';
   }
 
   /**
@@ -21,10 +22,12 @@ class login {
    * @returns {boardContainer} The PO of boardContainer.
    */
   loginAs(userKeys) {
-    let user = commonActions.getUserFromKey(userKeys);
-    commonActions.setValue(this.userNameTextfield, user.username);
-    commonActions.setValue(this.passwordTextField, user.password);
-    commonActions.click(this.loginButton);
+    if(!browser.isVisible(this.mainHeaderButton)) {
+      let user = commonActions.getUserFromKey(userKeys);
+      commonActions.setValue(this.userNameTextfield, user.username);
+      commonActions.setValue(this.passwordTextField, user.password);
+      commonActions.click(this.loginButton);
+    }
     return new boardContainer();
   }
 }
