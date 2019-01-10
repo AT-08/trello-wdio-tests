@@ -4,17 +4,17 @@ const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
 
-class boardContainer {
+class boardsDrawerContainer {
 
   /**
    * Constructor for set the elements.
    */
   constructor() {
-    this.createNewBoardButton = 'div[class="board-tile mod-add"]';
+    this.createNewBoardButton = 'a[class="quiet-button js-add-board"]';
   }
 
   /**
-   * This Method create a board in the board container PO.
+   * This Method create a board in the board drawer container PO.
    */
   createBoard() {
     commonActions.click(this.createNewBoardButton);
@@ -28,7 +28,7 @@ class boardContainer {
    * @returns {Dashboard} The PO of the dashboard.
    */
   selectBoard(boardName) {
-    let board = `[class="board-tile-details-name"][title="${boardName}"]`;
+    let board = `[class="compact-board-tile-link-text-name"][title="${boardName}"]`;
     commonActions.click(board);
     return new dashboard();
   }
@@ -39,4 +39,4 @@ class boardContainer {
   }
 }
 
-module.exports = boardContainer;
+module.exports = boardsDrawerContainer;

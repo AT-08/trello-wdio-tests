@@ -1,9 +1,10 @@
-const { When, Then } = require('cucumber');
+const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
 const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
+const BoardMenu = require('../../pages/dashboard/dashboardMenu.po');
 
 const CommonActions = require('../../core/ui/commonActions');
 
@@ -11,12 +12,22 @@ let dashboard;
 let dashboardForm;
 let titleString;
 let members;
+let boardMenu;
+let boardPage;
+let boardContainer;
 
 When(/^I search a Board with:$/, (dataTable) => {
     let rHash = dataTable.rowsHash();
     titleString = rHash.Title;
     dashboardForm = new DashboardForm().searchBoard(titleString);
     dashboardForm.click();
+});
+
+Given(/^I select the board with:$/, (dataTable) => {
+  boardContainer = new BoardContainer();
+  let rHashBoard = dataTable.rowsHash();
+  titleString = rHashBoard.Title;
+  dashboard = boardContainer.selectBoard(titleString);
 });
 
 When(/^I create a new Board with:$/, (dataTable) => {
@@ -45,7 +56,8 @@ Then(/^I see the member in board Members$/, (data) => {
 });
 
 When(/^I delete it/, () => {
-    dashboard.closeBoard();
+  boardMenu = new BoardMenu();
+  boardMenu.deleteBoard();
 });
 
 When(/^I go to boards page "([^"]*)"$/, (url) => {
@@ -53,5 +65,6 @@ When(/^I go to boards page "([^"]*)"$/, (url) => {
 });
 
 Then(/^I expect the board delete/, () => {
-    expect(dashboard.isBoardExisting(titleString)).to.equal(false);
+  boardPage = new BoardContainer();
+  expect(boardPage.isBoardExisting(titleString)).to.be.false;
 });

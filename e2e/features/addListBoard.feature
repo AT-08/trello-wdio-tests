@@ -11,7 +11,7 @@ Feature: Create list in Trello
     And I go to Trello main page
 
   Scenario: add list to existing board
-    Given I select a board with:
+    Given I select a board in Boards Drawer with:
       | Title | test Board 24 |
     When I create new list with:
       | Title | test list |

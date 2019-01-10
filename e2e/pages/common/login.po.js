@@ -10,6 +10,7 @@ class login {
 
   constructor(site) {
     browser.url(site);
+    browser.waitForVisible('#user');
     this.userNameTextfield = '#user';
     this.passwordTextField = '#password';
     this.loginButton = '#login';
