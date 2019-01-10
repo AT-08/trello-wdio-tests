@@ -3,7 +3,7 @@
 Feature: Create a board in Trello with all scenario
 
   Background: Login in Trello app
-    Given I login with "{credentials.owner1}"
+    Given I login with "{credentials.owner2}"
 
   Scenario: Create a board using link button from home page
     Given I go to Trello main page

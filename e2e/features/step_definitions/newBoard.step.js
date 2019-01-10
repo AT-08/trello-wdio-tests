@@ -1,6 +1,8 @@
 const {Given, When, Then} = require('cucumber');
 const expect = require('chai');
 
+
+
 Given(/^I click on link create new board from home page$/, () => {
   console.log('new board');
 });

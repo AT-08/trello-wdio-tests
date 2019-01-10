@@ -8,12 +8,15 @@ const boardContainer = require('../container/boardContainer.po');
  */
 class login {
 
-  constructor(site) {
+  static isLoggedIn(site) {
     browser.url(site);
-    browser.waitForVisible('#user');
-    this.userNameTextfield = '#user';
-    this.passwordTextField = '#password';
-    this.loginButton = '#login';
+    if (browser.isExisting('#header')) {
+      console.log('Logged');
+    } else {
+      this.userNameTextfield = '#user';
+      this.passwordTextField = '#password';
+      this.loginButton = '#login';
+    }
   }
 
   /**
@@ -21,7 +24,7 @@ class login {
    * @param userKeys Input name.
    * @returns {boardContainer} The PO of boardContainer.
    */
-  loginAs(userKeys) {
+  static loginAs(userKeys) {
     let user = commonActions.getUserFromKey(userKeys);
     commonActions.setValue(this.userNameTextfield, user.username);
     commonActions.setValue(this.passwordTextField, user.password);
