@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 
 const card = require('../card/card.po');
+const listActions = require('../dashboard/listActions.po');
 
 /**
  * PageObject for a list in the dashboard.
@@ -15,6 +16,7 @@ class list {
     this.addAnotherCardButton = '.js-open-card-composer';
     this.cardTitleTextAreaInput = '.list-card-composer-textarea.js-card-title';
     this.addCardButton = '.js-add-card';
+    this.listActionButton = '.list-header-extras-menu.dark-hover.js-open-list-menu.icon-lg.icon-overflow-menu-horizontal';
   }
 
   /**
@@ -49,6 +51,14 @@ class list {
   isThereCard(nameCard) {
     let text = browser.getText(`=${nameCard}`);
     return text === nameCard;
+  }
+
+  /**
+   * This method archive a list.
+   */
+  clickListAction() {
+    commonActions.click(this.listActionButton);
+    return new listActions();
   }
 }
 

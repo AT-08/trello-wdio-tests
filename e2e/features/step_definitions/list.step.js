@@ -4,11 +4,13 @@ const expect = require('chai').expect;
 const Header = require('../../pages/common/header.po');
 const BoardContainer = require('../../pages/container/boardContainer.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
+const List = require('../../pages/dashboard/list.po');
 
 let header;
 let dashboard;
 let boardContainer;
 let boardsDrawerContainer;
+let list;
 
 Given(/^I select a board with:$/, (dataTable) => {
   boardContainer = new BoardContainer();
@@ -43,4 +45,15 @@ Given(/^I select a list with:$/, (data) => {
   let listToSelect = data.rowsHash();
   let nameList = listToSelect.Title;
   dashboard.selectList(nameList);
+});
+
+When(/^I archive this list$/, () => {
+  list = new List();
+  list.clickListAction().archiveList();
+});
+
+Then(/^I don't expect list in board:$/, (dataTable) => {
+  let rHash = dataTable.rowsHash();
+  let titleString = rHash.Title;
+  expect(dashboard.isCreatedList(titleString)).to.be.false;
 });
