@@ -2,6 +2,7 @@
 
 const commonActions = require('../../core/ui/commonActions');
 const BoardsDrawerContainer = require('../../pages/container/boardsDrawerContainer.po');
+const CreatePlus = require('../../pages/common/createPlus.po');
 
 /**
  * PageObject of the header of Trello.
@@ -13,6 +14,7 @@ class header {
    */
   constructor() {
     this.boardsDrawerButton = 'span[class="header-btn-icon icon-lg icon-board light"]';
+    this.createPlusButtom = 'span[class="header-btn-icon icon-lg icon-add light"]';
   }
 
   /**
@@ -31,6 +33,16 @@ class header {
     commonActions.pause();
     commonActions.click(this.boardsDrawerButton);
     return new BoardsDrawerContainer();
+  }
+
+  /**
+   * Method for open PO
+   */
+  clickPlusButtom() {
+    commonActions.pause();
+    commonActions.click(this.createPlusButtom);
+    return new CreatePlus();
+
   }
 }
 

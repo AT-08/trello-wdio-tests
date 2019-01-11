@@ -1,6 +1,5 @@
-@wip
 #trello.feature
-@bvt
+@wip
 Feature: Delete an existing board
 
   Background: I create a new board in Trello
