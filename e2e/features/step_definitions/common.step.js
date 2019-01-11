@@ -10,6 +10,6 @@ Given(/^I login with "([^"]*)"$/, (userKeys) => {
   loginPage.loginAs(userKeys);
 });
 
-When(/^I go to Trello main page$/, () => {
+When(/^I go to Trello home page$/, () => {
   Header.clickTrelloIcon();
 });
