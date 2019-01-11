@@ -1,7 +1,7 @@
 'use strict';
 
 const commonActions = require('../../core/ui/commonActions');
-
+const DEFAULT_PAUSE = 1000;
 class memberCard {
 
   constructor() {
@@ -9,7 +9,7 @@ class memberCard {
   }
 
   isMember(data) {
-    browser.pause(1000);
+    browser.pause(DEFAULT_PAUSE);
     let member = commonActions.getUserFromKey(data);
     this.userMemberIcon = `.card-detail-data.u-gutter [title*="${member.username}"]`;
     commonActions.pause();

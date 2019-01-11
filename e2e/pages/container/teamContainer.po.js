@@ -3,6 +3,8 @@ const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
 
+const DEFAULT_PAUSE = 1000;
+
 /**
  * Page Object of the Team Container.
  */
@@ -40,7 +42,7 @@ class teamContainer {
    * Method for click to Members item list.
    */
   goToMembers() {
-    browser.pause(1000);
+    browser.pause(DEFAULT_PAUSE);
     commonActions.click(this.membersItemList);
   }
 }
