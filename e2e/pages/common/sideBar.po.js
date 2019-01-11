@@ -24,7 +24,7 @@ class sideBar {
    * This method as create team.
    * @returns {teamForm} .
    */
-  createTeam() {
+  clickCreateTeamLink() {
     commonActions.waitVisibility(this.createTeamButton);
     commonActions.click(this.createTeamButton);
     return new teamForm();

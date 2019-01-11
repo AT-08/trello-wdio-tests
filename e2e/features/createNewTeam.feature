@@ -1,26 +1,30 @@
 #trello.feature
-@wip
+@bvt
 Feature: Create a Team in Trello
 
   Background: I create a new Team
     Given I login with "{credentials.owner1}"
 
-  Scenario: Create a Team
-    When I create a new Team with:
+  Scenario: Create a Team from side bar.
+    When I click the create Team link from sidebar
+    And I create a new Team with:
+      | teamName    | AT-08-Team1 |
+      | description | any         |
+    Then I see the new team:
       | teamName    | AT-08-Team1 |
       | description | any         |
     And I go to Trello main page
-    Then I see the new team:
-      | teamName | AT-08-Team1 |
-    And I select a team with:
+    And I see the new team at sidebar:
       | teamName | AT-08-Team1 |
 
-  Scenario: Create a Team 1
-    When I create a new Team using plus buttom with:
+  Scenario: Create a Team using quick create button at header.
+    When I click the create Team link from header
+    And I create a new Team with:
+      | teamName    | AT-08-Team2 |
+      | description | any         |
+    Then I see the new team:
       | teamName    | AT-08-Team2 |
       | description | any         |
     And I go to Trello main page
-    Then I see the new team:
-      | teamName | AT-08-Team2 |
-    And I select a team with:
+    And I see the new team at sidebar:
       | teamName | AT-08-Team2 |

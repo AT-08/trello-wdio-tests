@@ -43,6 +43,11 @@ class team {
     return browser.isExisting(`//div[@class="member-list-item-detail"]
             /descendant::span[contains(@title,"${memberName.username}")]`);
   }
+
+  isNameTeam(nameTeam) {
+    commonActions.waitVisibility(`//h1[contains(text(),"${nameTeam}")]`);
+    return browser.isExisting(`//h1[contains(text(),"${nameTeam}")]`);
+  }
 }
 
 module.exports = team;

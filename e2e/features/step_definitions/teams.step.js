@@ -2,30 +2,23 @@ const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
 const SideBar = require('../../pages/common/sideBar.po');
-const Header = require('../../pages/common/header.po');
+const TeamForm = require('../../pages/team/teamForm.po');
+const Team = require('../../pages/team/team.po');
 
 let leftBar;
-let teamForm;
 let team;
 let teamContainer;
 let members;
-let header;
+let teamForm;
 
 When(/^I create a new Team with:$/, (data) => {
-  leftBar = new SideBar();
-  teamForm = leftBar.createTeam();
-  let teamData = data.rowsHash();
-  team = teamForm.createTeam(teamData);
-});
-
-When(/^I create a new Team using plus buttom with:$/, (data) => {
-  header = new Header();
-  teamForm = header.clickPlusButtom().createTeam();
+  teamForm = new TeamForm();
   let teamData = data.rowsHash();
   team = teamForm.createTeam(teamData);
 });
 
 Given(/^I select a team with:$/, (data) => {
+  leftBar = new SideBar();
   let rHash = data.rowsHash();
   teamContainer = leftBar.selectTeam(rHash.teamName);
 });
@@ -47,6 +40,13 @@ Then(/^I see the member in Team Members$/, (data) => {
 
 Then(/^I see the new team:$/, (data) => {
   let teamData = data.rowsHash();
+  team = new Team();
+  expect(team.isNameTeam(teamData.teamName)).to.be.true;
+});
+
+Then(/^I see the new team at sidebar:$/, (data) => {
+  let teamData = data.rowsHash();
   leftBar = new SideBar();
   expect(leftBar.existingTeam(teamData.teamName)).to.be.true;
 });
+
