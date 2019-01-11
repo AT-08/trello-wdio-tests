@@ -22,7 +22,7 @@ class login {
    * @returns {boardContainer} The PO of boardContainer.
    */
   loginAs(userKeys) {
-    if(!browser.isVisible(this.mainHeaderButton)) {
+    if (!browser.isVisible(this.mainHeaderButton)) {
       let user = commonActions.getUserFromKey(userKeys);
       commonActions.setValue(this.userNameTextfield, user.username);
       commonActions.setValue(this.passwordTextField, user.password);
