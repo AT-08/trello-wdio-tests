@@ -13,7 +13,6 @@ class dashboard {
     this.addLitButtomGreen = '.primary.mod-list-add-button.js-save-edit';
     this.listNameInput = '.list-name-input';
     this.saveListNameButton = '//input[@class="primary mod-list-add-button js-save-edit"]';
-    this.inviteMemberButton = '.js-open-manage-board-members';
   }
 
   /**
@@ -36,7 +35,6 @@ class dashboard {
    * @returns {member} Class member.
    */
   inviteMember() {
-    commonActions.click(this.inviteMemberButton);
     return new member();
   }
 

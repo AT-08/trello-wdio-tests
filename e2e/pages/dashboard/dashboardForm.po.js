@@ -33,6 +33,7 @@ class dashboardForm {
   }
 
   setTitleBoard(name) {
+    commonActions.waitVisibility(this.visibilityButton);
     commonActions.setValue(this.titleBoard, name);
   }
 

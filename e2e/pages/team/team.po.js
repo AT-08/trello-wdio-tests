@@ -48,6 +48,11 @@ class team {
     commonActions.waitVisibility(`//h1[contains(text(),"${nameTeam}")]`);
     return browser.isExisting(`//h1[contains(text(),"${nameTeam}")]`);
   }
+
+  removeMember() {
+    commonActions.click('a[class="option button-link remove-button"]');
+    commonActions.click('.js-soft-remove');
+  }
 }
 
 module.exports = team;
