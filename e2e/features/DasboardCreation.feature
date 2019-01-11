@@ -1,5 +1,5 @@
-#board.feature
-
+#trello.feature
+@wip
 Feature: Create board in Trello
   As a User
   I want to create boards in Trello

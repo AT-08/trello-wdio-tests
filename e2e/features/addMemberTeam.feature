@@ -1,5 +1,6 @@
+#trello.feature
+@wip
 Feature: Team
-
   Background: Create a team in Trello
     Given I login with "{credentials.owner1}"
     When I create a new Team with:
