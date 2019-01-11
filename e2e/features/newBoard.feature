@@ -4,7 +4,7 @@ Feature: Create a board in Trello with all scenario
 
   Background: Login in Trello app
     Given I login with "{credentials.owner1}"
-    And I go to Trello home page
+    And I go to Trello main page
 
   Scenario: Create a board using link button from home page
     Given I click on link create new board from home page
