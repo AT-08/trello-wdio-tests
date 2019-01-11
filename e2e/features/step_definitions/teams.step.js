@@ -2,15 +2,25 @@ const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
 
 const SideBar = require('../../pages/common/sideBar.po');
+const Header = require('../../pages/common/header.po');
 
 let leftBar;
 let teamForm;
 let team;
 let teamContainer;
 let members;
+let header;
+
 When(/^I create a new Team with:$/, (data) => {
   leftBar = new SideBar();
   teamForm = leftBar.createTeam();
+  let teamData = data.rowsHash();
+  team = teamForm.createTeam(teamData);
+});
+
+When(/^I create a new Team using plus buttom with:$/, (data) => {
+  header = new Header();
+  teamForm = header.clickPlusButtom().createTeam();
   let teamData = data.rowsHash();
   team = teamForm.createTeam(teamData);
 });
@@ -33,4 +43,10 @@ When(/^I add member in the team:$/, (data) => {
 Then(/^I see the member in Team Members$/, (data) => {
   let memberData = data.rowsHash();
   expect(team.isMember(memberData.user)).to.be.true;
+});
+
+Then(/^I see the new team:$/, (data) => {
+  let teamData = data.rowsHash();
+  leftBar = new SideBar();
+  expect(leftBar.existingTeam(teamData.teamName)).to.be.true;
 });

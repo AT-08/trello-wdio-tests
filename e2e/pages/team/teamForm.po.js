@@ -12,10 +12,9 @@ class teamForm {
    * Constructor for set the locators.
    */
   constructor() {
-    this.createTeamTab = '.tab__quiet__ed4jD';
-    this.teamNameInputText = '.js-autofocus.js-display-name';
-    this.descriptionOfTeamTextArea = '[id="org-desc"]';
-    this.createTeamButton = '.js-save';
+    this.teamNameInputText = 'input[class="js-autofocus js-display-name"]';
+    this.descriptionOfTeamTextArea = 'textArea[id="org-desc"]';
+    this.createTeamButton = 'input[class="primary wide js-save"]';
   }
 
   /**
