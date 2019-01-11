@@ -40,6 +40,7 @@ class teamContainer {
    * Method for click to Members item list.
    */
   goToMembers() {
+    browser.pause(1000);
     commonActions.click(this.membersItemList);
   }
 }

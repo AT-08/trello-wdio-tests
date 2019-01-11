@@ -1,5 +1,5 @@
 #trello.feature
-  @bvt
+@bvt
 Feature: Move an existing card
   As a user
   I want to move a card from a list to another list in the same board

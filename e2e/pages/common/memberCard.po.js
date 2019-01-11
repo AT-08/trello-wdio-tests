@@ -9,6 +9,7 @@ class memberCard {
   }
 
   isMember(data) {
+    browser.pause(1000);
     let member = commonActions.getUserFromKey(data);
     this.userMemberIcon = `.card-detail-data.u-gutter [title*="${member.username}"]`;
     commonActions.pause();
