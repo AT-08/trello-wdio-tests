@@ -16,17 +16,9 @@ class members {
    * This method add/invite a member.
    * @param data .
    */
-  addMember(data) {
+  addAMember(data) {
     this.fillDataMember(data);
     commonActions.click(this.sendInvitationButton);
-  }
-
-  /**
-   * This method add/invite a member.
-   * @param data .
-   */
-  addMemberBoard(data) {
-    this.fillDataMember(data);
   }
 
   /**
@@ -74,7 +66,7 @@ class members {
   isMemberDashboard(member) {
     let memberName = commonActions.getUserFromKey(member);
     commonActions.pause();
-    return browser.isExisting(`//div[@class="mini-profile-info"]/descendant::a[@href="/${memberName.username}"]`);
+    return browser.isExisting(`[title*="${memberName.username}"]`);
   }
 }
 

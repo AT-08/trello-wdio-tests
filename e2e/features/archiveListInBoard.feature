@@ -1,5 +1,4 @@
 #trello.feature
-@wip
 Feature: Archive an list in existing board
 
   Background: I archive a list in existing board
