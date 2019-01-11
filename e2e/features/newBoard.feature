@@ -3,7 +3,7 @@
 Feature: Create a board in Trello with all scenario
 
   Background: Login in Trello app
-    Given I login with "{credentials.owner2}"
+    Given I login with "{credentials.owner1}"
     And I go to Trello home page
 
   Scenario: Create a board using link button from home page
@@ -13,9 +13,7 @@ Feature: Create a board in Trello with all scenario
       | Privacy    | Public                         |
       | Background | orange                         |
     Then I expect my board created
-      | Title | Create board using link button |
     And I see the board
-      | Title | Create board using link button |
 
   Scenario: Create a board using plus icon from header
     Given I click on plus icon from header
@@ -25,9 +23,7 @@ Feature: Create a board in Trello with all scenario
       | Privacy    | Public                       |
       | Background | green                        |
     Then I expect my board created
-      | Title | Create board using plus icon |
     And I see the board
-      | Title | Create board using plus icon |
 
   Scenario: Create a board using button board icon from header
     Given I click on button board icon from header
@@ -37,6 +33,4 @@ Feature: Create a board in Trello with all scenario
       | Privacy    | Public                               |
       | Background | blue                                 |
     Then I expect my board created
-      | Title | Create board using board icon |
     And I see the board
-      | Title | Create board using board icon |

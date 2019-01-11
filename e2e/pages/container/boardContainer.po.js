@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
+const boardForm = require('../dashboard/dashboardForm.po');
 
 class boardContainer {
 
@@ -10,11 +11,11 @@ class boardContainer {
    * Constructor for set the elements.
    */
   constructor() {
-    this.createNewBoardButton = 'div[class="board-tile mod-add"]';
+    this.createNewBoardButton = '.board-tile.mod-add';
   }
 
   /**
-   * This Method create a board in the board container PO.
+   * This Method create a board in the board container PO. Deprecated ?
    */
   createBoard() {
     commonActions.click(this.createNewBoardButton);
@@ -36,6 +37,14 @@ class boardContainer {
   isBoardExisting(title) {
     commonActions.waitVisibility(this.createNewBoardButton);
     return browser.isVisible(`div[title="${title}"]`);
+  }
+
+  /**
+   * Method to click on new board.
+   */
+  onClickNewBoard() {
+    commonActions.click(this.createNewBoardButton);
+    return new boardForm();
   }
 }
 

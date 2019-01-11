@@ -36,9 +36,11 @@ When(/^I create a new Board with:$/, (dataTable) => {
   dashboard = dashboardForm.createBoard(rHash);
 });
 
+/*
 Then(/^I expect my board created$/, () => {
   Dashboard.showMenu();
 });
+*/
 
 When(/^I select Members button$/, () => {
   dashboard = new Dashboard();
