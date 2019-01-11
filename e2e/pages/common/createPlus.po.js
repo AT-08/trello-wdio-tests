@@ -1,7 +1,7 @@
 'use strict';
 
 const commonActions = require('../../core/ui/commonActions');
-const DashBoardForm = require('../../pages/dashboard/dashboardForm.po');
+const BoardForm = require('../../pages/dashboard/dashboardForm.po');
 const TeamForm = require('../../pages/team/teamForm.po');
 
 /**
@@ -20,10 +20,10 @@ class createPlus {
   /**
    * Method for open PO DashboardForm and create a new board.
    */
-  createBoard() {
+  openBoardForm() {
     commonActions.pause();
     commonActions.click(this.createBoardOption);
-    return new DashBoardForm();
+    return new BoardForm();
   }
 
   /**

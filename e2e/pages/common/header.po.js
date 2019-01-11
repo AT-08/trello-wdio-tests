@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const BoardsDrawerContainer = require('../../pages/container/boardsDrawerContainer.po');
 const CreatePlus = require('../../pages/common/createPlus.po');
+const LeftDrowpDownMenu = require('../../pages/common/sideBar.po');
 
 /**
  * PageObject of the header of Trello.
@@ -15,6 +16,8 @@ class header {
   constructor() {
     this.boardsDrawerButton = 'span[class="header-btn-icon icon-lg icon-board light"]';
     this.createPlusButtom = 'span[class="header-btn-icon icon-lg icon-add light"]';
+    this.headerPlusButton = '.header-btn.js-open-add-menu';
+    this.headerBoardButton = '.header-btn.header-boards.js-boards-menu';
   }
 
   /**
@@ -43,6 +46,18 @@ class header {
     commonActions.click(this.createPlusButtom);
     return new CreatePlus();
 
+  }
+
+  onClickPlusButton() {
+    commonActions.pause();
+    commonActions.click(this.headerPlusButton);
+    return new CreatePlus;
+  }
+
+  onClickBoardButton() {
+    commonActions.pause();
+    commonActions.click(this.headerBoardButton);
+    return new LeftDrowpDownMenu;
   }
 }
 

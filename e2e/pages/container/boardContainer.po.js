@@ -5,6 +5,8 @@ const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
 const boardForm = require('../dashboard/dashboardForm.po');
 
+//const DEFAULT_PAUSE = 30000;
+
 class boardContainer {
 
   /**
@@ -12,6 +14,7 @@ class boardContainer {
    */
   constructor() {
     this.createNewBoardButton = '.board-tile.mod-add';
+    this.titleBoard = '.board-header-btn-text';
   }
 
   /**
@@ -35,8 +38,13 @@ class boardContainer {
   }
 
   isBoardExisting(title) {
-    commonActions.waitVisibility(this.createNewBoardButton);
-    return browser.isVisible(`div[title="${title}"]`);
+    //browser.pause(DEFAULT_PAUSE);
+    //commonActions.waitVisibility(this.createNewBoardButton);
+    return commonActions.getText(this.titleBoard) === title;
+  }
+
+  getTitleBoard() {
+    return commonActions.getText(this.titleBoard);
   }
 
   /**
