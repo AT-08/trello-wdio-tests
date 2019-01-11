@@ -37,7 +37,7 @@ When(/^I select Members item list$/, () => {
 When(/^I add member in the team:$/, (data) => {
   members = team.inviteMember();
   let memberData = data.rowsHash();
-  members.addMember(memberData);
+  members.addAMember(memberData);
 });
 
 Then(/^I see the member in Team Members$/, (data) => {

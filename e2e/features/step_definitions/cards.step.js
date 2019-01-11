@@ -21,7 +21,7 @@ When(/^I create a card with:$/, (cardData => {
 Given(/^I invite a member to the board:$/, (dataMember) => {
   member = new Dashboard().inviteMember();
   let data = dataMember.rowsHash();
-  member.addMember(data);
+  member.addAMember(data);
 });
 
 Given(/^I select the card:$/, (member) => {

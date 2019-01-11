@@ -11,7 +11,7 @@ const CommonActions = require('../../core/ui/commonActions');
 let dashboard;
 let dashboardForm;
 let titleString;
-let members;
+let member;
 let boardMenu;
 let boardPage;
 let boardContainer;
@@ -44,17 +44,17 @@ Then(/^I expect my board created$/, () => {
 
 When(/^I select Members button$/, () => {
   dashboard = new Dashboard();
-  members = dashboard.inviteMember();
+  member = dashboard.inviteMember();
 });
 
 When(/^I add member in the board:$/, (data) => {
   let memberData = data.rowsHash();
-  members.addMemberBoard(memberData);
+  member.addAMember(memberData);
 });
 
 Then(/^I see the member in board Members$/, (data) => {
   let memberData = data.rowsHash();
-  expect(members.isMemberDashboard(memberData.user)).to.be.true;
+  expect(member.isMemberDashboard(memberData.user)).to.be.true;
 });
 
 When(/^I delete it/, () => {
