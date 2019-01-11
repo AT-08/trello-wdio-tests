@@ -43,6 +43,11 @@ class team {
     return browser.isExisting(`//div[@class="member-list-item-detail"]
             /descendant::span[contains(@title,"${memberName.username}")]`);
   }
+
+  removeMember() {
+    commonActions.click('a[class="option button-link remove-button"]');
+    commonActions.click('.js-soft-remove');
+  }
 }
 
 module.exports = team;
