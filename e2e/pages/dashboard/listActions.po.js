@@ -20,5 +20,6 @@ class listActions {
     commonActions.click(this.archiveListButtom);
   }
 }
+
 module.exports = listActions;
 

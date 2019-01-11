@@ -35,6 +35,7 @@ class sideBar {
    * @returns {boardContainer} .
    */
   selectBoardsContainer() {
+    commonActions.waitVisibility(this.selectedBoardButton);
     commonActions.click(this.selectedBoardButton);
     return new boardContainer();
   }
@@ -54,9 +55,15 @@ class sideBar {
    * @returns {teamContainer} .
    */
   selectTeam(title) {
+    commonActions.pause();
     var teamNameTab = `//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
     commonActions.click(teamNameTab);
     return new teamContainer();
+  }
+
+  existingTeam(name) {
+    commonActions.pause();
+    return browser.isExisting(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
   }
 }
 

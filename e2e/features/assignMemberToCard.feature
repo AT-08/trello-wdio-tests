@@ -1,3 +1,5 @@
+#trello.feature
+@wip
 Feature: Card
 
   Background: Prepare a List
