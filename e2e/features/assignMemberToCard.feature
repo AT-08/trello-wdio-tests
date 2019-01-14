@@ -4,10 +4,10 @@ Feature: Card
   Background: Prepare a List
     Given I login with "{credentials.owner1}"
     When I create a new Board with:
-      | Title | ATesTA |
+      | Title | Test assing member |
     And I go to Trello main page
     And I search a Board with:
-      | Title | ATesTA |
+      | Title | Test assing member |
     And I create new list with:
       | Title | Test list |
     And I create a card with:

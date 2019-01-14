@@ -5,8 +5,6 @@ const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
 const boardForm = require('../dashboard/dashboardForm.po');
 
-//const DEFAULT_PAUSE = 30000;
-
 class boardContainer {
 
   /**
