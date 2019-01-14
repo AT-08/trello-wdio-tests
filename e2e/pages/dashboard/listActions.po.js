@@ -41,8 +41,8 @@ class listActions {
   setMoveList(data2change) {
     const move = {
       'BoardTitle': () => this.changeBoard(data2change.BoardTitle),
-        'Position': () => this.setPosition(data2change.Position)
-      };
+      'Position': () => this.setPosition(data2change.Position)
+    };
     Object.keys(data2change).forEach(key => {
       move[key].call();
     });
