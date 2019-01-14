@@ -37,12 +37,6 @@ When(/^I create a new Board with:$/, (dataTable) => {
   boardForm.createBoard(dataTable.rowsHash());
 });
 
-/*
-Then(/^I expect my board created$/, () => {
-  Dashboard.showMenu();
-});
-*/
-
 When(/^I select Members button$/, () => {
   dashboard = new Dashboard();
   member = dashboard.inviteMember();
