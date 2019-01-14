@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
+const boardForm = require('../dashboard/dashboardForm.po');
 
 class boardContainer {
 
@@ -36,6 +37,18 @@ class boardContainer {
   isBoardExisting(title) {
     commonActions.waitVisibility(this.createNewBoardButton);
     return browser.isVisible(`div[title="${title}"]`);
+  }
+  
+  getTitleBoard() {
+    return commonActions.getText(this.titleBoard);
+  }
+
+  /**
+   * Method to click on new board.
+   */
+  onClickNewBoard() {
+    commonActions.click(this.createNewBoardButton);
+    return new boardForm();
   }
 }
 
