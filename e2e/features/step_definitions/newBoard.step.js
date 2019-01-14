@@ -11,10 +11,9 @@ let board = new Board();
 let header = new Header();
 let rightDropDownMenu = new RightDropDownMenu();
 let leftDropDownMenu = new LeftDropDownMenu();
-let boardForm = new BoardForm();
 
 Given(/^I click on link create new board from home page$/, () => {
-  boardForm = board.onClickNewBoard();
+  board.onClickNewBoard();
 });
 
 Given(/^I click on plus icon from header$/, () => {
@@ -22,7 +21,7 @@ Given(/^I click on plus icon from header$/, () => {
 });
 
 Given(/^I click on create board option from right dropdown menu$/, () => {
-  boardForm = rightDropDownMenu.openBoardForm();
+  rightDropDownMenu.openBoardForm();
 });
 
 Given(/^I click on button board icon from header$/, () => {
@@ -30,19 +29,11 @@ Given(/^I click on button board icon from header$/, () => {
 });
 
 Given(/^I click on create new board link from left dropdown menu$/, () => {
-  boardForm = leftDropDownMenu.openBoardForm();
+  leftDropDownMenu.openBoardForm();
 });
 
-When(/^I create a new board using link button with:$/, (data) => {
-  boardForm.createBoard(data.rowsHash());
-});
-
-When(/^I create a new board using plus icon with:$/, (data) => {
-  boardForm.createBoard(data.rowsHash());
-});
-
-When(/^I create a new board using board icon with:$/, (data) => {
-  boardForm.createBoard(data.rowsHash());
+When(/^I create a new board with:$/, (data) => {
+  new BoardForm().createBoard(data.rowsHash());
 });
 
 Then(/^I expect my board created$/, (data) => {
