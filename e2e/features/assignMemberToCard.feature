@@ -4,8 +4,11 @@ Feature: Assign member to card.
 
   Background: Prepare a List
     Given I login with "{credentials.owner1}"
-    And I create a new Board with:
-      | Title | ATesTA |
+    When I create a new Board with:
+      | Title | Test assing member |
+    And I go to Trello main page
+    And I search a Board with:
+      | Title | Test assing member |
     And I create new list with:
       | Title | Test list |
     And I create a card with:
