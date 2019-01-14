@@ -31,9 +31,10 @@ Given(/^I select the board with:$/, (dataTable) => {
 });
 
 When(/^I create a new Board with:$/, (dataTable) => {
-  let dashboardForm = new BoardContainer().createBoard();
-  let rHash = dataTable.rowsHash();
-  dashboard = dashboardForm.createBoard(rHash);
+  let board = new BoardContainer();
+  let boardForm = new DashboardForm();
+  boardForm = board.onClickNewBoard();
+  boardForm.createBoard(dataTable.rowsHash());
 });
 
 Then(/^I expect my board created$/, () => {
