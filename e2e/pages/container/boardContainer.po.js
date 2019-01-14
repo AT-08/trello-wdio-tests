@@ -36,8 +36,6 @@ class boardContainer {
   }
 
   isBoardExisting(title) {
-    //browser.pause(DEFAULT_PAUSE);
-    //commonActions.waitVisibility(this.createNewBoardButton);
     return commonActions.getText(this.titleBoard) === title;
   }
 
