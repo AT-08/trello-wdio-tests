@@ -55,14 +55,14 @@ class sideBar {
    * @returns {teamContainer} .
    */
   selectTeam(title) {
-    commonActions.pause();
+    commonActions.waitVisibility(`//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
     var teamNameTab = `//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
     commonActions.click(teamNameTab);
     return new teamContainer();
   }
 
   existingTeam(name) {
-    commonActions.pause();
+    commonActions.waitVisibility(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
     return browser.isExisting(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
   }
 }
