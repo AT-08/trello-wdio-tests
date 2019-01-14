@@ -29,7 +29,7 @@ class boardContainer {
    * @returns {Dashboard} The PO of the dashboard.
    */
   selectBoard(boardName) {
-    let board = `[class="board-tile-details-name"][title="${boardName}"]`;
+    let board = '[class="board-tile-details-name"]';
     commonActions.click(board);
     return new dashboard();
   }

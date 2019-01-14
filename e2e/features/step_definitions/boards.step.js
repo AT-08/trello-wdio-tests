@@ -5,7 +5,6 @@ const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 const BoardMenu = require('../../pages/dashboard/dashboardMenu.po');
-
 const CommonActions = require('../../core/ui/commonActions');
 
 let dashboard;
@@ -27,8 +26,16 @@ When(/^I search a Board with:$/, (dataTable) => {
 Given(/^I select the board with:$/, (dataTable) => {
   boardContainer = new BoardContainer();
   let rHashBoard = dataTable.rowsHash();
-  titleString = rHashBoard.Title;
-  dashboard = boardContainer.selectBoard(titleString);
+    var paso;
+    for (paso = 0; paso < 400; paso++) {
+        titleString = rHashBoard.Title;
+        dashboard = boardContainer.selectBoard(titleString);
+        boardMenu = new BoardMenu();
+        boardMenu.deleteBoard();
+        boardMenu.menuMain();
+    };
+
+
 });
 
 When(/^I create a new Board with:$/, (dataTable) => {

@@ -14,6 +14,7 @@ class dashboardMenu {
     this.menuMoreCloseBoard = '.js-close-board';
     this.confirmCloseBoard = '.js-confirm.full.negate';
     this.permanentlyDeleteBoardLink = '.quiet.js-delete';
+    this.menuMainlink = '.header-logo-default';
   }
 
   deleteBoard() {
@@ -28,6 +29,10 @@ class dashboardMenu {
     commonActions.click(this.menuMoreItem);
     commonActions.click(this.menuMoreCloseBoard);
     commonActions.click(this.confirmCloseBoard);
+  }
+
+  menuMain(){
+      commonActions.click(this.menuMainlink);
   }
 
 }
