@@ -10,6 +10,8 @@ let team;
 let teamContainer;
 let members;
 let header;
+let teamBoard;
+let dashboard;
 
 When(/^I create a new Team with:$/, (data) => {
   leftBar = new SideBar();
@@ -17,6 +19,14 @@ When(/^I create a new Team with:$/, (data) => {
   let teamData = data.rowsHash();
   team = teamForm.createTeam(teamData);
 });
+
+When(/^I create a team board:$/, (data) => {
+  let dashboardForm = team.clickCreateBoard();
+  let rHash = data.rowsHash();
+  dashboard = dashboardForm.createTeamBoard(rHash);
+
+});
+
 
 When(/^I create a new Team using plus buttom with:$/, (data) => {
   header = new Header();

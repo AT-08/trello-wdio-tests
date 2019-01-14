@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const member = require('../common/members.po');
 const teamSetting = require('./teamSettings.po');
+const dashboardForm = require('../dashboard/dashboardForm.po');
 
 /**
  * This is the PO of the team page.
@@ -13,6 +14,7 @@ class team {
     this.membersTabPane = '[data-tab="members"]';
     this.settingTabPane = '[data-tab="settings"]';
     this.sendInvitationButton = '.autocomplete-btn.primary';
+    this.createNewBoardButton = '//div[contains(@class,"tabbed-pane-main-col")]/descendant::*[@class="board-tile mod-add"]';
   }
 
   /**
@@ -44,10 +46,23 @@ class team {
             /descendant::span[contains(@title,"${memberName.username}")]`);
   }
 
+  /**
+   *
+   */
   removeMember() {
     commonActions.click('a[class="option button-link remove-button"]');
     commonActions.click('.js-soft-remove');
   }
+
+  /**
+   * This Method create a board in the team container PO.
+   */
+  clickCreateBoard() {
+    commonActions.waitVisibility(this.createNewBoardButton);
+    commonActions.click(this.createNewBoardButton);
+    return new dashboardForm();
+  }
+
 }
 
 module.exports = team;

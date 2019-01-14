@@ -32,6 +32,21 @@ class dashboardForm {
     return new dashboard();
   }
 
+
+  createTeamBoard(valuesBoard) {
+    const fillValues = {
+      'Title': () => this.setTitleBoard(valuesBoard.Title),
+    };
+    Object.keys(valuesBoard).forEach(key => {
+      fillValues[key].call();
+    });
+
+    commonActions.click(this.submit);
+    commonActions.waitInvisibility(this.submit);
+    return new dashboard();
+  }
+
+
   setTitleBoard(name) {
     commonActions.waitVisibility(this.visibilityButton);
     commonActions.setValue(this.titleBoard, name);
