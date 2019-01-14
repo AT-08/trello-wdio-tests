@@ -44,10 +44,24 @@ class team {
             /descendant::span[contains(@title,"${memberName.username}")]`);
   }
 
+  /**
+   * this method remove member.
+   */
   removeMember() {
     commonActions.click('a[class="option button-link remove-button"]');
     commonActions.click('.js-soft-remove');
   }
+
+
+  /**
+   * Method for click to Setting item list.
+   */
+  goToSettingTab() {
+    commonActions.waitVisibility(this.settingTabPane);
+    commonActions.click(this.settingTabPane);
+    return new teamSetting();
+  }
+
 }
 
 module.exports = team;
