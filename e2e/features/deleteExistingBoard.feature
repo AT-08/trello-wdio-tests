@@ -16,3 +16,4 @@ Feature: Delete an existing board
     And I delete it
     And I go to Trello main page
     Then I expect the board delete
+

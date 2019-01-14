@@ -2,7 +2,7 @@
 
 const config = require('../../../environment.json');
 
-const EXPLICIT_TIMEOUT = 240000;
+const EXPLICIT_TIMEOUT = 120000;
 const DEFAULT_PAUSE = 1000;
 
 /**

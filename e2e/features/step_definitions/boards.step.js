@@ -30,10 +30,10 @@ Given(/^I select the board with:$/, (dataTable) => {
   dashboard = boardContainer.selectBoard(titleString);
 });
 
-When(/^I create a new Board with:$/, (dataTable) => {
+When(/^I create a new Board with:$/, async (dataTable) => {
   let dashboardForm = new BoardContainer().createBoard();
   let rHash = dataTable.rowsHash();
-  dashboard = dashboardForm.createBoard(rHash);
+  await dashboardForm.createBoard(rHash);
 });
 
 Then(/^I expect my board created$/, () => {

@@ -21,7 +21,6 @@ class header {
    */
   static clickTrelloIcon() {
     this.trelloIcon = '.header-logo-default';
-    commonActions.pause();
     commonActions.click(this.trelloIcon);
   }
 
@@ -29,7 +28,6 @@ class header {
    * Method for open PO Boards Drawer container.
    */
   clickBoardsDrawerButtom() {
-    commonActions.pause();
     commonActions.click(this.boardsDrawerButton);
     return new BoardsDrawerContainer();
   }
@@ -38,7 +36,6 @@ class header {
    * Method for open PO
    */
   static clickPlusButton() {
-    commonActions.pause();
     commonActions.click('span[class="header-btn-icon icon-lg icon-add light"]');
     return new CreatePlus();
   }
