@@ -15,6 +15,7 @@ let member;
 let boardMenu;
 let boardPage;
 let boardContainer;
+let boardForm = new DashboardForm();
 
 When(/^I search a Board with:$/, (dataTable) => {
   let rHash = dataTable.rowsHash();
@@ -32,7 +33,6 @@ Given(/^I select the board with:$/, (dataTable) => {
 
 When(/^I create a new Board with:$/, (dataTable) => {
   let board = new BoardContainer();
-  let boardForm = new DashboardForm();
   boardForm = board.onClickNewBoard();
   boardForm.createBoard(dataTable.rowsHash());
 });
