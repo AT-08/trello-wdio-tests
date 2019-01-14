@@ -8,7 +8,6 @@ Feature: Move an existing card
     Given I login with "{credentials.owner1}"
     When I create a new Board with:
       | Title   | FinalBoard |
-      | Privacy | Public     |
     And I create new list with:
       | Title | To Do |
     And I create new list with:

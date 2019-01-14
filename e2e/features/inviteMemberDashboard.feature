@@ -8,8 +8,6 @@ Feature: Create Board in Trello
     Given I login with "{credentials.owner1}"
     When I create a new Board with:
       | Title      | inviteMemberTest |
-      | Privacy    | Public        |
-      | Background | orange        |
     And  I go to Trello main page
 
   Scenario: invite member to the board
