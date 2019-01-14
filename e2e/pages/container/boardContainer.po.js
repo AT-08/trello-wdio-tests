@@ -17,6 +17,7 @@ class boardContainer {
    * This Method create a board in the board container PO.
    */
   createBoard() {
+    commonActions.waitVisibility(this.createNewBoardButton);
     commonActions.click(this.createNewBoardButton);
     return new dashboardForm();
   }
