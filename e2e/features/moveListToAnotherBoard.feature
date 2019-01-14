@@ -14,8 +14,11 @@ Feature: Create list in Trello
       | Title | ListFirstBoard |
   Scenario: As a user owner change list to other board
     When I move the list to the my board:
+      | BoardTitle | SecondBoard |
+      | ListTitle | To Do     |
+    And I select a board in Boards Drawer with:
+      | Title | FirstBoard |
+    Then I not should see the list in the board:
       | Board | SecondBoard |
-    And I open the board
-      | Board | SecondBoard |
-    Then I should see the list in the board:
+    And I should see the list in the board:
       | Board | SecondBoard |
