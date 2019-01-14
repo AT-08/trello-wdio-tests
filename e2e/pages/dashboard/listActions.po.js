@@ -30,39 +30,38 @@ class listActions {
    * This method create a card in a list.
    */
   moveList(board) {
-      commonActions.click(this.moveListButton);
-      this.setMoveList(board);
-      commonActions.click(this.moveButon);
-
+    commonActions.click(this.moveListButton);
+    this.setMoveList(board);
+    commonActions.click(this.moveButon);
   }
 
   /**
    * This method move the list.
    */
   setMoveList(data2change) {
-      const move = {
-         'BoardTitle': () => this.changeBoard(data2change.BoardTitle),
-          'Position': () => this.setPosition(data2change.Position)
+    const move = {
+      'BoardTitle': () => this.changeBoard(data2change.BoardTitle),
+        'Position': () => this.setPosition(data2change.Position)
       };
-      Object.keys(data2change).forEach(key => {
-          move[key].call();
-      });
+    Object.keys(data2change).forEach(key => {
+      move[key].call();
+    });
   }
 
   /**
    * This method gives the board new  to the list.
    */
   changeBoard(nameBoard) {
-      const sb = $(this.btnSelectBoard);
-      sb.selectByVisibleText(`${nameBoard}`);
+    const sb = $(this.btnSelectBoard);
+    sb.selectByVisibleText(`${nameBoard}`);
   }
 
   /**
    * This method gives the position new to the list.
    */
   setPosition(position) {
-      const sb = $(this.btnSelectPosition);
-      sb.selectByVisibleText(`${position}`);
+    const sb = $(this.btnSelectPosition);
+    sb.selectByVisibleText(`${position}`);
   }
 }
 
