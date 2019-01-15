@@ -7,7 +7,7 @@ const memberCard = require('../../pages/common/memberCard.po');
 class members {
 
   constructor() {
-    this.findMemberInputText = 'input[class="autocomplete-input"]';
+    this.findMemberInputText = 'input.autocomplete-input';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
     this.inviteButton = 'span[class="icon-sm icon-add-member board-header-btn-icon"]';

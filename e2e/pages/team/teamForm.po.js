@@ -12,9 +12,9 @@ class teamForm {
    * Constructor for set the locators.
    */
   constructor() {
-    this.teamNameInputText = 'input[class="js-autofocus js-display-name"]';
+    this.teamNameInputText = '.js-autofocus.js-display-name';
     this.descriptionOfTeamTextArea = 'textArea[id="org-desc"]';
-    this.createTeamButton = 'input[class="primary wide js-save"]';
+    this.createTeamButton = '.primary.wide.js-save';
   }
 
   /**

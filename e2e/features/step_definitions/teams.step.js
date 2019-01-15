@@ -41,9 +41,9 @@ When(/^I add member in the team:$/, (data) => {
 });
 
 Then(/^I see the member in Team Members$/, (data) => {
+  members = team.inviteMember();
   let memberData = data.rowsHash();
-  expect(team.isMember(memberData.user)).to.be.true;
-  team.removeMember();
+  expect(members.isMemberDashboard(memberData.user)).to.be.true;
 });
 
 Then(/^I see the new team:$/, (data) => {
