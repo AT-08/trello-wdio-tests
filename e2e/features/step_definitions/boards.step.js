@@ -71,7 +71,7 @@ Then(/^I expect the board delete/, () => {
 });
 
 Then(/^I should see the list in the board:$/, (dataTable) => {
-    dashboard = new Dashboard();
-    let rHash = dataTable.rowsHash();
-    expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+  dashboard = new Dashboard();
+  let rHash = dataTable.rowsHash();
+  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
 });

@@ -59,8 +59,8 @@ Then(/^I don't expect list in board:$/, (dataTable) => {
 });
 
 When(/^I move the list to the my board:$/, (data) => {
-    list = new List();
-    let BoardSet = data.rowsHash();
-    list.clickListAction().moveList(BoardSet);
+  list = new List();
+  let BoardSet = data.rowsHash();
+  list.clickListAction().moveList(BoardSet);
 });
 

@@ -11,10 +11,10 @@ class listActions {
    */
   constructor() {
     this.archiveListButtom = 'a[class="js-close-list"]';
-      this.moveListButton = 'a[class="js-move-list"]';
-      this.moveButon = 'input.primary.wide.js-commit-position';
-      this.btnSelectBoard = 'select[class="js-select-board"]';
-      this.btnSelectPosition = 'select[class="js-select-list-pos"]';
+    this.moveListButton = 'a[class="js-move-list"]';
+    this.moveButon = 'input.primary.wide.js-commit-position';
+    this.btnSelectBoard = 'select[class="js-select-board"]';
+    this.btnSelectPosition = 'select[class="js-select-list-pos"]';
   }
 
   /**
