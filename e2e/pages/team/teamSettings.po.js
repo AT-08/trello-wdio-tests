@@ -18,11 +18,16 @@ class teamSettings {
    * This method change the visibility of team.
    */
   changeVisibility(privacy) {
-    commonActions.click(this.settingTabPane);
+    commonActions.waitVisibility(this.changeVisibilityButton);
     commonActions.click(this.changeVisibilityButton);
     const privacyLocator = `//span[@class="icon-sm icon-${privacy}"]/parent::a`;
     commonActions.click(privacyLocator);
   }
+
+  verifyChangeprivacy(privacy) {
+    return browser.isExisting(`//div[@class='tabbed-pane-header-details-name']/descendant::*[@class='icon-sm icon-${privacy}']`);
+  }
+
 
   /**
    * This method delete the team.
