@@ -3,6 +3,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const member = require('../common/members.po');
 const teamSetting = require('./teamSettings.po');
+const teamBoard = require('./teamBoard.po');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 
 /**
@@ -57,10 +58,9 @@ class team {
   /**
    * This Method create a board in the team container PO.
    */
-  clickCreateBoard() {
-    commonActions.waitVisibility(this.createNewBoardButton);
-    commonActions.click(this.createNewBoardButton);
-    return new dashboardForm();
+  goToTeamBoard() {
+    commonActions.click(this.boardsTabPane);
+    return new teamBoard();
   }
 
 }

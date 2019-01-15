@@ -1,14 +1,15 @@
-
 Feature: Delete team board
 
   Background:
     Given  I login with "{credentials.owner1}"
-    And I create a new Board with:
-      | Title      | test Board 24 |
-      | Privacy    | Public        |
-      | Background | orange        |
+    And I create a new Team with:
+      | teamName    | AT-08-Team1 |
+      | description | any         |
+    And I go to tab Boards
     And  I create a team board:
-      | Title | DeadBoard1 |
+      | Title      | testAbel |
+      | Privacy    | Public   |
+      | Background | orange   |
 
   Scenario: I delete a board to team
     And I delete it

@@ -12,6 +12,7 @@ let members;
 let header;
 let teamBoard;
 let dashboard;
+let dashboardForm;
 
 When(/^I create a new Team with:$/, (data) => {
   leftBar = new SideBar();
@@ -20,8 +21,12 @@ When(/^I create a new Team with:$/, (data) => {
   team = teamForm.createTeam(teamData);
 });
 
+When(/^I go to tab Boards/, () => {
+  teamBoard = team.goToTeamBoard();
+});
+
 When(/^I create a team board:$/, (data) => {
-  let dashboardForm = team.clickCreateBoard();
+  dashboardForm = teamBoard.clickCreateBoard();
   let rHash = data.rowsHash();
   dashboard = dashboardForm.createTeamBoard(rHash);
 

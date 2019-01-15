@@ -36,11 +36,15 @@ class dashboardForm {
   createTeamBoard(valuesBoard) {
     const fillValues = {
       'Title': () => this.setTitleBoard(valuesBoard.Title),
+      'Privacy': () => this.setAccessBoard(valuesBoard.Privacy),
+      'Background': () => this.setBackgroundBoard(valuesBoard.Background)
     };
     Object.keys(valuesBoard).forEach(key => {
       fillValues[key].call();
+
     });
 
+    commonActions.waitVisibility(this.submit);
     commonActions.click(this.submit);
     commonActions.waitInvisibility(this.submit);
     return new dashboard();
@@ -63,6 +67,7 @@ class dashboardForm {
       commonActions.click(this.publicButton);
       commonActions.click(this.confirmPublicButton);
     }
+
   }
 
   searchBoard(title) {
