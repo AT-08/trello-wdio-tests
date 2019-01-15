@@ -1,4 +1,5 @@
 #trello.feature
+@bvt
 Feature: change team privacy
 
   Background: Create a team in Trello
