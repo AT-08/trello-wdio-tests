@@ -27,7 +27,7 @@ When(/^I go to tab Boards/, () => {
 When(/^I create a team board:$/, (data) => {
   dashboardForm = teamBoard.clickCreateBoard();
   let rHash = data.rowsHash();
-dashboardForm.createTeamBoard(rHash);
+  dashboardForm.createTeamBoard(rHash);
 
 });
 
