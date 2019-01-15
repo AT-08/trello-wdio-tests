@@ -7,7 +7,7 @@ const memberCard = require('../../pages/common/memberCard.po');
 class members {
 
   constructor() {
-    this.findMemberInputText = 'input.autocomplete-input';
+    this.findMemberInputText = '//input[@type="text"] [@class="autocomplete-input"]';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
     this.inviteButton = 'span[class="icon-sm icon-add-member board-header-btn-icon"]';
@@ -70,7 +70,7 @@ class members {
   isMemberDashboard(member) {
     let memberName = commonActions.getUserFromKey(member);
     commonActions.pause();
-    return browser.isExisting(`[title*="${memberName.username}"]`);
+    return browser.isExisting(`//*[contains(text(),"${memberName.username}")]`);
   }
 }
 

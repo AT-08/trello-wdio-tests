@@ -8,9 +8,10 @@ Feature: Team
     And I go to Trello main page
     And I select a team with:
       | teamName | software1234 |
+    And I go to Trello main page
+    And I select Members item list
   Scenario: Add member to the team
-    When I select Members item list
-    And I add member in the team:
+    When I add member in the team:
       | user | {credentials.member1} |
     Then I see the member in Team Members
       | user | {credentials.member1} |
