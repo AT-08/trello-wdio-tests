@@ -15,6 +15,7 @@ class dashboardMenu {
     this.confirmCloseBoard = '.js-confirm.full.negate';
     this.permanentlyDeleteBoardLink = '.quiet.js-delete';
     this.showMenuLink = '.js-show-sidebar';
+    this.notBoardMessage = 'div[class="little-message"]';
   }
 
   deleteBoard() {
@@ -23,6 +24,8 @@ class dashboardMenu {
     commonActions.click(this.confirmCloseBoard);
     commonActions.click(this.permanentlyDeleteBoardLink);
     commonActions.click(this.confirmCloseBoard);
+    commonActions.waitVisibility(this.notBoardMessage);
+
   }
 
   clickShowMenu () {

@@ -10,5 +10,6 @@ Feature: Delete an existing board
     When I click in ShowMenu link
     And I delete it
     And I go to Trello main page
-    Then I expect the board delete
+    Then I expect the board delete:
+      | Title      | DeadBoard test |
 

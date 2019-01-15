@@ -71,7 +71,9 @@ When(/^I go to boards page "([^"]*)"$/, (url) => {
   CommonActions.loadPage(url);
 });
 
-Then(/^I expect the board delete/, () => {
+Then (/^I expect the board delete:$/, (data) => {
   boardPage = new BoardContainer();
-  expect(boardPage.isBoardExisting(titleString)).to.be.false;
+  let boardData = data.rowsHash();
+  expect(boardPage.isBoardExisting(boardData.Title)).to.be.false;
 });
+
