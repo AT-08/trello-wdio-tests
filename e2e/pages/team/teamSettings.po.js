@@ -10,7 +10,7 @@ class teamSettings {
   constructor() {
     this.settingTabPane = '[href*="/teamtestcreation/account"]';
     this.changeVisibilityButton = 'a[class="button-link u-text-align-center"]';
-    this.confirmDeleteTeamButton = 'input[class=.js-confirm';
+    this.confirmDeleteTeamButton = '.js-confirm';
     this.deleteButton = 'a[class="quiet-button"]';
   }
 
@@ -28,7 +28,6 @@ class teamSettings {
    * This method delete the team.
    */
   deleteTeam() {
-    commonActions.click(this.settingTabPane);
     commonActions.click(this.deleteButton);
     commonActions.click(this.confirmDeleteTeamButton);
   }

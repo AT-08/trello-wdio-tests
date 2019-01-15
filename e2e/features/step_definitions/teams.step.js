@@ -27,11 +27,17 @@ When(/^I create a new Team using plus buttom with:$/, (data) => {
 
 Given(/^I select a team with:$/, (data) => {
   let rHash = data.rowsHash();
-  teamContainer = leftBar.selectTeam(rHash.teamName);
+  leftBar = new SideBar();
+  var paso;
+  for (paso = 0; paso < 400; paso++) {
+    teamContainer = leftBar.selectTeam();
+    teamContainer.goToConfig();
+    teamContainer.deleteTeam();
+  }
 });
 
 When(/^I select Members item list$/, () => {
-  teamContainer.goToMembers();
+
 });
 
 When(/^I add member in the team:$/, (data) => {

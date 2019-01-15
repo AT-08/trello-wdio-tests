@@ -16,6 +16,9 @@ class teamContainer {
   constructor() {
     this.createNewBoardButton = '[class*="mod-add"][href="#"]';
     this.membersItemList = '[href*=members]';
+    this.configItemList = '[href*=account]';
+    this.confirmDeleteTeamButton = '.js-confirm';
+    this.deleteButton = 'a[class="quiet-button"]';
   }
 
   /**
@@ -44,6 +47,22 @@ class teamContainer {
   goToMembers() {
     browser.pause(DEFAULT_PAUSE);
     commonActions.click(this.membersItemList);
+  }
+
+  /**
+   * Method for click to Members item list.
+   */
+  goToConfig() {
+    browser.pause(DEFAULT_PAUSE);
+    commonActions.click(this.configItemList);
+  }
+
+  /**
+   * This method delete the team.
+   */
+  deleteTeam() {
+    commonActions.click(this.deleteButton);
+    commonActions.click(this.confirmDeleteTeamButton);
   }
 }
 

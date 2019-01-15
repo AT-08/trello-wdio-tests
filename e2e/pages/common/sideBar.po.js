@@ -54,9 +54,9 @@ class sideBar {
    * @param title input.
    * @returns {teamContainer} .
    */
-  selectTeam(title) {
+  selectTeam() {
     commonActions.pause();
-    var teamNameTab = `//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
+    var teamNameTab = '//ul[@class="tab__tabList__3G31t"]//*[contains(@data-test-id,"home-team-tab-section")]';
     commonActions.click(teamNameTab);
     return new teamContainer();
   }
