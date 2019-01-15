@@ -11,7 +11,6 @@ let teamContainer;
 let members;
 let header;
 let teamBoard;
-let dashboard;
 let dashboardForm;
 
 When(/^I create a new Team with:$/, (data) => {
@@ -28,7 +27,7 @@ When(/^I go to tab Boards/, () => {
 When(/^I create a team board:$/, (data) => {
   dashboardForm = teamBoard.clickCreateBoard();
   let rHash = data.rowsHash();
-  dashboard = dashboardForm.createTeamBoard(rHash);
+dashboardForm.createTeamBoard(rHash);
 
 });
 

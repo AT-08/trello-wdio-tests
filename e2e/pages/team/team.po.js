@@ -4,7 +4,6 @@ const commonActions = require('../../core/ui/commonActions');
 const member = require('../common/members.po');
 const teamSetting = require('./teamSettings.po');
 const teamBoard = require('./teamBoard.po');
-const dashboardForm = require('../dashboard/dashboardForm.po');
 
 /**
  * This is the PO of the team page.
