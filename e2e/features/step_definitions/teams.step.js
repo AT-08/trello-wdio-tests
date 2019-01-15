@@ -4,19 +4,18 @@ const expect = require('chai').expect;
 const SideBar = require('../../pages/common/sideBar.po');
 const TeamForm = require('../../pages/team/teamForm.po');
 const Team = require('../../pages/team/team.po');
+const TeamSettings = require('../../pages/team/teamSettings.po');
 
 let leftBar;
-let team;
 let teamContainer;
 let members;
 let teamForm;
-let header;
 let teamSettings;
 
 When(/^I create a new Team with:$/, (data) => {
   teamForm = new TeamForm();
   let teamData = data.rowsHash();
-  team = teamForm.createTeam(teamData);
+  teamForm.createTeam(teamData);
 });
 
 Given(/^I select a team with:$/, (data) => {
@@ -43,7 +42,7 @@ Then(/^I see the member in Team Members$/, (data) => {
 
 Then(/^I see the new team:$/, (data) => {
   let teamData = data.rowsHash();
-  team = new Team();
+  let team = new Team();
   expect(team.isNameTeam(teamData.teamName)).to.be.true;
 });
 
@@ -54,16 +53,19 @@ Then(/^I see the new team at sidebar:$/, (data) => {
 });
 
 When(/^I select Settings item list:$/, () => {
-  teamSettings = team.goToSettingTab();
+  let team = new Team();
+  team.goToSettingTab();
 });
 
 
 When(/^I change the privacy of the team:$/, (data) => {
   let settingData = data.rowsHash();
+  let teamSettings = new TeamSettings();
   teamSettings.changeVisibility(settingData.privacy);
 });
 
 Then(/^I see the privacy change in team:$/, (data) => {
+  let teamSettings = new TeamSettings()
   let settingData = data.rowsHash();
   expect(teamSettings.verifyChangeprivacy(settingData.privacy)).to.be.true;
 });
