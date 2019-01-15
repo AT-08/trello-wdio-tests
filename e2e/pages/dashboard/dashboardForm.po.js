@@ -16,7 +16,7 @@ class dashboardForm {
     this.submit = 'button[type="submit"]';
   }
 
-  async createBoard(valuesBoard) {
+  createBoard(valuesBoard) {
     const fillValues = {
       'Title': () => this.setTitleBoard(valuesBoard.Title),
       'Privacy': () => this.setAccessBoard(valuesBoard.Privacy),
@@ -24,7 +24,7 @@ class dashboardForm {
     };
 
     browser.call(() => {
-      return Promise.all(Object.keys(valuesBoard).map(async key => {
+      return Promise.all(Object.keys(valuesBoard).map( async key => {
         return fillValues[key].call();
       }));
     });

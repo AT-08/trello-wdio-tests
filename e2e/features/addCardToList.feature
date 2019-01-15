@@ -5,7 +5,7 @@ Feature: Create card in Trello
   Background: Create a board in Trello
     Given I login with "{credentials.owner1}"
     And I create a new Board with:
-      | Title | test Board 24 |
+      | Title | test Board |
     And I create new list with:
       | Title | test list |
 

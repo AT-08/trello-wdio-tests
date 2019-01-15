@@ -28,7 +28,7 @@ class list {
   createCard(cardName) {
     commonActions.waitVisibility(this.addAnotherCardButton);
     commonActions.click(this.addAnotherCardButton);
-    commonActions.waitVisibility(this.cardTitleTextAreaInput)
+    commonActions.waitVisibility(this.cardTitleTextAreaInput);
     commonActions.setValue(this.cardTitleTextAreaInput, cardName);
     commonActions.waitVisibility(this.addCardButton);
     commonActions.click(this.addCardButton);

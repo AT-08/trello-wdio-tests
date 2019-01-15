@@ -14,6 +14,7 @@ class dashboardMenu {
     this.menuMoreCloseBoard = '.js-close-board';
     this.confirmCloseBoard = '.js-confirm.full.negate';
     this.permanentlyDeleteBoardLink = '.quiet.js-delete';
+    this.showMenuLink = '.js-show-sidebar';
   }
 
   deleteBoard() {
@@ -22,6 +23,12 @@ class dashboardMenu {
     commonActions.click(this.confirmCloseBoard);
     commonActions.click(this.permanentlyDeleteBoardLink);
     commonActions.click(this.confirmCloseBoard);
+  }
+
+  clickShowMenu () {
+    if(!browser.isExisting(this.menuMoreItem)) {
+      commonActions.click(this.showMenuLink);
+    }
   }
 
   closeBoard() {

@@ -31,10 +31,10 @@ Given(/^I select the board with:$/, (dataTable) => {
   dashboard = boardContainer.selectBoard(titleString);
 });
 
-When(/^I create a new Board with:$/, async (dataTable) => {
+When(/^I create a new Board with:$/, (dataTable) => {
   let board = new BoardContainer();
   boardForm = board.onClickNewBoard();
-  await boardForm.createBoard(dataTable.rowsHash());
+  boardForm.createBoard(dataTable.rowsHash());
 });
 
 Then(/^I expect my board created$/, () => {
@@ -55,6 +55,12 @@ Then(/^I see the member in board Members$/, (data) => {
   let memberData = data.rowsHash();
   expect(member.isMemberDashboard(memberData.user)).to.be.true;
 });
+
+When(/^I click in ShowMenu link/, () => {
+  boardMenu = new BoardMenu();
+  boardMenu.clickShowMenu();
+});
+
 
 When(/^I delete it/, () => {
   boardMenu = new BoardMenu();
