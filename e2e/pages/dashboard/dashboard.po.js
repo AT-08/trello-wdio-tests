@@ -48,7 +48,7 @@ class dashboard {
 
   isCreatedList(title) {
     commonActions.pause();
-    return browser.isExisting(`//div[contains(@class,"js-list-header")]//*[contains(text(),"${title}")]`);
+    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
   }
 
   /**
