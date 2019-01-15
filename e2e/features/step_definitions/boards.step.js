@@ -82,4 +82,3 @@ Then(/^I should see the list in the board:$/, (dataTable) => {
   let rHash = dataTable.rowsHash();
   expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
 });
-

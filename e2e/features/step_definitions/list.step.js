@@ -59,3 +59,10 @@ Then(/^I don't expect list in board:$/, (dataTable) => {
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.false;
 });
+
+When(/^I move the list to the my board:$/, (data) => {
+  list = new List();
+  let BoardSet = data.rowsHash();
+  list.clickListAction().moveList(BoardSet);
+});
+
