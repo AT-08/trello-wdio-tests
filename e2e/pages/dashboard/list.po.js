@@ -39,7 +39,6 @@ class list {
    * @returns {card} Page Object.
    */
   selectCard(cardName, listTitle) {
-    browser.pause(DEFAULT_PAUSE);
     let cardOfList = `//textarea[@aria-label="${listTitle}"]
                       /ancestor::div[contains(@class, 'js-list-content')]
                       /descendant::span[contains(text(), "${cardName}")]`;

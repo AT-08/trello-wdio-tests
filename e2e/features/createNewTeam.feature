@@ -7,13 +7,13 @@ Feature: Create a Team in Trello
 
   Scenario: Create a Team
     When I create a new Team with:
-      | teamName    | AT-08-Team1 |
+      | teamName    | AT-08-Team |
       | description | any         |
     And I go to Trello main page
     Then I see the new team:
-      | teamName | AT-08-Team1 |
+      | teamName | AT-08-Team|
     And I select a team with:
-      | teamName | AT-08-Team1 |
+      | teamName | AT-08-Team |
 
   Scenario: Create a Team 1
     When I create a new Team using plus buttom with:

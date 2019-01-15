@@ -53,6 +53,23 @@ Then(/^I see the new team:$/, (data) => {
   expect(leftBar.existingTeam(teamData.teamName)).to.be.true;
 });
 
+When(/^I select Settings item list:$/, () => {
+  teamSettings = team.goToSettingTab();
+});
+
+
+When(/^I change the privacy of the team:$/, (data) => {
+  let settingData = data.rowsHash();
+  teamSettings.changeVisibility(settingData.privacy);
+});
+
+Then(/^I see the privacy change in team:$/, (data) => {
+  let settingData = data.rowsHash();
+  expect(teamSettings.verifyChangeprivacy(settingData.privacy)).to.be.true;
+});
+
+
+
 When(/^I select the Team with:$/, (data) => {
   leftBar = new SideBar();
   let rHash = data.rowsHash();
