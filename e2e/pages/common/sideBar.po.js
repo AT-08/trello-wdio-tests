@@ -61,8 +61,9 @@ class sideBar {
   }
 
   existingTeam(name) {
-    commonActions.waitVisibility(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
-    return browser.isExisting(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
+    var team = `//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
+    commonActions.waitVisibility(team);
+    return browser.isExisting(team);
   }
 }
 
