@@ -10,7 +10,6 @@ let leftBar;
 let teamContainer;
 let members;
 let teamForm;
-let teamSettings;
 
 When(/^I create a new Team with:$/, (data) => {
   teamForm = new TeamForm();
@@ -29,12 +28,14 @@ When(/^I select Members item list$/, () => {
 });
 
 When(/^I add member in the team:$/, (data) => {
+  let team = new Team();
   members = team.inviteMember();
   let memberData = data.rowsHash();
   members.addAMember(memberData);
 });
 
 Then(/^I see the member in Team Members$/, (data) => {
+  let team = new Team();
   let memberData = data.rowsHash();
   expect(team.isMember(memberData.user)).to.be.true;
   team.removeMember();
@@ -57,7 +58,6 @@ When(/^I select Settings item list:$/, () => {
   team.goToSettingTab();
 });
 
-
 When(/^I change the privacy of the team:$/, (data) => {
   let settingData = data.rowsHash();
   let teamSettings = new TeamSettings();
@@ -65,7 +65,7 @@ When(/^I change the privacy of the team:$/, (data) => {
 });
 
 Then(/^I see the privacy change in team:$/, (data) => {
-  let teamSettings = new TeamSettings()
+  let teamSettings = new TeamSettings();
   let settingData = data.rowsHash();
   expect(teamSettings.verifyChangeprivacy(settingData.privacy)).to.be.true;
 });
