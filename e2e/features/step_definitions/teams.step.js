@@ -10,6 +10,7 @@ let team;
 let teamContainer;
 let members;
 let header;
+let teamSettings;
 
 When(/^I create a new Team with:$/, (data) => {
   leftBar = new SideBar();
@@ -50,4 +51,19 @@ Then(/^I see the new team:$/, (data) => {
   let teamData = data.rowsHash();
   leftBar = new SideBar();
   expect(leftBar.existingTeam(teamData.teamName)).to.be.true;
+});
+
+When(/^I select the Team with:$/, (data) => {
+  leftBar = new SideBar();
+  let rHash = data.rowsHash();
+  teamContainer = leftBar.selectTeam(rHash.teamName);
+  team = teamContainer.goToSetings();
+});
+
+When(/^I go to settings$/, () => {
+  teamSettings = team.clickSettings();
+});
+
+When(/^I delete the team$/, () => {
+  teamSettings.deleteTeam();
 });

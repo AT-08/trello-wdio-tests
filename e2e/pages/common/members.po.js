@@ -10,7 +10,7 @@ class members {
     this.findMemberInputText = 'input[class="autocomplete-input"]';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
-    this.inviteButton = 'span[class="icon-sm icon-add-member board-header-btn-icon"]';
+    this.inviteButton = 'a[title="Invite To Board"]';
   }
 
   /**
@@ -19,6 +19,7 @@ class members {
    */
   addAMember(data) {
     if (browser.isVisible(this.inviteButton)) {
+      console.log("there will be a click");
       commonActions.click(this.inviteButton);
     }
     this.fillDataMember(data);

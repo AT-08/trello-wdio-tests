@@ -48,6 +48,11 @@ class team {
     commonActions.click('a[class="option button-link remove-button"]');
     commonActions.click('.js-soft-remove');
   }
+
+  clickSettings() {
+    commonActions.click('.tabbed-pane-nav-item-button.js-org-account');
+    return new teamSetting();
+  }
 }
 
 module.exports = team;

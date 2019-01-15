@@ -5,9 +5,11 @@ const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 const BoardMenu = require('../../pages/dashboard/dashboardMenu.po');
+const SideBar = require('../../pages/common/sideBar.po');
 
 const CommonActions = require('../../core/ui/commonActions');
 
+let leftBar;
 let dashboard;
 let dashboardForm;
 let titleString;
@@ -68,4 +70,12 @@ When(/^I go to boards page "([^"]*)"$/, (url) => {
 Then(/^I expect the board delete/, () => {
   boardPage = new BoardContainer();
   expect(boardPage.isBoardExisting(titleString)).to.be.false;
+});
+
+Then(/^I expect the Team delete$/, (data) => {
+  leftBar = new SideBar();
+  boardPage = new BoardContainer();
+  let rHash = data.rowsHash();
+  let titleString = rHash.teamName;
+  expect(leftBar.existingTeam(titleString)).to.be.false;
 });
