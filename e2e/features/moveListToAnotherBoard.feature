@@ -2,7 +2,7 @@
 Feature: Create list in Trello
 
   Background: Create a board in Trello
-    Given I login with "{credentials.owner1}"
+    Given I login with "{credentials.member1}"
     And I create a new Board with:
       | Title      | FirstBoardX4 |
     And I go to Trello main page
