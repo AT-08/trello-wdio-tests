@@ -69,3 +69,9 @@ Then(/^I expect the board delete/, () => {
   boardPage = new BoardContainer();
   expect(boardPage.isBoardExisting(titleString)).to.be.false;
 });
+
+Then(/^I should see the list in the board:$/, (dataTable) => {
+  dashboard = new Dashboard();
+  let rHash = dataTable.rowsHash();
+  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+});
