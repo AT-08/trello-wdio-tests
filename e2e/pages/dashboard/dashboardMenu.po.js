@@ -32,7 +32,7 @@ class dashboardMenu {
   }
 
   menuMain(){
-      commonActions.click(this.menuMainlink);
+    browser.url('https://trello.com/jorgeflores129/boards');
   }
 
 }
