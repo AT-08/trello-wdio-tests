@@ -36,7 +36,7 @@ class team {
   /**
    * This method verifies if exists a member in the team.
    *
-   * @param member To verify.
+   * @param imput member To verify.
    */
   isMember(member) {
     commonActions.click(this.membersTabPane);
