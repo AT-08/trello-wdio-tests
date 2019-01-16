@@ -33,6 +33,7 @@ class teamSettings {
    * This method delete the team.
    */
   deleteTeam() {
+    commonActions.waitVisibility('div[class="org-bc-settings-ad-logo"]');
     commonActions.click(this.deleteButton);
     commonActions.click(this.confirmDeleteTeamButton);
   }
