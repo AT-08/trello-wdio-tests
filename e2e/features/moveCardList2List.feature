@@ -6,7 +6,8 @@ Feature: Move an existing card
 
   Background: I create a new board in Trello, with 2 lists and one card in only a list
     Given I login with "{credentials.owner1}"
-    When I create a new Board with:
+    And I click on link create new board from home page
+    And I create a new Board with:
       | Title   | FinalBoard |
     And I create new list with:
       | Title | To Do |
