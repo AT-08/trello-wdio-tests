@@ -10,6 +10,7 @@ let team;
 let teamContainer;
 let members;
 let header;
+let teamSettings;
 
 When(/^I create a new Team with:$/, (data) => {
   leftBar = new SideBar();
@@ -51,3 +52,20 @@ Then(/^I see the new team:$/, (data) => {
   leftBar = new SideBar();
   expect(leftBar.existingTeam(teamData.teamName)).to.be.true;
 });
+
+When(/^I select Settings item list:$/, () => {
+  teamSettings = team.goToSettingTab();
+});
+
+
+When(/^I change the privacy of the team:$/, (data) => {
+  let settingData = data.rowsHash();
+  teamSettings.changeVisibility(settingData.privacy);
+});
+
+Then(/^I see the privacy change in team:$/, (data) => {
+  let settingData = data.rowsHash();
+  expect(teamSettings.verifyChangeprivacy(settingData.privacy)).to.be.true;
+});
+
+
