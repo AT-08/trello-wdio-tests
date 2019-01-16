@@ -72,6 +72,12 @@ Then(/^I expect the board delete/, () => {
   expect(boardPage.isBoardExisting(titleString)).to.be.false;
 });
 
+Then(/^I should see the list in the board:$/, (dataTable) => {
+  dashboard = new Dashboard();
+  let rHash = dataTable.rowsHash();
+  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+});
+
 Then(/^I expect the Team delete$/, (data) => {
   leftBar = new SideBar();
   boardPage = new BoardContainer();

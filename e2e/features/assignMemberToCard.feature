@@ -10,6 +10,8 @@ Feature: Card
       | Title | Test assing member |
     And I create new list with:
       | Title | Test list |
+    Given I select a list with:
+      | Title | Test list |
     And I create a card with:
       | CardTitle | card Test |
 

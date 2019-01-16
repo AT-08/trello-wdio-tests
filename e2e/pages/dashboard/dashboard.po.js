@@ -48,6 +48,10 @@ class dashboard {
     return new dashboardMenu();
   }
 
+  /**
+   * Method verify if exist list
+   * @param list name.
+   */
   isCreatedList(title) {
     commonActions.pause();
     return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);

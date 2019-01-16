@@ -6,7 +6,7 @@ const card = require('../card/card.po');
 const listActions = require('../dashboard/listActions.po');
 const Header = require('../common/header.po');
 
-const DEFAULT_PAUSE = 2000;
+const DEFAULT_PAUSE = 1000;
 
 /**
  * PageObject for a list in the dashboard.
@@ -39,6 +39,7 @@ class list {
    * @returns {card} Page Object.
    */
   selectCard(cardName, listTitle) {
+    browser.pause(DEFAULT_PAUSE);
     let cardOfList = `//textarea[@aria-label="${listTitle}"]
                       /ancestor::div[contains(@class, 'js-list-content')]
                       /descendant::span[contains(text(), "${cardName}")]`;
