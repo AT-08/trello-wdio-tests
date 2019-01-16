@@ -26,7 +26,6 @@ class list {
    * This method create a card in a list.
    */
   createCard(cardName) {
-    commonActions.waitVisibility(this.addAnotherCardButton);
     commonActions.click(this.addAnotherCardButton);
     commonActions.waitVisibility(this.cardTitleTextAreaInput);
     commonActions.setValue(this.cardTitleTextAreaInput, cardName);

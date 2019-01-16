@@ -10,16 +10,16 @@ Feature: Assign member to card.
     And I search a Board with:
       | Title | Test assing member |
     And I create new list with:
-      | Title | Test list |
+      | Title | Test list3 |
     And I create a card with:
-      | CardTitle | card Test |
+      | CardTitle | card Test1 |
     And I invite a member to the board:
       | user | {credentials.member1} |
 
   Scenario: Assign Member to Card
     When I select the card:
-      | CardTitle | card Test |
-      | ListTitle | Test list |
+      | CardTitle | card Test1 |
+      | ListTitle | Test list3 |
     And I assign a member to the card:
       | user | {credentials.member1} |
     Then I see the assigned member on the form card

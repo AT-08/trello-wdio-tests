@@ -9,6 +9,6 @@ Feature: Add list in board.
 
   Scenario: add list to existing board
     When I create new list with:
-      | Title | test list |
+      | Title | test list1 |
     Then I expect list created in board
-      | Title | test list |
+      | Title | test list1|
