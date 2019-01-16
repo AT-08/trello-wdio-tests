@@ -5,7 +5,7 @@ Feature: Archive an list in existing board
   Background: I archive a list in existing board
     Given I login with "{credentials.owner1}"
     And I click on link create new board from home page
-    And I create a new Board with:
+    And I create a new board with:
       | Title | Board Test |
     And I create new list with:
       | Title | test list2 |
