@@ -36,7 +36,9 @@ class boardContainer {
   }
 
   isBoardExisting(title) {
-    return commonActions.getText(this.titleBoard) === title;
+    let boardTitle = `div[title="${title}"]`;
+    commonActions.waitVisibility(this.createNewBoardButton);
+    return browser.isVisible(boardTitle);
   }
 
   getTitleBoard() {

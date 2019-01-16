@@ -13,7 +13,7 @@ class dashboardForm {
     this.visibilityButton = 'button[class="subtle-chooser-trigger unstyled-button vis-chooser-trigger"]';
     this.publicButton = 'span[class="icon-sm icon-public"]';
     this.confirmPublicButton = 'input[class="js-confirm full primary"]';
-    this.submit = 'button[type="submit"]';
+    this.submit = 'button.primary';
   }
 
   createBoard(valuesBoard) {
@@ -23,8 +23,10 @@ class dashboardForm {
       'Background': () => this.setBackgroundBoard(valuesBoard.Background)
     };
 
-    Object.keys(valuesBoard).forEach(key => {
-      fillValues[key].call();
+    browser.call(() => {
+      return Promise.all(Object.keys(valuesBoard).map( async key => {
+        return fillValues[key].call();
+      }));
     });
 
     commonActions.click(this.submit);

@@ -37,7 +37,7 @@ When(/^I assign a member to the card:$/, (data) => {
   cardMember.addMember(memberData);
 });
 
-Then(/^I see the assigned member on the form$/, (data) => {
+Then(/^I see the assigned member on the form card$/, (data) => {
   let memberData = data.rowsHash();
   expect(cardMember.isMember(memberData.user)).to.be.true;
 });

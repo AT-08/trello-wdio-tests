@@ -1,19 +1,16 @@
 #trello.feature
+@bvt
 Feature: Create Board in Trello
   As a User
   I want to create board in Trello
 
   Background: Create a Board in Trello
     Given I login with "{credentials.owner1}"
-    When I create a new Board with:
+    And I click on link create new board from home page
+    And I create a new Board with:
       | Title      | inviteMemberTest |
-      | Privacy    | Public        |
-      | Background | orange        |
-    And  I go to Trello main page
 
-  Scenario: invite member to the board
-    Given I select a board with:
-      | Title | inviteMemberTest |
+  Scenario: Invite member to the board
     When I select Members button
     And I add member in the board:
       | user | {credentials.member1} |
