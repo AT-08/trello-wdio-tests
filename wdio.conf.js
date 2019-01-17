@@ -11,7 +11,7 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './e2e/features/**/*.feature'
+    './e2e/features/deleteExistingBoard.feature'
   ],
   // Patterns to exclude.
   exclude: [
@@ -146,7 +146,7 @@ exports.config = {
     profile: [],        // <string[]> (name) specify the profile to use
     strict: false,      // <boolean> fail if there are any undefined or pending steps
     tagExpression: environment.tags,   // <string[]> (expression) only execute the features or scenarios with tags matching the expression
-    timeout: 240000,    // <number> timeout for step definitions
+    timeout: 2240000,    // <number> timeout for step definitions
     ignoreUndefinedDefinitions: true, // <boolean> Enable this config to treat undefined definitions as warnings.
   },
 
