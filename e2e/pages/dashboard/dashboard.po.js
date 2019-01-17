@@ -65,6 +65,29 @@ class dashboard {
                       /ancestor::div[contains(@class, 'js-list-content')]`);
   }
 
+  verifyMoveList(moveSet) {
+    let rightList = true;
+    let rightPosition = true;
+    const move = {
+      'ListTitle': () => rightList = this.verifyList(moveSet.ListTitle),
+      'Position': () => rightPosition = this.verifyPosition(moveSet.Position)
+    };
+    Object.keys(moveSet).forEach(key => {
+      move[key].call();
+    });
+    return rightList && rightPosition;
+  }
+
+  verifyList(nameList) {
+    let cardOfList = `//textarea[@aria-label="${nameList}"]
+                      /ancestor::div[contains(@class, 'js-list-content')]`;
+    return browser.isExisting(cardOfList);
+  }
+
+  verifyPosition(position) {
+    return position;
+  }
+
 
 }
 

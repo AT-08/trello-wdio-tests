@@ -84,6 +84,6 @@ Then (/^I expect the board delete:$/, (data) => {
 
 Then(/^I should see the list in the board:$/, (dataTable) => {
   dashboard = new Dashboard();
-  let rHash = dataTable.rowsHash();
-  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+  let origin = data.rowsHash();
+  expect(dashboard.verifyMoveList(origin)).to.be.true;
 });
