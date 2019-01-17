@@ -15,9 +15,9 @@ Feature: Create list in Trello
       | Title | ListFirstMLTABF |
   Scenario: As a user owner change list to other board
     When I move the list to the my board:
-      | BoardTitle | SecondBoardMLTABF|
+      | BoardTitle | SecondBoardMLTABF |
     And I go to Trello main page
     And I select a board in Boards Drawer with:
-      | Title | SecondBoardMLTABF|
+      | Title | SecondBoardMLTABF |
     Then I should see the list in the board:
       | Title | ListFirstMLTABF |
