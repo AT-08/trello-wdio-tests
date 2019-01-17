@@ -2,7 +2,7 @@
 @bvt
 Feature: Create A New Board In An Existing Team
   Background: I create a new Team
-    Given I login with "{credentials.ownerJF}"
+    Given I login with "{credentials.owner1}"
     And I click the create Team link from sidebar
     And I create a new Team with:
       | teamName    | TeamCANBIANET |
