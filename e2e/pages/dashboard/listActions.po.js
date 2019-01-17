@@ -37,6 +37,7 @@ class listActions {
    * This method move the list.
    */
   setMoveList(data2change) {
+    commonActions.pause();
     const move = {
       'BoardTitle': () => this.changeBoard(data2change.BoardTitle),
       'Position': () => this.setPosition(data2change.Position) };
@@ -49,6 +50,7 @@ class listActions {
    * This method gives the board new  to the list.
    */
   changeBoard(nameBoard) {
+    commonActions.pause();
     const sb = $(this.btnSelectBoard);
     sb.selectByVisibleText(`${nameBoard}`);
   }
