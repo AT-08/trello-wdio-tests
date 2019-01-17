@@ -41,7 +41,9 @@ When(/^I create a new Board with:$/, (dataTable) => {
 });
 
 Then(/^I expect my board created$/, () => {
-  Dashboard.showMenu();
+  boardPage = new BoardContainer();
+  let boardData = data.rowsHash();
+  expect(boardPage.isBoardExisting(boardData.Title)).to.be.true;
 });
 
 When(/^I select Members button$/, () => {

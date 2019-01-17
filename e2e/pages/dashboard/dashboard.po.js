@@ -51,8 +51,9 @@ class dashboard {
    * @param list name.
    */
   isCreatedList(title) {
-    commonActions.pause();
-    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
+    var list = `//textarea[contains(text(),"${title}")]`;
+    commonActions.waitVisibility(list);
+    return browser.isExisting(list);
   }
 
   /**
