@@ -17,7 +17,7 @@ class sideBar {
     this.createTeamButton = 'button[class="tab__tabButton__37WIj tab__quiet__ed4jD"]';
     this.selectedBoardButton = '[href*="/boards"]';
     this.selectedHomeButton = '.tab__tabLink__3C9rw.tab__selected__1gsiC"]';
-
+    this.classCreateTeamButton = '.tab__tabButton__37WIj.tab__quiet__ed4jD';
   }
 
   /**
@@ -25,8 +25,8 @@ class sideBar {
    * @returns {teamForm} .
    */
   clickCreateTeamLink() {
-    commonActions.waitVisibility(this.createTeamButton);
-    commonActions.click(this.createTeamButton);
+    commonActions.waitVisibility(this.classCreateTeamButton);
+    commonActions.click(this.classCreateTeamButton);
     return new teamForm();
   }
 
