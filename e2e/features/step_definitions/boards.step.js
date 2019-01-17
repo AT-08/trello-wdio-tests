@@ -40,9 +40,9 @@ When(/^I create a new Board with:$/, (dataTable) => {
   boardForm.createBoard(dataTable.rowsHash());
 });
 
-Then(/^I expect my board created$/, () => {
+Then(/^I expect my board created$/, (dataTable) => {
   boardPage = new BoardContainer();
-  let boardData = data.rowsHash();
+  let boardData = dataTable.rowsHash();
   expect(boardPage.isBoardExisting(boardData.Title)).to.be.true;
 });
 
@@ -84,6 +84,6 @@ Then (/^I expect the board delete:$/, (data) => {
 
 Then(/^I should see the list in the board:$/, (dataTable) => {
   dashboard = new Dashboard();
-  let origin = data.rowsHash();
+  let origin = dataTable.rowsHash();
   expect(dashboard.verifyMoveList(origin)).to.be.true;
 });
