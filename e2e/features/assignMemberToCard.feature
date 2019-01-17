@@ -3,7 +3,7 @@ Feature: Card
 
   Background: Prepare a List
     Given I login with "{credentials.owner1}"
-    When I create a new Board with:
+    When I create a new board with:
       | Title | Test assing member |
     And I go to Trello main page
     And I search a Board with:
