@@ -29,11 +29,6 @@ Given(/^I select the board with:$/, (dataTable) => {
   dashboard = boardContainer.selectBoard(titleString);
 });
 
-/*Given(/^I click on link create new board from home page$/, () => {
-  let board = new BoardContainer();
-  board.onClickNewBoard();
-});*/
-
 When(/^I create a new Board with:$/, (dataTable) => {
   let boardForm = new DashboardForm();
   boardForm.createBoard(dataTable.rowsHash());
