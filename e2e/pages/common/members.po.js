@@ -65,7 +65,7 @@ class members {
 
   isMemberDashboard(member) {
     let memberName = commonActions.getUserFromKey(member);
-    commonActions.pause();
+    commonActions.waitVisibility(`[title*="${memberName.username}"]`);
     return browser.isExisting(`[title*="${memberName.username}"]`);
   }
 }

@@ -24,7 +24,7 @@ class sideBar {
    * This method as create team.
    * @returns {teamForm} .
    */
-  createTeam() {
+  clickCreateTeamLink() {
     commonActions.waitVisibility(this.createTeamButton);
     commonActions.click(this.createTeamButton);
     return new teamForm();
@@ -55,15 +55,15 @@ class sideBar {
    * @returns {teamContainer} .
    */
   selectTeam(title) {
-    commonActions.pause();
     var teamNameTab = `//*[contains(text(),"${title}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
     commonActions.click(teamNameTab);
     return new teamContainer();
   }
 
   existingTeam(name) {
-    commonActions.pause();
-    return browser.isExisting(`//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`);
+    var team = `//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
+    commonActions.waitVisibility('div[class="section-header__text__1SpVs"]');
+    return browser.isExisting(team);
   }
 }
 

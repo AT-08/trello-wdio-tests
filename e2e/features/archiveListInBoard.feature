@@ -1,19 +1,18 @@
 #trello.feature
+@wip
 Feature: Archive an list in existing board
 
   Background: I archive a list in existing board
     Given I login with "{credentials.owner1}"
-    When I create a new Board with:
-      | Title | DeathBoard1 |
+    And I click on link create new board from home page
+    And I create a new Board with:
+      | Title | Board Test |
     And I create new list with:
-      | Title | test list1 |
+      | Title | test list2 |
 
   Scenario: I archive a list in existing board
-    Given I go to Trello main page
-    When I select a board with:
-      | Title | DeathBoard1 |
-    And I select a list with:
-      | Title | test list1 |
+    When I select a list with:
+      | Title | test list2 |
     And I archive this list
     Then I don't expect list in board:
-      | Title | test list1 |
+      | Title | test list2 |

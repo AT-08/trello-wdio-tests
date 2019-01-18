@@ -4,7 +4,8 @@ Feature: change team privacy
 
   Background: Create a team in Trello
     Given I login with "{credentials.owner1}"
-    When I create a new Team with:
+    When I click the create Team link from sidebar
+    And I create a new Team with:
       | teamName    | AT-08-Team1 |
       | description | any         |
 

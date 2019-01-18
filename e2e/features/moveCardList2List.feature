@@ -1,14 +1,14 @@
 #trello.feature
-@bvt
+@wip
 Feature: Move an existing card
   As a user
   I want to move a card from a list to another list in the same board
 
   Background: I create a new board in Trello, with 2 lists and one card in only a list
     Given I login with "{credentials.owner1}"
-    When I create a new Board with:
-      | Title      | FinalBoard    |
-      | Privacy    | Public        |
+    And I click on link create new board from home page
+    And I create a new Board with:
+      | Title   | FinalBoard |
     And I create new list with:
       | Title | To Do |
     And I create new list with:

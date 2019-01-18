@@ -44,6 +44,11 @@ class team {
             /descendant::span[contains(@title,"${memberName.username}")]`);
   }
 
+  isNameTeam(nameTeam) {
+    commonActions.waitVisibility(`//h1[contains(text(),"${nameTeam}")]`);
+    return browser.isExisting(`//h1[contains(text(),"${nameTeam}")]`);
+  }
+
   /**
    * this method remove member.
    */

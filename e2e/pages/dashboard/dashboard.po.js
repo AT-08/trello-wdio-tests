@@ -63,10 +63,9 @@ class dashboard {
    */
   selectList(list) {
     commonActions.click(`//textarea[@aria-label="${list}"]
-                      /ancestor::div[contains(@class, 'js-list-content')]`);
+                      /ancestor::div[contains(@class, 'list js-list-content')]
+                      /descendant::a[contains(@class, '.list-header-extras-menu')]`);
   }
-
-
 }
 
 module.exports = dashboard;
