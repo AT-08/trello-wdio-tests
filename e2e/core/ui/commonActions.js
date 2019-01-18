@@ -2,8 +2,8 @@
 
 const config = require('../../../environment.json');
 
-const EXPLICIT_TIMEOUT = 120000;
-const DEFAULT_PAUSE = 1000;
+const EXPLICIT_TIMEOUT = 240000;
+const DEFAULT_PAUSE = 2000;
 
 /**
  * CommonActions class with common actions methods.

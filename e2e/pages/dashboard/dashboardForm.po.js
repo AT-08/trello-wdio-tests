@@ -9,11 +9,11 @@ const dashboard = require('./dashboard.po.js');
 class dashboardForm {
 
   constructor() {
-    this.titleBoard = 'input[class="subtle-input"]';
+    this.titleBoard = '//input[@class="subtle-input"]';
     this.visibilityButton = 'button[class="subtle-chooser-trigger unstyled-button vis-chooser-trigger"]';
     this.publicButton = 'span[class="icon-sm icon-public"]';
     this.confirmPublicButton = 'input[class="js-confirm full primary"]';
-    this.submit = 'button.primary';
+    this.submit = '//button[@class="primary"][@type="submit"]';
   }
 
   createBoard(valuesBoard) {
@@ -24,7 +24,7 @@ class dashboardForm {
     };
 
     browser.call(() => {
-      return Promise.all(Object.keys(valuesBoard).map( async key => {
+      return Promise.all(Object.keys(valuesBoard).map(async key => {
         return fillValues[key].call();
       }));
     });
@@ -33,6 +33,25 @@ class dashboardForm {
     commonActions.waitInvisibility(this.submit);
     return new dashboard();
   }
+
+
+  createTeamBoard(valuesBoard) {
+    const fillValues = {
+      'Title': () => this.setTitleBoard(valuesBoard.Title),
+      'Privacy': () => this.setAccessBoard(valuesBoard.Privacy),
+      'Background': () => this.setBackgroundBoard(valuesBoard.Background)
+    };
+    Object.keys(valuesBoard).forEach(key => {
+      fillValues[key].call();
+
+    });
+
+    commonActions.waitVisibility(this.submit);
+    commonActions.click(this.submit);
+    commonActions.waitInvisibility(this.submit);
+    return new dashboard();
+  }
+
 
   setTitleBoard(name) {
     commonActions.waitVisibility(this.visibilityButton);
@@ -50,6 +69,7 @@ class dashboardForm {
       commonActions.click(this.publicButton);
       commonActions.click(this.confirmPublicButton);
     }
+
   }
 
   searchBoard(title) {

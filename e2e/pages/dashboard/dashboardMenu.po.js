@@ -18,6 +18,7 @@ class dashboardMenu {
   }
 
   deleteBoard() {
+    commonActions.waitVisibility(this.menuMoreItem);
     commonActions.click(this.menuMoreItem);
     commonActions.click(this.menuMoreCloseBoard);
     commonActions.click(this.confirmCloseBoard);
