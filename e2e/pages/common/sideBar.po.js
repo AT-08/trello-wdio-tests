@@ -62,7 +62,7 @@ class sideBar {
 
   existingTeam(name) {
     var team = `//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
-    commonActions.waitVisibility(team);
+    commonActions.waitVisibility('div[class="section-header__text__1SpVs"]');
     return browser.isExisting(team);
   }
 }

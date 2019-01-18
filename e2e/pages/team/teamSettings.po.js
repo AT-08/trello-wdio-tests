@@ -10,8 +10,8 @@ class teamSettings {
   constructor() {
     this.settingTabPane = '[href*="/teamtestcreation/account"]';
     this.changeVisibilityButton = 'a[class="button-link u-text-align-center"]';
-    this.confirmDeleteTeamButton = 'input[class=.js-confirm';
-    this.deleteButton = 'a[class="quiet-button"]';
+    this.confirmDeleteTeamButton = 'input[class="js-confirm full negate"]';
+    this.deleteButton = 'div[class="window-module u-gutter"]';
   }
 
   /**
@@ -33,7 +33,7 @@ class teamSettings {
    * This method delete the team.
    */
   deleteTeam() {
-    commonActions.click(this.settingTabPane);
+    commonActions.waitVisibility('div[class="org-bc-settings-ad-logo"]');
     commonActions.click(this.deleteButton);
     commonActions.click(this.confirmDeleteTeamButton);
   }

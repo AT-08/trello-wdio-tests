@@ -1,5 +1,5 @@
 #trello.feature
-@bvt
+@wip
 Feature: Assign member to card.
 
   Background: Prepare a List

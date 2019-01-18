@@ -67,6 +67,11 @@ class team {
     return new teamSetting();
   }
 
+
+  clickSettings() {
+    commonActions.click('.tabbed-pane-nav-item-button.js-org-account');
+    return new teamSetting();
+  }
 }
 
 module.exports = team;
