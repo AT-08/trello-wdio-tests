@@ -86,8 +86,7 @@ class CommonActions {
     try {
       var keys = textInBrackets.match(/{([^)]+)}/)[1].split('.');
       let credentials = config[keys[0]];
-      var dateTime = new String("dateTime");
-        return credentials[keys[1]] == dateTime ? credentials[keys[1]].concat(new Date().getUTCMilliseconds()) : credentials[keys[1]];
+        return credentials[keys[1]];
     } catch (e) {
       throw `Isnt a key="${textInBrackets}"`;
     }
