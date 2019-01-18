@@ -37,7 +37,6 @@ class listActions {
    * This method move the list.
    */
   setMoveList(data2change) {
-    commonActions.pause();
     const move = {
       'BoardTitle': () => this.changeBoard(data2change.BoardTitle),
       'Position': () => this.setPosition(data2change.Position) };
