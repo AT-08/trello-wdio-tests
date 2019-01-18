@@ -13,4 +13,3 @@ Feature: Delete an existing board
     And I go to Trello main page
     Then I expect the board delete:
       | Title      | DeadBoard test |
-

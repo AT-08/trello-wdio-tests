@@ -1,5 +1,5 @@
 #trello.feature
-@bvt
+@wip
 Feature: Delete member of the team
 
   Background: Add member to team
