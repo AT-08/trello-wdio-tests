@@ -40,6 +40,11 @@ class dashboard {
     return new member();
   }
 
+
+  deleteMember2() {
+    commonActions.click('a[class="option button-link remove-button"]');
+    commonActions.click('.js-soft-remove');
+  }
   /**
    * This method shows the menu option.
    * @returns {dashboardMenu} Class dashboardMenu.

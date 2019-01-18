@@ -76,7 +76,7 @@ When(/^I go to boards page "([^"]*)"$/, (url) => {
   CommonActions.loadPage(url);
 });
 
-Then (/^I expect the board delete:$/, (data) => {
+Then(/^I expect the board delete:$/, (data) => {
   boardPage = new BoardContainer();
   let boardData = data.rowsHash();
   expect(boardPage.isBoardExisting(boardData.Title)).to.be.false;
@@ -94,4 +94,14 @@ Then(/^I expect the Team delete$/, (data) => {
   let rHash = data.rowsHash();
   let titleString = rHash.teamName;
   expect(leftBar.existingTeam(titleString)).to.be.false;
+});
+When(/^I delete member to board$/, (data) => {
+  dashboard = new Dashboard();
+  dashboard.deleteMember2(data);
+});
+
+
+Then(/^I don't see the member in board Members$/, (data) => {
+  let memberData = data.rowsHash();
+  expect(member.isMemberDashboard(memberData.user)).to.be.false;
 });
