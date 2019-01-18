@@ -11,6 +11,7 @@ class members {
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
     this.deleteMemberButton = '.option.button-link.remove-button';
+    this.deleteConfirmButton = '.js-soft-remove';
   }
 
   /**
@@ -72,8 +73,7 @@ class members {
 
   deleteMember() {
     commonActions.click(this.deleteMemberButton);
-    this.deleteButton = ".js-soft-remove";
-    commonActions.click(this.deleteButton);
+    commonActions.click(this.deleteConfirmButton);
   }
 
   verifyMember(data) {
