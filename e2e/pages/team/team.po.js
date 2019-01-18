@@ -24,6 +24,13 @@ class team {
   }
 
   /**
+   * This method delete a member to the team.
+   */
+  newMember() {
+    return new member();
+  }
+
+  /**
    * This method edit the current team.
    */
   editTeam() {
@@ -37,12 +44,11 @@ class team {
    * @param member To verify.
    */
   isMember(member) {
-    commonActions.click(this.membersTabPane);
-    let memberName = commonActions.getUserFromKey(member);
+    let memberName = commonActions.getUserFromKey(member.user);
     commonActions.pause();
-    return browser.isExisting(`//div[@class="member-list-item-detail"]
-            /descendant::span[contains(@title,"${memberName.username}")]`);
+    return browser.isExisting(`//*[contains(text(),"${memberName.username}")]`);
   }
+
 
   isNameTeam(nameTeam) {
     commonActions.waitVisibility(`//h1[contains(text(),"${nameTeam}")]`);
