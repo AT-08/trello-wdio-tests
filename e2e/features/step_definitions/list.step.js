@@ -7,7 +7,7 @@ const Dashboard = require('../../pages/dashboard/dashboard.po');
 const List = require('../../pages/dashboard/list.po');
 
 let header;
-let dashboard;
+let dashboard = new Dashboard();
 let boardContainer;
 let boardsDrawerContainer;
 let list;
@@ -28,21 +28,18 @@ Given(/^I select a board in Boards Drawer with:$/, (dataTable) => {
 });
 
 When(/^I create new list with:$/, (dataTable) => {
-  dashboard = new Dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   dashboard.createList(titleString);
 });
 
 Then(/^I expect list created in board$/, (dataTable) => {
-  dashboard = new Dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.true;
 });
 
 Given(/^I select a list with:$/, (data) => {
-  dashboard = new Dashboard();
   let listToSelect = data.rowsHash();
   let nameList = listToSelect.Title;
   dashboard.selectList(nameList);
@@ -54,7 +51,6 @@ When(/^I archive this list$/, () => {
 });
 
 Then(/^I don't expect list in board:$/, (dataTable) => {
-  dashboard = new Dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.false;
