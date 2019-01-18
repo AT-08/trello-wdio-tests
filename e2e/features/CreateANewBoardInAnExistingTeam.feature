@@ -1,5 +1,5 @@
 #trello.feature
-@wip
+@bvt
 Feature: Create A New Board In An Existing Team
   Background: I create a new Team
     Given I login with "{credentials.owner1}"
