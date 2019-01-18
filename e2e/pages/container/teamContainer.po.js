@@ -23,6 +23,7 @@ class teamContainer {
    * This Method create a board in the team container PO.
    */
   createBoard() {
+    commonActions.waitVisibility(this.createNewBoardButton);
     commonActions.click(this.createNewBoardButton);
     return new dashboardForm();
   }

@@ -5,10 +5,9 @@ const SideBar = require('../../pages/common/sideBar.po');
 const TeamForm = require('../../pages/team/teamForm.po');
 const Team = require('../../pages/team/team.po');
 const TeamSettings = require('../../pages/team/teamSettings.po');
-
+const TeamBoard = require('../../pages/team/teamBoard.po');
 let leftBar;
-let teamForm;
-let team;
+
 let teamContainer;
 let members;
 let teamForm;
@@ -23,6 +22,7 @@ When(/^I create a new Team with:$/, (data) => {
   teamForm.createTeam(teamData);
 });
 When(/^I go to tab Boards/, () => {
+  let team = new Team();
   teamBoard = team.goToTeamBoard();
 });
 When(/^I create a new Team using plus buttom with:$/, (data) => {
@@ -32,6 +32,7 @@ When(/^I create a new Team using plus buttom with:$/, (data) => {
   team = teamForm.createTeam(teamData);
 });
 When(/^I create a team board:$/, (data) => {
+  teamBoard = new TeamBoard();
   dashboardForm = teamBoard.clickCreateBoard();
   let rHash = data.rowsHash();
   dashboardForm.createTeamBoard(rHash);
@@ -89,7 +90,6 @@ Then(/^I see the privacy change in team:$/, (data) => {
   let settingData = data.rowsHash();
   expect(teamSettings.verifyChangeprivacy(settingData.privacy)).to.be.true;
 });
-
 
 
 When(/^I select the Team with:$/, (data) => {
