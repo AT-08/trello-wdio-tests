@@ -35,7 +35,7 @@ class boardContainer {
   }
 
   isBoardExisting(title) {
-    let boardTitle = `//*[contains(text(),"${title}")]`;
+    let boardTitle = `div[title="${title}"]`;
     commonActions.waitVisibility(boardTitle);
     return browser.isVisible(boardTitle);
   }
