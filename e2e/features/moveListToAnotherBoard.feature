@@ -17,8 +17,7 @@ Feature: Create list in Trello
     When I move the list to the my board:
       | BoardTitle | SecondBoardMLTABF |
     And I go to Trello main page
-    And I select a board in Boards Drawer with:
+    And I select a board with:
       | Title | SecondBoardMLTABF |
     Then I should see the list in the board:
       | Title | ListFirstMLTABF |
-    And I delete it
