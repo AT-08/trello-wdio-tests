@@ -6,7 +6,7 @@ const card = require('../card/card.po');
 const listActions = require('../dashboard/listActions.po');
 const Header = require('../common/header.po');
 
-const DEFAULT_PAUSE = 2000;
+const DEFAULT_PAUSE = 1000;
 
 /**
  * PageObject for a list in the dashboard.
@@ -25,8 +25,10 @@ class list {
   /**
    * This method create a card in a list.
    */
-  createCard(cardName) {
-    commonActions.click(this.addAnotherCardButton);
+  createCard(cardName, list) {
+    commonActions.click(`//textarea[@aria-label="${list}"]
+                      /ancestor::div[contains(@class, 'list js-list-content')]
+                      /descendant::a[contains(@class, 'js-open-card-composer')]`);
     commonActions.waitVisibility(this.cardTitleTextAreaInput);
     commonActions.setValue(this.cardTitleTextAreaInput, cardName);
     commonActions.waitVisibility(this.addCardButton);
@@ -63,7 +65,6 @@ class list {
    * This method archive a list.
    */
   clickListAction() {
-    commonActions.click(this.listActionButton);
     return new listActions();
   }
 

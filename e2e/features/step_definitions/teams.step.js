@@ -10,6 +10,8 @@ let leftBar;
 let teamContainer;
 let members;
 let teamForm;
+let teamSettings;
+let team;
 
 When(/^I create a new Team with:$/, (data) => {
   teamForm = new TeamForm();
@@ -55,7 +57,7 @@ Then(/^I see the new team at sidebar:$/, (data) => {
 
 When(/^I select Settings item list:$/, () => {
   let team = new Team();
-  team.goToSettingTab();
+  teamSettings = team.goToSettingTab();
 });
 
 When(/^I change the privacy of the team:$/, (data) => {
@@ -71,3 +73,18 @@ Then(/^I see the privacy change in team:$/, (data) => {
 });
 
 
+
+When(/^I select the Team with:$/, (data) => {
+  leftBar = new SideBar();
+  let rHash = data.rowsHash();
+  teamContainer = leftBar.selectTeam(rHash.teamName);
+  team = teamContainer.goToSetings();
+});
+
+When(/^I go to settings$/, () => {
+  teamSettings = team.clickSettings();
+});
+
+When(/^I delete the team$/, () => {
+  teamSettings.deleteTeam();
+});
