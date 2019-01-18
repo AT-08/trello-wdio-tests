@@ -11,11 +11,12 @@ class boardContainer {
    * Constructor for set the elements.
    */
   constructor() {
-    this.createNewBoardButton = 'div[class="board-tile mod-add"]';
+    this.createNewBoardButton = '.board-tile.mod-add';
+    this.titleBoard = '.board-header-btn-text';
   }
 
   /**
-   * This Method create a board in the board container PO.
+   * This Method create a board in the board container PO. Deprecated ?
    */
   createBoard() {
     commonActions.click(this.createNewBoardButton);
@@ -39,7 +40,7 @@ class boardContainer {
     commonActions.waitVisibility(this.createNewBoardButton);
     return browser.isVisible(boardTitle);
   }
-  
+
   getTitleBoard() {
     return commonActions.getText(this.titleBoard);
   }

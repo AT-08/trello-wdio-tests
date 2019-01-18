@@ -1,6 +1,5 @@
 const {Given, When, Then} = require('cucumber');
 const expect = require('chai').expect;
-
 const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
@@ -32,18 +31,9 @@ Given(/^I select the board with:$/, (dataTable) => {
   dashboard = boardContainer.selectBoard(titleString);
 });
 
-Given(/^I click on link create new board from home page$/, () => {
-  let board = new BoardContainer();
-  board.onClickNewBoard();
-});
-
 When(/^I create a new Board with:$/, (dataTable) => {
   let boardForm = new DashboardForm();
   boardForm.createBoard(dataTable.rowsHash());
-});
-
-Then(/^I expect my board created$/, () => {
-  Dashboard.showMenu();
 });
 
 When(/^I select Members button$/, () => {

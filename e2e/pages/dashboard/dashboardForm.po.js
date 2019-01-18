@@ -30,12 +30,11 @@ class dashboardForm {
     });
 
     commonActions.click(this.submit);
-    commonActions.waitInvisibility(this.submit);
     return new dashboard();
   }
 
   setTitleBoard(name) {
-    commonActions.waitVisibility(this.visibilityButton);
+    commonActions.pause();
     commonActions.setValue(this.titleBoard, name);
   }
 
@@ -46,7 +45,6 @@ class dashboardForm {
 
   setAccessBoard(accessAttribute) {
     if (accessAttribute === 'Public') {
-      commonActions.click(this.visibilityButton);
       commonActions.click(this.publicButton);
       commonActions.click(this.confirmPublicButton);
     }

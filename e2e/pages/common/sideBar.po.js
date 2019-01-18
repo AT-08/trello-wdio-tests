@@ -5,6 +5,7 @@ const teamForm = require('../team/teamForm.po');
 const boardContainer = require('../container/boardContainer.po');
 const homeContainer = require('../container/homeContainer.po');
 const teamContainer = require('../container/teamContainer.po');
+const BoardForm = require('../../pages/dashboard/dashboardForm.po');
 
 /**
  * PageObject of the sideBar.
@@ -17,7 +18,7 @@ class sideBar {
     this.createTeamButton = 'button[class="tab__tabButton__37WIj tab__quiet__ed4jD"]';
     this.selectedBoardButton = '[href*="/boards"]';
     this.selectedHomeButton = '.tab__tabLink__3C9rw.tab__selected__1gsiC"]';
-
+    this.createNewBoardLink = '.quiet-button.js-add-board';
   }
 
   /**
@@ -64,6 +65,12 @@ class sideBar {
     var team = `//*[contains(text(),"${name}")]/ancestor::a[contains(@class,'tab__tabLink__3C9rw')]`;
     commonActions.waitVisibility('div[class="section-header__text__1SpVs"]');
     return browser.isExisting(team);
+  }
+
+  openBoardForm() {
+    commonActions.pause();
+    commonActions.click(this.createNewBoardLink);
+    return new BoardForm();
   }
 }
 

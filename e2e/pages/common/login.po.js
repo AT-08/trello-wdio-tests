@@ -13,7 +13,7 @@ class login {
     this.userNameTextfield = '#user';
     this.passwordTextField = '#password';
     this.loginButton = '#login';
-    this.mainHeaderButton = 'span[class="header-logo-default"]';
+    this.mainHeaderButton = '.header-logo-default';
   }
 
   /**
