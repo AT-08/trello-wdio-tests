@@ -5,9 +5,11 @@ const BoardContainer = require('../../pages/container/boardContainer.po');
 const DashboardForm = require('../../pages/dashboard/dashboardForm.po');
 const Dashboard = require('../../pages/dashboard/dashboard.po');
 const BoardMenu = require('../../pages/dashboard/dashboardMenu.po');
+const SideBar = require('../../pages/common/sideBar.po');
 
 const CommonActions = require('../../core/ui/commonActions');
 
+let leftBar;
 let dashboard;
 let dashboardForm;
 let titleString;
@@ -15,7 +17,6 @@ let member;
 let boardMenu;
 let boardPage;
 let boardContainer;
-let boardForm = new DashboardForm();
 
 When(/^I search a Board with:$/, (dataTable) => {
   let rHash = dataTable.rowsHash();
@@ -31,9 +32,13 @@ Given(/^I select the board with:$/, (dataTable) => {
   dashboard = boardContainer.selectBoard(titleString);
 });
 
-When(/^I create a new Board with:$/, (dataTable) => {
+Given(/^I click on link create new board from home page$/, () => {
   let board = new BoardContainer();
-  boardForm = board.onClickNewBoard();
+  board.onClickNewBoard();
+});
+
+When(/^I create a new Board with:$/, (dataTable) => {
+  let boardForm = new DashboardForm();
   boardForm.createBoard(dataTable.rowsHash());
 });
 
@@ -56,6 +61,12 @@ Then(/^I see the member in board Members$/, (data) => {
   expect(member.isMemberDashboard(memberData.user)).to.be.true;
 });
 
+When(/^I click in ShowMenu link/, () => {
+  boardMenu = new BoardMenu();
+  boardMenu.clickShowMenu();
+});
+
+
 When(/^I delete it/, () => {
   boardMenu = new BoardMenu();
   boardMenu.deleteBoard();
@@ -65,7 +76,22 @@ When(/^I go to boards page "([^"]*)"$/, (url) => {
   CommonActions.loadPage(url);
 });
 
-Then(/^I expect the board delete/, () => {
+Then (/^I expect the board delete:$/, (data) => {
   boardPage = new BoardContainer();
-  expect(boardPage.isBoardExisting(titleString)).to.be.false;
+  let boardData = data.rowsHash();
+  expect(boardPage.isBoardExisting(boardData.Title)).to.be.false;
+});
+
+Then(/^I should see the list in the board:$/, (dataTable) => {
+  dashboard = new Dashboard();
+  let rHash = dataTable.rowsHash();
+  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+});
+
+Then(/^I expect the Team delete$/, (data) => {
+  leftBar = new SideBar();
+  boardPage = new BoardContainer();
+  let rHash = data.rowsHash();
+  let titleString = rHash.teamName;
+  expect(leftBar.existingTeam(titleString)).to.be.false;
 });

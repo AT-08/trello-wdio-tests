@@ -14,6 +14,7 @@ class dashboardMenu {
     this.menuMoreCloseBoard = '.js-close-board';
     this.confirmCloseBoard = '.js-confirm.full.negate';
     this.permanentlyDeleteBoardLink = '.quiet.js-delete';
+    this.notBoardMessage = 'div[class="little-message"]';
   }
 
   deleteBoard() {
@@ -23,6 +24,15 @@ class dashboardMenu {
     commonActions.click(this.confirmCloseBoard);
     commonActions.click(this.permanentlyDeleteBoardLink);
     commonActions.click(this.confirmCloseBoard);
+    commonActions.waitVisibility(this.notBoardMessage);
+
+  }
+
+  clickShowMenu () {
+    commonActions.waitVisibility('.board-header-btn-text');
+    if (!browser.isVisible('div[class="board-menu js-fill-board-menu"]')) {
+      browser.click('.board-header-btn.mod-show-menu.js-show-sidebar');
+    }
   }
 
   closeBoard() {

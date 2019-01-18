@@ -35,6 +35,7 @@ When(/^I create new list with:$/, (dataTable) => {
 });
 
 Then(/^I expect list created in board$/, (dataTable) => {
+  dashboard = new Dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.true;
@@ -53,7 +54,15 @@ When(/^I archive this list$/, () => {
 });
 
 Then(/^I don't expect list in board:$/, (dataTable) => {
+  dashboard = new Dashboard();
   let rHash = dataTable.rowsHash();
   let titleString = rHash.Title;
   expect(dashboard.isCreatedList(titleString)).to.be.false;
 });
+
+When(/^I move the list to the my board:$/, (data) => {
+  list = new List();
+  let BoardSet = data.rowsHash();
+  list.clickListAction().moveList(BoardSet);
+});
+
