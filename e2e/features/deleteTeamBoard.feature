@@ -1,5 +1,5 @@
 #trello.feature
-@bvt
+@wip
 Feature: Delete team board
 
   Background:
