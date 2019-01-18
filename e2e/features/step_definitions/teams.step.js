@@ -6,6 +6,7 @@ const TeamForm = require('../../pages/team/teamForm.po');
 const Team = require('../../pages/team/team.po');
 const TeamSettings = require('../../pages/team/teamSettings.po');
 const TeamBoard = require('../../pages/team/teamBoard.po');
+const Header = require('../../pages/common/header.po');
 let leftBar;
 
 let teamContainer;
