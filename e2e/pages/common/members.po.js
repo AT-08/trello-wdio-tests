@@ -10,6 +10,8 @@ class members {
     this.findMemberInputText = 'input[class="autocomplete-input"]';
     this.invitationMessageInput = 'textarea[class="js-invitation-message]';
     this.sendInvitationButton = 'button[class="autocomplete-btn primary"]';
+    this.deleteMemberButton = '.option.button-link.remove-button';
+    this.deleteConfirmButton = '.js-soft-remove';
   }
 
   /**
@@ -68,6 +70,15 @@ class members {
     commonActions.waitVisibility(`[title*="${memberName.username}"]`);
     return browser.isExisting(`[title*="${memberName.username}"]`);
   }
-}
 
+  deleteMember() {
+    commonActions.click(this.deleteMemberButton);
+    commonActions.click(this.deleteConfirmButton);
+  }
+
+  verifyMember(data) {
+    let user = commonActions.getUserFromKey(data.user);
+    return browser.isExisting(`//*[contains(text(),"${user.username}")]`);
+  }
+}
 module.exports = members;

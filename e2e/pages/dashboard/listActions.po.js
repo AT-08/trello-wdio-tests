@@ -49,6 +49,7 @@ class listActions {
    * This method gives the board new  to the list.
    */
   changeBoard(nameBoard) {
+    commonActions.pause();
     const sb = $(this.btnSelectBoard);
     sb.selectByVisibleText(`${nameBoard}`);
   }

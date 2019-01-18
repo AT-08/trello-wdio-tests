@@ -54,7 +54,9 @@ class dashboard {
    */
   isCreatedList(title) {
     commonActions.pause();
-    return browser.isExisting(`//textarea[contains(@aria-label,"${title}")]`);
+    var list = `//textarea[contains(@aria-label,"${title}")]`;
+    commonActions.waitVisibility(list);
+    return browser.isExisting(list);
   }
 
   /**
@@ -65,6 +67,29 @@ class dashboard {
     commonActions.click(`//textarea[@aria-label="${list}"]
                       /ancestor::div[contains(@class, 'list js-list-content')]
                       /descendant::a[contains(@class, '.list-header-extras-menu')]`);
+  }
+
+  verifyMoveList(moveSet) {
+    let rightList = true;
+    let rightPosition = true;
+    const move = {
+      'ListTitle': () => rightList = this.verifyList(moveSet.ListTitle),
+      'Position': () => rightPosition = this.verifyPosition(moveSet.Position)
+    };
+    Object.keys(moveSet).forEach(key => {
+      move[key].call();
+    });
+    return rightList && rightPosition;
+  }
+
+  verifyList(nameList) {
+    let cardOfList = `//textarea[@aria-label="${nameList}"]
+                      /ancestor::div[contains(@class, 'js-list-content')]`;
+    return browser.isExisting(cardOfList);
+  }
+
+  verifyPosition(position) {
+    return position;
   }
 }
 

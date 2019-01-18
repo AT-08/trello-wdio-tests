@@ -42,8 +42,10 @@ When(/^I create a new Board with:$/, (dataTable) => {
   boardForm.createBoard(dataTable.rowsHash());
 });
 
-Then(/^I expect my board created$/, () => {
-  Dashboard.showMenu();
+Then(/^I expect my board created$/, (dataTable) => {
+  boardPage = new BoardContainer();
+  let boardData = dataTable.rowsHash();
+  expect(boardPage.isBoardExisting(boardData)).to.be.true;
 });
 
 When(/^I select Members button$/, () => {
@@ -84,8 +86,8 @@ Then (/^I expect the board delete:$/, (data) => {
 
 Then(/^I should see the list in the board:$/, (dataTable) => {
   dashboard = new Dashboard();
-  let rHash = dataTable.rowsHash();
-  expect(dashboard.isCreatedList(rHash.Title)).to.be.true;
+  let origin = dataTable.rowsHash();
+  expect(dashboard.verifyMoveList(origin)).to.be.true;
 });
 
 Then(/^I expect the Team delete$/, (data) => {

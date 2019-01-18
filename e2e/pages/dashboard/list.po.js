@@ -65,6 +65,7 @@ class list {
    * This method archive a list.
    */
   clickListAction() {
+    commonActions.pause();
     return new listActions();
   }
 

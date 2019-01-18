@@ -39,7 +39,7 @@ When(/^I add member in the team:$/, (data) => {
 Then(/^I see the member in Team Members$/, (data) => {
   let team = new Team();
   let memberData = data.rowsHash();
-  expect(team.isMember(memberData.user)).to.be.true;
+  expect(team.isMember(memberData)).to.be.true;
   team.removeMember();
 });
 
@@ -87,4 +87,17 @@ When(/^I go to settings$/, () => {
 
 When(/^I delete the team$/, () => {
   teamSettings.deleteTeam();
+});
+
+When(/^I delete the member$/, () => {
+  let team = new Team();
+  members = team.newMember();
+  members.deleteMember();
+});
+
+Then(/^I don't expect member of team:$/, (data) => {
+  let team = new Team();
+  members = team.newMember();
+  let memberData = data.rowsHash();
+  expect(members.verifyMember(memberData)).to.be.false;
 });
