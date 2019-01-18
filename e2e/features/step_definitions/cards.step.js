@@ -15,7 +15,7 @@ let card;
 When(/^I create a card with:$/, (cardData => {
   let cardName = cardData.rowsHash();
   newList = new List();
-  newCard = newList.createCard(cardName.CardTitle);
+  newCard = newList.createCard(cardName.CardTitle, cardName.Title);
 }));
 
 Given(/^I invite a member to the board:$/, (dataMember) => {

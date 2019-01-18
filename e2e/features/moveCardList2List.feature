@@ -1,5 +1,5 @@
 #trello.feature
-@bvt
+@wip
 Feature: Move an existing card
   As a user
   I want to move a card from a list to another list in the same board
@@ -16,13 +16,13 @@ Feature: Move an existing card
     And I create a card with:
       | CardTitle | Card2Move |
 
-  Scenario: Move card created from a list to another list
-    Given I select the card:
-      | CardTitle | Card2Move |
-      | ListTitle | To Do     |
-    When I move the card to:
-      | ListTitle | In Progress |
-    Then I see the card in:
-      | ListTitle | In Progress |
-    And I don't see the card in:
-      | ListTitle | To Do |
+    Scenario: Move card created from a list to another list
+      Given I select the card:
+        | CardTitle | Card2Move |
+        | ListTitle | To Do |
+      When I move the card to:
+        | ListTitle | In Progress |
+      Then I see the card in:
+        | ListTitle | In Progress |
+      And I don't see the card in:
+        | ListTitle | To Do |

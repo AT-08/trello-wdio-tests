@@ -2,6 +2,7 @@
 const commonActions = require('../../core/ui/commonActions');
 const dashboardForm = require('../dashboard/dashboardForm.po');
 const dashboard = require('../dashboard/dashboard.po');
+const team = require('../team/team.po');
 
 const DEFAULT_PAUSE = 1000;
 
@@ -44,6 +45,11 @@ class teamContainer {
   goToMembers() {
     browser.pause(DEFAULT_PAUSE);
     commonActions.click(this.membersItemList);
+  }
+
+  goToSetings() {
+    commonActions.click('[href*=account]');
+    return new team();
   }
 }
 

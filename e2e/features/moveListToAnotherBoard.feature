@@ -24,3 +24,4 @@ Feature: Create list in Trello
       | Title | SecondBoardMLTABF|
     Then I should see the list in the board:
       | Title | ListFirstMLTABF |
+    And I delete it

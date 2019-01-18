@@ -14,7 +14,6 @@ class dashboardMenu {
     this.menuMoreCloseBoard = '.js-close-board';
     this.confirmCloseBoard = '.js-confirm.full.negate';
     this.permanentlyDeleteBoardLink = '.quiet.js-delete';
-    this.showMenuLink = '.js-show-sidebar';
     this.notBoardMessage = 'div[class="little-message"]';
   }
 
@@ -29,8 +28,9 @@ class dashboardMenu {
   }
 
   clickShowMenu () {
-    if(!browser.isExisting(this.menuMoreItem)) {
-      commonActions.click(this.showMenuLink);
+    commonActions.waitVisibility('.board-header-btn-text');
+    if (!browser.isVisible('div[class="board-menu js-fill-board-menu"]')) {
+      browser.click('.board-header-btn.mod-show-menu.js-show-sidebar');
     }
   }
 
