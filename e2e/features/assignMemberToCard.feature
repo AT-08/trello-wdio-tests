@@ -5,7 +5,7 @@ Feature: Assign member to card.
   Background: Prepare a List
     Given I login with "{credentials.owner1}"
     And I click on link create new board from home page
-    And I create a new Board with:
+    And I create a new board with:
       | Title | Test assing member |
     And I go to Trello main page
     And I search a Board with:
